@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @publication.title %>
+</p>
+
+<p>
+  <b>Subtitle:</b>
+  <%= @publication.subtitle %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @publication.name %>
+</p>
+
+<p>
+  <b>Welcome:</b>
+  <%= @publication.welcome %>
+</p>
+
+<p>
+  <b>Copyright:</b>
+  <%= @publication.copyright %>
+</p>
+
+<p>
+  <b>Issn:</b>
+  <%= @publication.issn %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%= @publication.publisher %>
+</p>
+
+
+<%= link_to 'Edit', edit_publication_path(@publication) %> |
+<%= link_to 'Back', publications_path %>

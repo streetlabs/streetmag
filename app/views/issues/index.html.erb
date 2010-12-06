@@ -1,0 +1,32 @@
+<% title "STREETMAG » " + @publication.title + " » Issues" %>  
+<h1>Listing issues</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Volume</th>
+    <th>Issue number</th>
+    <th>Year</th>
+    <th>Publication</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @issues.each do |issue| %>
+  <tr>
+    <td><%= issue.title %></td>
+    <td><%= issue.volume %></td>
+    <td><%= issue.issue_number %></td>
+    <td><%= issue.year %></td>
+    <td><%= issue.publication.title %></td>
+    <td><%= link_to 'Show', publication_issue_path(@publication, issue) %></td>
+    <td><%= link_to 'Edit', edit_publication_issue_path(@publication, issue)  %></td>
+    <td><%= link_to 'Destroy', publication_issue_path(@publication, issue) , :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Issue', new_publication_issue_path %>
