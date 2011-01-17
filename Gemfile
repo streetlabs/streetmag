@@ -8,7 +8,7 @@ gem 'rails', '3.0.3'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
+gem 'ckeditor', '3.4.2.pre'
 gem 'cloudfiles'
 #gem "paperclip-cloudfiles", :require => 'paperclip'
 

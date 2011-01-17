@@ -4,7 +4,8 @@ class PublicationsController < ApplicationController
   end
 
   def show
-    @publication = Publication.find(params[:id])
+    @publication = Publication.find_by_name!(request.subdomain)  
+    #@publication = Publication.find(params[:id])
   end
 
   def new
