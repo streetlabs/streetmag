@@ -1,0 +1,23 @@
+<%= simple_form_for [@publication, @arrangement] do |f| %>
+  <% if @arrangement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@arrangement.errors.count, "error") %> prohibited this arrangement from being saved:</h2>
+
+      <ul>
+      <% @arrangement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="inputs">
+    <%= f.association :issue %>
+    <%= f.association :section %>
+    <%= f.association :article %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

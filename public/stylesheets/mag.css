@@ -1,0 +1,103 @@
+.mag {
+  padding-left: 10px;
+  border-left: 100px solid #7c890f;
+}
+.mag h1 {
+  color: #7c890f;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0px;
+  font-size: 50pt;
+}
+.mag h2 {
+  color: #0d4158;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px;
+  font-size: 32pt;
+}
+.mag a { color: #1a2e37; }
+.mag a:visited { color: #0d4158; }
+.mag a:hover {
+  color: white;
+  background-color: #021d29;
+}
+.mag .title {
+  color: #7c890f;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+}
+.mag .author {
+  color: #0d4158;
+  font-size: 12pt;
+  font-weight: normal;
+  text-align: center;
+}
+.mag .affiliation {
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: center;
+}
+.mag .abstract {
+  margin-left: 72pt;
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: left;
+  background-color: #e0e6ac;
+}
+.mag .heading {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #7c890f;
+}
+.mag .subheading { color: #8c5110; }
+.mag .epigraph { margin-left: 72pt; }
+.mag .paragraph { line-height: 200%; }
+.mag p { line-height: 200%; }
+.mag ul {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.mag ol {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.mag blockquote {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.mag .caption { font-size: 10pt; }
+.mag .stanza {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.mag .important { font-weight: bold; }
+.mag .emphasize { font-style: italic; }
+.mag .note {
+  border: 1px dotted black;
+  background-color: #a7ccdc;
+  margin: 2px;
+  padding: 2px;
+}
+.mag .definition {
+  border: 1px dashed black;
+  background-color: #e7cbac;
+  margin: 2px;
+  padding: 2px;
+}
+.mag .endnotes {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #021d29;
+  color: #0d4158;
+  font-size: 10pt;
+}
+.mag .citation {
+  color: #8c5110;
+  line-height: 150%;
+}
+.mag .bio {
+  color: #0d4158;
+  font-size: 10pt;
+}

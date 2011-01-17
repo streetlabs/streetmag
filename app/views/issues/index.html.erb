@@ -1,5 +1,8 @@
 <% title "STREETMAG » " + @publication.title + " » Issues" %>  
-<h1>Listing issues</h1>
+<div class="admin">
+<p id="notice"><%= notice %></p>
+
+<h1>Issues :: LIST</h1>
 
 <table>
   <tr>
@@ -30,3 +33,5 @@
 <br />
 
 <%= link_to 'New Issue', new_publication_issue_path %>
+
+</div>

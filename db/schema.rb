@@ -10,7 +10,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101128185539) do
+ActiveRecord::Schema.define(:version => 20101215214501) do
+
+  create_table "arrangements", :force => true do |t|
+    t.integer  "issue_id",       :null => false
+    t.integer  "section_id",     :null => false
+    t.integer  "article_id",     :null => false
+    t.integer  "publication_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "articles", :force => true do |t|
+    t.string   "title",              :null => false
+    t.integer  "author_id",          :null => false
+    t.text     "abstract"
+    t.text     "content",            :null => false
+    t.text     "notes"
+    t.text     "cited_works"
+    t.text     "excerpt"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authors", :force => true do |t|
+    t.string   "name",        :null => false
+    t.string   "email"
+    t.string   "url"
+    t.string   "affiliation"
+    t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                                 :null => false
@@ -48,6 +82,14 @@ ActiveRecord::Schema.define(:version => 20101128185539) do
     t.string   "copyright"
     t.string   "issn"
     t.string   "publisher"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sections", :force => true do |t|
+    t.string   "name",           :null => false
+    t.integer  "publication_id", :null => false
+    t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

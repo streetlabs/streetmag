@@ -1,0 +1,10 @@
+<% content_for :javascript do %>
+  <%= javascript_include_tag :ckeditor %>
+<% end %>
+<div class="admin">
+<h1>Article :: NEW</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', publication_articles_path(@publication) %>
+</div>

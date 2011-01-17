@@ -31,7 +31,7 @@ class IssuesController < ApplicationController
     @issue = @publication.issues.create(params[:issue])
 
     if @issue.save
-      redirect_to(@publication, :notice => 'Issue was successfully created.')
+      redirect_to(publication_issues_path(@publication), :notice => 'Issue was successfully created.')
     else
       render :action => "new" 
     end

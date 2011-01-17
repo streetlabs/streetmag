@@ -8,7 +8,21 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
+  <div id="head">
+    <div id="street_mag_title">STREETMAG » <span class="subtitle">the OPEN platform for publishing magazines and journals.</span></div>
+  </div>
+  
+  <% if @publication && !@publication.new_record? %>
+    <div id="nav">
+      <%= link_to 'Home', @publication %> |
+      <%= link_to 'Issues', publication_issues_path(@publication) %> | 
+      <%= link_to 'Sections', publication_sections_path(@publication) %> | 
+      <%= link_to 'Article Arrangement', publication_arrangements_path(@publication) %> | 
+      <%= link_to 'Articles', publication_articles_path(@publication) %> | 
+      <%= link_to 'Authors', publication_authors_path(@publication) %>
+    </div>
+  <% end %>
+  
 <%= yield %>
 
 </body>

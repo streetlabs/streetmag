@@ -1,9 +1,13 @@
+<% title "STREETMAG » Publications" %>  
+
 <% content_for :javascript do %>
   <%= javascript_include_tag :ckeditor %>
 <% end %>
 
-<h1>New publication</h1>
+<div class="admin">
+  <h1>New publication</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', publications_path %>
+  <%= link_to 'Back', publications_path %>
+</div>

@@ -1,0 +1,128 @@
+//Primary Color:
+@primary: #177085;	
+@primary-medium: #284C54;
+@primary-dark: #033540;
+@primary-light: #76D2E7;
+@primary-xlight: #B3DEE7;
+//Complementary Color:
+@complement: #D77B20;	
+@complement-medium: #88633F;
+@complement-dark: #683604;
+@complement-light: #F7B87A;
+@complement-xlight: #F7DABE;
+
+
+
+
+#head{
+	width: 100%;
+	margin: 0px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color: white;
+	background-color: @complement;
+	#street_mag_title{
+		font-family: Arial, Helvetica, Serif;
+		font-size: 20pt;
+		padding: 10px;
+		margin-left: 6px;
+		margin-right: 6px;
+		color: white;
+		background-color: @primary;
+		border: 1px solid white;
+	}
+	.subtitle{
+		font-size: 14pt;
+		font-style: italic;
+	}
+}
+
+
+#nav{
+	text-align: right;
+	font-family: Arial, Helvetica, Serif;
+	font-size: 12pt;
+	margin-top: 5px;
+	padding: 5px;
+	padding-top: 0px;
+	color: @complement-dark;
+	a{color: @complement; text-decoration: underline; padding: 3px;}
+	a:hover{ color: white; background-color: @primary; text-decoration:underline;}
+}
+
+.admin{
+
+	h1{
+		color: @primary-dark;
+	}
+
+
+	a{ color: @complement-medium; }
+	a:visited { color: @complement; }
+	a:hover { color: white; background-color:@complement-dark; }
+
+	table{
+		margin: auto;
+		border: 2px solid @primary;
+	}
+
+	tr,td, th{
+		padding: 2px;
+		border: 1px solid @primary;
+	}
+
+	th{
+		font-weight: bold;
+		color: white;
+		background-color: @primary;
+	}
+	form{
+		width: 96%;
+		margin: auto;
+		padding: 10px;
+		padding-right: 24px;
+		border: 2px solid @primary;	
+		position: relative;
+		label, input, select{
+			font-family: Tahoma, Verdana, Serif;
+			font-size: 12pt;
+			padding: 4px;
+			vertical-align: middle;
+
+		}
+		label{
+			color: white;
+			background-color: @primary;
+		}
+		label.required{
+			color: white;
+			background-color: @complement;
+		}
+		.input{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		.inputs_left{
+			float: left;
+			width: 49%;
+		}
+		.inputs_right{
+			float: right;
+			width: 49%;
+		}
+		.actions{
+			text-align: center;
+		}
+	}
+
+	.input_end{
+		width: 980px;
+		clear: both;
+		padding-bottom: 20px;
+	}
+
+	.editor{
+		padding-top: 20px;
+	}
+
+}

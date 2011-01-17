@@ -1,0 +1,22 @@
+<div class="admin">
+<p id="notice"><%= notice %></p>
+<h1>Sections :: VIEW</h1>
+<p>
+  <b>Name:</b>
+  <%= @section.name %>
+</p>
+
+<p>
+  <b>Publication:</b>
+  <%= @section.publication.title %>
+</p>
+
+<p>
+  <b>Parent Section:</b>
+  <%= @section.parent.name unless @section.parent==nil %>
+</p>
+
+
+<%= link_to 'Edit',edit_publication_section_path(@publication, @section)%> |
+<%= link_to 'Back', publication_sections_path(@publication) %>
+</div>

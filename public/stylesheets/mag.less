@@ -1,0 +1,137 @@
+//Primary Color:
+@primary: #7C890F;	
+@primary-medium: #505526;
+@primary-dark: #3A4002;
+@primary-light: #D9E66B;
+@primary-xlight: #E0E6AC;
+//Complementary Color:
+@complement: #8C5110;	
+@complement-medium: #574027;
+@complement-dark: #422402;
+@complement-light: #E7AD6B;
+@complement-xlight: #E7CBAC;
+//Complementary Color:
+@secondary: #0D4158;	
+@secondary-medium: #1A2E37;
+@secondary-dark: #021D29;
+@secondary-light: #6CBADC;
+@secondary-xlight: #A7CCDC;
+
+
+.mag{
+	padding-left: 10px;
+	border-left: 100px solid @primary;
+	
+	h1{
+		color:@primary;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin: 0px;
+		font-size: 50pt;
+	}
+	h2{
+		color:@secondary;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin: 0px;
+		font-size: 32pt;
+	}
+
+
+	a{ color: @secondary-medium; }
+	a:visited { color: @secondary; }
+	a:hover { color: white; background-color:@secondary-dark; }
+	
+	/* STREETMAG */
+
+	.title{
+		color:@primary;
+		font-size: 16pt;
+		font-weight: bold;
+		text-align: center;
+	}
+	.author{
+		color:@secondary;
+		font-size: 12pt;
+		font-weight: normal;
+		text-align: center;
+	}
+	.affiliation{
+		font-size: 10pt;
+		font-weight: normal;
+		text-align: center;
+	}
+	.abstract{
+		margin-left: 72pt;
+		font-size: 10pt;
+		font-weight: normal;
+		text-align: left;
+		background-color: @primary-xlight;
+	}
+
+	.heading{
+		font-size: 14pt;
+		font-weight: bold;
+		color :@primary;
+	}
+	.subheading{
+		color:@complement;
+	}
+	.epigraph{
+		margin-left: 72pt;
+	}
+	.paragraph, p{
+		line-height:200%
+	}
+
+	ul, ol, blockquote{
+		margin-left: 72pt;
+		line-height:150%;
+	}
+
+	.caption{
+		font-size: 10pt;
+	}
+	.stanza{
+		margin-left: 72pt;
+		line-height:150%;
+	}
+
+	.important{ font-weight: bold; }
+	.emphasize{ font-style: italic;}
+
+	.note{
+		/*
+		width: 300px;
+		float: right;
+		clear: both;
+		*/
+		border: 1px dotted black;
+		background-color: @secondary-xlight;
+		margin: 2px;
+		padding: 2px;
+	}
+	.definition{
+		border: 1px dashed black;
+		background-color: @complement-xlight;
+		margin: 2px;
+		padding: 2px;
+	}
+
+	.endnotes{
+		margin-top: 10px;
+		padding-top: 10px;
+		border-top: 1px solid @secondary-dark;
+		color: @secondary;
+		font-size: 10pt;
+	}
+	.citation{
+		color: @complement;
+		line-height:150%;
+	}
+	.bio{
+		color: @secondary;
+		font-size: 10pt;	
+	}
+
+}

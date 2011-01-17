@@ -1,40 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="mag">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @publication.title %>
-</p>
+  <h1>
+    <%= @publication.title %>
+  </h1>
+  <h2>
+    <%= @publication.subtitle %>
+  </h2>
 
-<p>
-  <b>Subtitle:</b>
-  <%= @publication.subtitle %>
-</p>
+  <h3>URL: <%= @publication.name %>.streetmag.org</h3>
 
-<p>
-  <b>Name:</b>
-  <%= @publication.name %>
-</p>
+  <h4>Welcome</h4>
+    <%= raw @publication.welcome %>
 
-<p>
-  <b>Welcome:</b>
-  <%= @publication.welcome %>
-</p>
+  <h4>Sections</h4>
+  <ul>
+    <% @publication.sections.each do |section| %>
+      <li><%= section.name %></li>
+      <ul>
+        <% section.articles.each do |article| %>
+          <li><%= article.title %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </ul>
+  
+  <p>
+    &copy; <%= @publication.copyright %>
+  </p>
 
-<p>
-  <b>Copyright:</b>
-  <%= @publication.copyright %>
-</p>
+  <p>
+    <b>Issn:</b> <%= @publication.issn %>
+  </p>
 
-<p>
-  <b>Issn:</b>
-  <%= @publication.issn %>
-</p>
-
-<p>
-  <b>Publisher:</b>
-  <%= @publication.publisher %>
-</p>
+  <p>
+    <b>Brought to you by:</b>
+    <%= @publication.publisher %>
+  </p>
 
 
-<%= link_to 'Edit', edit_publication_path(@publication) %> |
-<%= link_to 'Back', publications_path %>
+  <%= link_to 'Edit', edit_publication_path(@publication) %> |
+  <%= link_to 'Back', publications_path %>
+
+</div>

@@ -2,6 +2,10 @@ Streetmag::Application.routes.draw do
 
   resources :publications do
     resources :issues
+    resources :arrangements
+    resources :sections
+    resources :authors
+    resources :articles
   end
 
 

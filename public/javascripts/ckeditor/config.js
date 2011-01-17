@@ -3,6 +3,37 @@ Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
+
+CKEDITOR.addStylesSet( 'streetmag_styles',
+[
+    // Block Styles
+	
+    { name : 'Regular' , element : 'p' },
+    { name : 'Title' , element : 'div', attributes : { 'class' : 'title' } },
+    { name : 'Author' , element : 'div', attributes : { 'class' : 'author' } },
+    { name : 'Affiliation' , element : 'div', attributes : { 'class' : 'affiliation' } },
+    { name : 'Abstract' , element : 'div', attributes : { 'class' : 'abstract' } },
+    { name : 'Heading' , element : 'h3', attributes : { 'class' : 'heading' } },
+    { name : 'Subheading' , element : 'h4', attributes : { 'class' : 'subheading' } },
+    { name : 'Epigraph' , element : 'p', attributes : { 'class' : 'epigraph' } },
+
+	
+    { name : 'Caption' , element : 'div', attributes : { 'class' : 'caption' } },
+    { name : 'Stanza' , element : 'div', attributes : { 'class' : 'stanza' } },
+    { name : 'Note' , element : 'div', attributes : { 'class' : 'note' } },
+    { name : 'Definition' , element : 'div', attributes : { 'class' : 'definition' } },
+
+	
+    { name : 'Endnotes' , element : 'div', attributes : { 'class' : 'endnotes' } },
+    { name : 'Citation' , element : 'div', attributes : { 'class' : 'citation' } },
+    { name : 'Bio' , element : 'div', attributes : { 'class' : 'bio' } },
+
+    // Inline Styles
+    { name : 'Important', element : 'span', attributes : { 'class' : 'important' } },
+    { name : 'Emphasize', element : 'span', attributes : { 'class' : 'emphasize' } },
+    { name : 'Highlight: Yellow', element : 'span', styles : { 'background-color' : 'Yellow' } }
+]);
+
 CKEDITOR.editorConfig = function( config )
 {
   config.PreserveSessionOnFileBrowser = true;
@@ -13,7 +44,7 @@ CKEDITOR.editorConfig = function( config )
   //config.ContextMenu = ['Generic','Anchor','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField','ImageButton','Button','BulletedList','NumberedList','Table','Form'] ; 
   
   config.height = '400px';
-  config.width = '600px';
+  config.width = '100px';
   
   //config.resize_enabled = false;
   //config.resize_maxHeight = 2000;
@@ -48,7 +79,6 @@ CKEDITOR.editorConfig = function( config )
     	['Styles','Format'],
 		['RemoveFormat'],
 	    ['Link','Unlink','Anchor'],
-	    ['Undo','Redo'],
 		['Find','Replace'],
 	    ['PasteText','PasteFromWord'],
 	    ['ShowBlocks','Maximize'],
@@ -56,41 +86,10 @@ CKEDITOR.editorConfig = function( config )
 	    ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
 	    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
 	    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
-	    ['Table','HorizontalRule','SpecialChar']
+	    ['Table','SpecialChar']
 	];
-	
-	CKEDITOR.addStylesSet( 'streetmag_styles',
-	[
-	    // Block Styles
-		
-	    { name : 'Regular' , element : 'p' },
-	    { name : 'Title' , element : 'div', attributes : { 'class' : 'title' } },
-	    { name : 'Author' , element : 'div', attributes : { 'class' : 'author' } },
-	    { name : 'Affiliation' , element : 'div', attributes : { 'class' : 'affiliation' } },
-	    { name : 'Abstract' , element : 'div', attributes : { 'class' : 'abstract' } },
-	    { name : 'Heading' , element : 'h3', attributes : { 'class' : 'heading' } },
-	    { name : 'Subheading' , element : 'h4', attributes : { 'class' : 'subheading' } },
-	    { name : 'Epigraph' , element : 'p', attributes : { 'class' : 'epigraph' } },
-	
-		
-	    { name : 'Caption' , element : 'div', attributes : { 'class' : 'caption' } },
-	    { name : 'Stanza' , element : 'div', attributes : { 'class' : 'stanza' } },
-	    { name : 'Note' , element : 'div', attributes : { 'class' : 'note' } },
-	    { name : 'Definition' , element : 'div', attributes : { 'class' : 'definition' } },
-	
-		
-	    { name : 'Endnotes' , element : 'div', attributes : { 'class' : 'endnotes' } },
-	    { name : 'Citation' , element : 'div', attributes : { 'class' : 'citation' } },
-	    { name : 'Bio' , element : 'div', attributes : { 'class' : 'bio' } },
-
-	    // Inline Styles
-	    { name : 'Important', element : 'span', attributes : { 'class' : 'important' } },
-	    { name : 'Emphasize', element : 'span', attributes : { 'class' : 'emphasize' } },
-	    { name : 'Highlight: Yellow', element : 'span', styles : { 'background-color' : 'Yellow' } }
-	]);
 	
 	config.stylesCombo_stylesSet = 'streetmag_styles';
 	
-
 };
 

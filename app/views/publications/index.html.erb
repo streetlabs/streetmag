@@ -1,36 +1,39 @@
 <% title "STREETMAG » Publications" %>  
-<h1>Listing publications</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Subtitle</th>
-    <th>Name</th>
-    <th>Welcome</th>
-    <th>Copyright</th>
-    <th>Issn</th>
-    <th>Publisher</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="admin">
+  <p id="notice"><%= notice %></p>
+  <h1>Listing publications</h1>
 
-<% @publications.each do |publication| %>
-  <tr>
-    <td><%= publication.title %></td>
-    <td><%= publication.subtitle %></td>
-    <td><%= publication.name %></td>
-    <td><%= publication.welcome %></td>
-    <td><%= publication.copyright %></td>
-    <td><%= publication.issn %></td>
-    <td><%= publication.publisher %></td>
-    <td><%= link_to 'Show', publication %></td>
-    <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
-    <td><%= link_to 'Destroy', publication, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Name</th>
+      <th>Copyright</th>
+      <th>Issn</th>
+      <th>Publisher</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<%= link_to 'New Publication', new_publication_path %>
+  <% @publications.each do |publication| %>
+    <tr>
+      <td><%= publication.title %></td>
+      <td><%= publication.subtitle %></td>
+      <td><%= publication.name %></td>
+      <td><%= publication.copyright %></td>
+      <td><%= publication.issn %></td>
+      <td><%= publication.publisher %></td>
+      <td><%= link_to 'Show', publication %></td>
+      <td><%= link_to 'Edit', edit_publication_path(publication) %></td>
+      <td><%= link_to 'Destroy', publication, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New Publication', new_publication_path %>
+</div>

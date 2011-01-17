@@ -1,0 +1,38 @@
+<%= simple_form_for [@publication, @article], :html => {:multipart => true}  do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="inputs">
+    <div class="inputs_left">
+      <%= f.input :title %>
+      <%= f.association :author %>
+      <%= f.label :content %><br /><br />
+      <%= f.cktext_area :content, :id=>'content', :toolbar=>'Article', :height=>'600px' %><br />
+    </div>
+    <div class="inputs_right">  
+      <%= f.label :abstract %><br /><br />
+      <%= f.cktext_area :abstract, :id=>'abstract', :toolbar=>'Article', :height=>'100px' %><br />
+      <%= f.label :notes %><br /><br />
+      <%= f.cktext_area :notes, :id=>'notes', :toolbar=>'Article', :height=>'100px' %><br />
+      <%= f.label :cited_works %><br /><br />
+      <%= f.cktext_area :cited_works, :id=>'cited_works', :toolbar=>'Article', :height=>'100px' %><br />
+      <%= f.label :excerpt %><br /><br />
+      <%= f.cktext_area :excerpt, :id=>'excerpt', :toolbar=>'Article', :height=>'100px' %><br />
+      <%= f.file_field :photo%> 
+    </div>
+    <div class="input_end"> </div>
+  </div>
+  
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

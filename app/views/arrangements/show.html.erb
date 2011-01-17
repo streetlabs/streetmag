@@ -1,0 +1,27 @@
+<div class="admin">
+<p id="notice"><%= notice %></p>
+<h1>Article Arrangements :: VIEW</h1>
+<p>
+  <b>Issue:</b>
+  <%= @arrangement.issue.title %>
+</p>
+
+<p>
+  <b>Section:</b>
+  <%= @arrangement.section.name %>
+</p>
+
+<p>
+  <b>Article:</b>
+  <%= @arrangement.article.title %>
+</p>
+
+<p>
+  <b>Publication:</b>
+  <%= @arrangement.publication.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_publication_arrangement_path(@publication, @arrangement) %> |
+<%= link_to 'Back', publication_arrangements_path(@publication) %>
+</div>
