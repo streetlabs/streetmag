@@ -10,10 +10,11 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'ckeditor', '3.4.2.pre'
 gem 'cloudfiles'
-#gem "paperclip-cloudfiles", :require => 'paperclip'
-
-gem 'paperclip'
-
+gem "paperclip-cloudfiles", :require => 'paperclip'
+#gem 'paperclip'
+gem 'devise'
+gem "cancan"
+gem 'bcrypt-ruby'
 # Use unicorn as the web server
 # gem 'unicorn'
 

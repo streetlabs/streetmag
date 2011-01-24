@@ -46,4 +46,5 @@ Streetmag::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  IMAGE_MAGICK_BIN_PATH = "/usr/local/imagemagick/bin"
 end

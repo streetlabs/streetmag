@@ -61,9 +61,12 @@ Streetmag::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   
+  devise_for :users
+  
   constraints(Subdomain) do  
     match '/' => 'publications#show'    
   end
+  
   root :to => "publications#index"
 
   # See how all your routes lay out with "rake routes"
