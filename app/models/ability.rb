@@ -24,5 +24,27 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    
+    user ||= User.new # guest user (not logged in)
+    if user.is_admin?
+      can :manage, :all
+    else
+      can :manage, Publication do |publication|
+        publication.try(:owner) == user
+      end
+      can :manage, Section do |section|
+        section.try(:owner) == user
+      end
+      can :manage, Issue do |issue|
+        issue.publication.try(:owner) == user
+      end
+      can :manage, Arrangement do |arrangement|
+        arrangement.publication.try(:owner) == user
+      end
+      can :manage, Article do |article|
+        article.try(:editors).include?(user) || article.try(:contributor).include?(user)
+      end
+      can :read, :all
+    end
   end
 end
