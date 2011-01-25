@@ -1,0 +1,72 @@
+//Primary Color:
+@primary: #177085;	
+@primary-medium: #284C54;
+@primary-dark: #033540;
+@primary-light: #76D2E7;
+@primary-xlight: #B3DEE7;
+//Complementary Color:
+@complement: #D77B20;	
+@complement-medium: #88633F;
+@complement-dark: #683604;
+@complement-light: #F7B87A;
+@complement-xlight: #F7DABE;
+
+body{
+}
+
+h1,h2,h3,h4{ font-family: Helvetica, Arial, Serif;}
+
+h2{ font-size: 24px;}
+h3{ font-size: 20px;}
+
+#container{
+	position: relative;
+	width: 800px;
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	h2 {
+		color: @primary-medium;
+	}
+	a{
+		padding-left: 2px;
+		padding-right: 2px;
+		color: @primary-dark;
+	}
+	a:hover{
+		background-color: @primary-dark;
+		color: @complement-xlight;
+	}
+
+
+	.feature{
+		position: absolute;
+		float: left;
+		right: 0px;
+		top: 15px;
+		padding: 10px;
+		padding-top: 5px;
+		width: 360px;
+		background-color: @complement-dark;
+		color: white;
+		border-left: 3px solid @complement;
+		border-right: 3px solid @complement;
+		h2 {color: @complement-xlight;}
+	}
+	.content{
+		width: 360px;
+	}
+	.about{
+		h3{ color: @complement;}
+		width: 100%;
+	}
+}
+#footer{
+	border-top: 3px solid @complement;
+	color: white;
+	margin-top: 100px;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: @primary;
+	text-align: center;
+}

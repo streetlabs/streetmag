@@ -63,11 +63,14 @@ Streetmag::Application.routes.draw do
   
   devise_for :users
   
+  #match '/mobile', :controller => 'high_voltage/pages', :action => 'show', :id => 'mobile'
+  match '/home', :controller => 'high_voltage/pages', :action => 'show', :id => 'home'
+  
   constraints(Subdomain) do  
     match '/' => 'publications#show'    
   end
   
-  root :to => "publications#index"
+  root :to => 'high_voltage/pages', :action => 'show', :id => 'home'
 
   # See how all your routes lay out with "rake routes"
 

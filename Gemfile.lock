@@ -76,6 +76,7 @@ GEM
       rake (>= 0.8.7)
     gherkin (2.3.3)
       json (~> 1.4.6)
+    high_voltage (0.9.3)
     i18n (0.5.0)
     jquery-rails (0.2.6)
       rails (~> 3.0)
@@ -164,6 +165,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  high_voltage
   jquery-rails
   launchy
   mysql2
