@@ -1,0 +1,11 @@
+<% content_for :javascript do %>
+  <%= javascript_include_tag :ckeditor %>
+<% end %>
+<div class="admin">
+<h1>Author :: EDIT</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', admin_publication_admin_author_path(@publication, @author) %> |
+<%= link_to 'Back', admin_publication_admin_authors_path(@publication) %>
+</div>

@@ -8,15 +8,15 @@ h3 { font-size: 20px; }
   padding-top: 20px;
   padding-bottom: 20px;
 }
-#container h2 { color: #284c54; }
+#container h2 { color: #4d5b27; }
 #container a {
   padding-left: 2px;
   padding-right: 2px;
-  color: #033540;
+  color: #394c06;
 }
 #container a:hover {
-  background-color: #033540;
-  color: #f7dabe;
+  background-color: #394c06;
+  color: #cbb479;
 }
 #container .feature {
   position: absolute;
@@ -26,21 +26,21 @@ h3 { font-size: 20px; }
   padding: 10px;
   padding-top: 5px;
   width: 360px;
-  background-color: #683604;
+  background-color: #513c06;
   color: white;
-  border-left: 3px solid #d77b20;
-  border-right: 3px solid #d77b20;
+  border-left: 3px solid #88691a;
+  border-right: 3px solid #88691a;
 }
-#container .feature h2 { color: #f7dabe; }
+#container .feature h2 { color: #cbb479; }
 #container .content { width: 360px; }
 #container .about { width: 100%; }
-#container .about h3 { color: #d77b20; }
+#container .about h3 { color: #88691a; }
 #footer {
-  border-top: 3px solid #d77b20;
+  border-top: 3px solid #88691a;
   color: white;
   margin-top: 100px;
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #177085;
+  background-color: #648118;
   text-align: center;
 }

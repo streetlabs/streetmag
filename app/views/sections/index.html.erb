@@ -9,8 +9,6 @@
     <th>Publication</th>
     <th>Parent</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @sections.each do |section| %>
@@ -19,13 +17,7 @@
     <td><%= section.publication.title %></td>
     <td><%= section.parent.name unless section.parent == nil %></td>
     <td><%= link_to 'Show', publication_section_path(@publication, section) %></td>
-    <td><%= link_to 'Edit', edit_publication_section_path(@publication, section) %></td>
-    <td><%= link_to 'Destroy', publication_section_path(@publication, section) , :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Section', new_publication_section_path(@publication)  %>
 </div>

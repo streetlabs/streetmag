@@ -25,6 +25,11 @@ class Ability
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
     
+    #
+    # There is currently an error in the new method. Only admin can perform new...
+    # This is likely due to me messing up permissions.
+    #
+    
     user ||= User.new # guest user (not logged in)
     if user.is_admin?
       can :manage, :all

@@ -4,7 +4,7 @@
   padding-top: 6px;
   padding-bottom: 6px;
   color: white;
-  background-color: #d77b20;
+  background-color: #88691a;
 }
 #head #street_mag_title {
   font-family: Arial, Helvetica, Serif;
@@ -13,7 +13,7 @@
   margin-left: 6px;
   margin-right: 6px;
   color: white;
-  background-color: #177085;
+  background-color: #648118;
   border: 1px solid white;
 }
 #head .subtitle {
@@ -27,52 +27,52 @@
   margin-top: 5px;
   padding: 5px;
   padding-top: 0px;
-  color: #683604;
+  color: #513c06;
 }
 #nav a {
-  color: #d77b20;
+  color: #88691a;
   text-decoration: underline;
   padding: 3px;
 }
 #nav a:hover {
   color: white;
-  background-color: #177085;
+  background-color: #648118;
   text-decoration: underline;
 }
-.admin h1 { color: #033540; }
-.admin a { color: #88633f; }
-.admin a:visited { color: #d77b20; }
+.admin h1 { color: #394c06; }
+.admin a { color: #615129; }
+.admin a:visited { color: #88691a; }
 .admin a:hover {
   color: white;
-  background-color: #683604;
+  background-color: #513c06;
 }
 .admin table {
   margin: auto;
-  border: 2px solid #177085;
+  border: 2px solid #648118;
 }
 .admin tr {
   padding: 2px;
-  border: 1px solid #177085;
+  border: 1px solid #648118;
 }
 .admin td {
   padding: 2px;
-  border: 1px solid #177085;
+  border: 1px solid #648118;
 }
 .admin th {
   padding: 2px;
-  border: 1px solid #177085;
+  border: 1px solid #648118;
 }
 .admin th {
   font-weight: bold;
   color: white;
-  background-color: #177085;
+  background-color: #648118;
 }
 .admin form {
   width: 96%;
   margin: auto;
   padding: 10px;
   padding-right: 24px;
-  border: 2px solid #177085;
+  border: 2px solid #648118;
   position: relative;
 }
 .admin form label {
@@ -95,11 +95,11 @@
 }
 .admin form label {
   color: white;
-  background-color: #177085;
+  background-color: #648118;
 }
 .admin form label.required {
   color: white;
-  background-color: #d77b20;
+  background-color: #88691a;
 }
 .admin form .input {
   padding-top: 10px;

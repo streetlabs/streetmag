@@ -1,0 +1,12 @@
+<div class="admin">
+<% content_for :javascript do %>
+  <%= javascript_include_tag :ckeditor %>
+<% end %>
+
+<h1>Article :: EDIT</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', admin_publication_admin_article_path(@publication, @article) %> |
+<%= link_to 'Back', admin_publication_admin_articles_path(@publication) %>
+</div>
