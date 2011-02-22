@@ -4,3 +4,4 @@ log/*.log
 tmp/*
 tmp/**/*
 config/rackspace_cloudfiles.yml
+config/database.yml
