@@ -5,6 +5,7 @@ class Publication < ActiveRecord::Base
   has_many :sections, :dependent => :destroy
   has_many :articles, :through => :arrangements, :dependent => :destroy
   has_many :assignments
+  has_many :posts
   has_many :users, :through => :assignments
   validates_presence_of :title
   validates_presence_of :subtitle

@@ -25,7 +25,7 @@
       <td><%= publication.copyright %></td>
       <td><%= publication.issn %></td>
       <td><%= publication.publisher %></td>
-      <td><%= link_to 'Show', root_url(:subdomain => publication.name) %></td>
+      <td><%= link_to 'Show', admin_publication_path(publication) %></td>
       <td><%= link_to 'Edit', edit_admin_publication_path(publication) %></td>
       <td><%= link_to 'Destroy', admin_publication_path(publication), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

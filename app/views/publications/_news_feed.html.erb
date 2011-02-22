@@ -1,0 +1,7 @@
+<h2>News <img src="/images/inquire/rss.jpg" alt="" /></h2>
+<div class="postBlock">
+  <% @website_publication.posts.each do |post| %>
+    <h3><a href="#"><%= post.title %></a></h3>
+    <p><%= post.summary %></p>
+  <% end %>
+</div>

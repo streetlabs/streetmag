@@ -7,5 +7,4 @@ class Issue < ActiveRecord::Base
   validates_presence_of :title
   validates_numericality_of :volume, :only_integer => true
   validates_numericality_of :issue_number, :only_integer => true
-  validates_numericality_of :year, :only_integer => true
 end

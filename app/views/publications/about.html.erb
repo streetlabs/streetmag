@@ -1,0 +1,21 @@
+<div id="page">
+
+		<div id="mainBlock">
+      <%= raw @website_publication.welcome %>
+		</div>
+			
+	
+		<div id="news">
+      <%= render 'news_feed'%>
+			<%= render 'twitter' %>
+		</div>
+		
+		<%= render 'sidebar' %>
+		
+		<div style="clear: both;">&nbsp;</div><br clear="left" />
+				
+	
+</div>
+<script type='text/javascript'>
+$('#tweets').liveTwitter('inquire_jcl', {mode: 'user_timeline', rate:300000, limit: 5 });
+</script>

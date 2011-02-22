@@ -11,5 +11,9 @@ class PublicationsController < ApplicationController
     @issue = @publication.issues.first 
     #@publication = Publication.find(params[:id])
   end
+  
+  def about
+    @publication = Publication.find_by_name!(request.subdomain)
+  end
 
 end

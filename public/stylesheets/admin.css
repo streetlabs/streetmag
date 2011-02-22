@@ -114,6 +114,10 @@
   width: 49%;
 }
 .admin form .actions { text-align: center; }
+.admin .published {
+  color: #cba954;
+  background-color: #513c06;
+}
 .admin .input_end {
   width: 980px;
   clear: both;

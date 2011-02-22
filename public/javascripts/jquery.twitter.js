@@ -205,9 +205,9 @@
 										}
 									}
 									if (settings.service.length > 0) {
-										tweet_url = 'http://' + settings.service + '/notice/' + this.id;
+										tweet_url = 'http://' + settings.service + '/notice/' + this.id_str;
 									} else {
-										tweet_url = 'http://twitter.com/' + screen_name + '/status/' + this.id;
+										tweet_url = 'http://twitter.com/' + screen_name + '/status/' + this.id_str;
 									}
 									var userInfo = this.user;
 									var linkified_text = this.text.replace(/[A-Za-z]+:\/\/[A-Za-z0-9-_]+\.[A-Za-z0-9-_:%&\?\/.=]+/, function (m) { 
@@ -265,7 +265,7 @@
 												this.timeStamp = timeStamp;
 											});
 											if (!initialize) {
-												$(twitter.container).find('.tweet-' + this.id).hide().fadeIn();
+												$(twitter.container).find('.tweet-' + this.id_str).hide().fadeIn();
 											}
 											twitter.lastTimeStamp = Date.parse(created_at_date);
 										}

@@ -16,6 +16,7 @@
   			  <img src="/images/inquire/logo.png" alt="logo" title="Inquire: Journal of Comparative Literature" />
   		  <% end %>
   		</div>
+  		<!-- SEARCH IS NOT ONLINE, YET....
   		<div id="search">
   			<form method="get" action="">
   				<fieldset>
@@ -24,16 +25,17 @@
   				</fieldset>
   			</form>
   		</div>
+      	-->
   	</div>
   	<!-- end #header -->
   	<div class="menu">
   		<ul>
-  			<li class="current_page_item"><a href="#">Home</a></li>
-  			<li><a href="#">About</a></li>
-  			<li><a href="#">People</a></li>
-  			<li><a href="#">Submissions</a></li>
-  			<li><a href="#">Browse</a></li>
-  			<li><a href="#">Archive</a></li>
+  			<li class="current_page_item"><%= link_to "Home", root_url %></li>
+    		<li><%= link_to "About", root_url+ "about" %></li>  			
+  			<li><%= link_to "People", root_url+ "people" %></li>			
+  			<li><%= link_to "Submissions", root_url+ "submissions" %></li>
+  			<!-- <li><a href="#">Browse</a></li> -->
+  			<!-- <li><a href="#">Archive</a></li> -->
   		</ul>
   	</div>
   	<!-- end #menu -->

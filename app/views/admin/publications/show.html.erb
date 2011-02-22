@@ -11,7 +11,7 @@
   <h3>URL: <%= @publication.name %>.streetmag.org</h3>
 
   <h4>Welcome</h4>
-    <%= raw @publication.welcome %>
+    <%= truncate (@publication.welcome, :length => 1000)%>
 
   <h4>Sections</h4>
   <ul>

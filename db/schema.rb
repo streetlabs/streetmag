@@ -10,13 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110124062006) do
+ActiveRecord::Schema.define(:version => 20110222071823) do
 
   create_table "arrangements", :force => true do |t|
     t.integer  "issue_id"
     t.integer  "section_id"
-    t.integer  "article_id",     :null => false
-    t.integer  "publication_id", :null => false
+    t.integer  "article_id"
+    t.integer  "publication_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,25 +72,39 @@ ActiveRecord::Schema.define(:version => 20110124062006) do
   add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
 
   create_table "issues", :force => true do |t|
-    t.string   "title",          :null => false
+    t.string   "title",                               :null => false
     t.integer  "volume"
     t.integer  "issue_number"
-    t.integer  "year"
+    t.integer  "publication_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "is_published",     :default => false
+    t.date     "publication_date"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "summary"
+    t.text     "content"
+    t.string   "author"
     t.integer  "publication_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "publications", :force => true do |t|
-    t.string   "title",      :null => false
+    t.string   "title",                           :null => false
     t.string   "subtitle"
-    t.string   "name",       :null => false
+    t.string   "name",                            :null => false
     t.text     "welcome"
     t.string   "copyright"
     t.string   "issn"
     t.string   "publisher"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_published", :default => false
+    t.text     "people"
+    t.text     "submissions"
   end
 
   create_table "roles", :force => true do |t|

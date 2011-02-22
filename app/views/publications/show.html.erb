@@ -6,7 +6,7 @@
 			
 					
 			<div id="volume">
-				<div id="issue">Issue <%= @issue.volume %>.<%= @issue.issue_number %>: January <%= @issue.year %></div>
+				<div id="issue">Issue <%= @issue.volume %>.<%= @issue.issue_number %>: <%=  Date::MONTHNAMES[@issue.publication_date.month] %> <%= @issue.publication_date.year %></div>
 				<div id="issueTitle"><%= @issue.title %></div>
 				
           <% @issue.sections.each do |section| %>
@@ -23,46 +23,13 @@
 			
 	
 		<div id="news">
-			<h2>News <img src="/images/inquire/rss.jpg" alt="" /></h2>
-			<div class="postBlock">
-			<h3><a href="#">Phasellus pellentesque turpis</a></h3>
-			<p>Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus.</p>
-			
-			<h3><a href="#">Phasellus pellentesque turpis</a></h3>
-			<p>Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus.</p>
-			
-			<h3><a href="#">Phasellus pellentesque turpis</a></h3>
-			<p>Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus.</p>
-			</div>
-			
-			
-			<h2>Discussion <img src="/images/inquire/twitter.jpg" alt="" /></h2>
-			<div id="tweets" class="postBlock"></div>
+      <%= render 'news_feed'%>
+			<%= render 'twitter' %>
 		</div>
 		
-		
-		<div id="sidebar">
-			<h2>CL Hub</h2>
-			<ul>
-				<li><a href="#">What's On</a></li>
-				<li><a href="#">New Pubs</a></li>
-				<li><a href="#">Find It</a></li>
-				<li><a href="#">Cool Courses</a></li>
-				<li><a href="#">In the Field</a></li>
-				<li><a href="#">Project Room</a></li>
-				<li><a href="#">CL World</a></li>
-				<li><a href="#">Post-CL</a></li>
-			</ul>
-			
-			<h2 class="message">New Translations</h2>
-			<p>Inquire invites unpublished English translations of poetry, drama or prose, complete or in part, not previously translated. For more information: <a href="mailto:inquire@ualberta.ca">inquire@ualberta.ca</a>.</p>
-		</div>
-		
+		<%= render 'sidebar' %>
 		
 		<div style="clear: both;">&nbsp;</div><br clear="left" />
 				
 	
 </div>
-<script type='text/javascript'>
-$('#tweets').liveTwitter('inquire_jcl', {mode: 'user_timeline', rate:300000, limit: 5 });
-</script>

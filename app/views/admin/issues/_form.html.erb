@@ -18,7 +18,8 @@
     <%= f.input :title %>
     <%= f.input :volume %>
     <%= f.input :issue_number %>
-    <%= f.input :year %>
+    <%= f.input :publication_date, :discard_day => true, :order => [:month, :year] %>
+    <%= f.input :is_published %>
   </div>
 
   <div class="actions">

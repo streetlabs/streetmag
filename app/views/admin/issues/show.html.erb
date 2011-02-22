@@ -19,13 +19,24 @@
 
 <p>
   <b>Year:</b>
-  <%= @issue.year %>
+  <%= @issue.publication_date.year unless @issue.publication_date == nil %>
+</p>
+
+<p>
+  <b>Month:</b>
+  <%= Date::MONTHNAMES[@issue.publication_date.month] unless @issue.publication_date == nil %>
 </p>
 
 <p>
   <b>Publication:</b>
   <%= @issue.publication_id %>
 </p>
+
+<% if @issue.is_published? %>
+  <p><b>this issue is published!</b></p>
+<% else %>
+  <p>this issue is NOT published.</p>
+<%end%>
 
 
 <%= link_to 'Edit', edit_admin_publication_admin_issue_path(@publication, @issue) %> |

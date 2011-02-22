@@ -13,16 +13,20 @@
 
   <div class="inputs">
     <div class="inputs_left">
-    <%= f.input :title %>
-    <%= f.input :subtitle %>
-    <%= f.input :name %>
-    <%= f.input :copyright %>
-    <%= f.input :issn %>
-    <%= f.input :publisher %>
+      <%= f.input :title %>
+      <%= f.input :subtitle %>
+      <%= f.input :name %>
+      <%= f.input :copyright %>
+      <%= f.input :issn %>
+      <%= f.input :publisher %>
     </div>
     <div class="inputs_right">
       <%= f.label :welcome %><br/><br/>
-      <%= f.cktext_area :welcome, :toolbar=>'Article', :height=>'400px' %>
+      <%= f.cktext_area :welcome, :toolbar=>'Article', :height=>'400px' %><br/>
+      <%= f.label :people %><br/><br/>
+      <%= f.cktext_area :people, :toolbar=>'Article', :height=>'400px' %><br/>
+      <%= f.label :submissions %><br/><br/>
+      <%= f.cktext_area :submissions, :toolbar=>'Article', :height=>'400px' %>
     </div>
     <div class="input_end"> </div>
   </div>

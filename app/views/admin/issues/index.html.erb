@@ -6,10 +6,12 @@
 
 <table>
   <tr>
+    <th>Published</th>
     <th>Title</th>
     <th>Volume</th>
     <th>Issue number</th>
     <th>Year</th>
+    <th>Month</th>
     <th>Publication</th>
     <th></th>
     <th></th>
@@ -17,11 +19,13 @@
   </tr>
 
 <% @issues.each do |issue| %>
-  <tr>
+  <tr class="<%= issue.is_published? ? "published" :  "unpublished" %>">
+    <td><%= issue.is_published? ? "yes" :  "no" %></td>
     <td><%= issue.title %></td>
     <td><%= issue.volume %></td>
     <td><%= issue.issue_number %></td>
-    <td><%= issue.year %></td>
+    <td><%= issue.publication_date.year unless issue.publication_date == nil%></td>
+    <td><%= Date::MONTHNAMES[issue.publication_date.month] unless issue.publication_date == nil%></td>
     <td><%= issue.publication.title %></td>
     <td><%= link_to 'Show', admin_publication_admin_issue_path(@publication, issue) %></td>
     <td><%= link_to 'Edit', edit_admin_publication_admin_issue_path(@publication, issue)  %></td>
