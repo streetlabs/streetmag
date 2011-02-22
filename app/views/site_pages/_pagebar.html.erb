@@ -1,0 +1,12 @@
+<div id="pageBar">
+	<h2>CL Hub</h2>
+	<ul>
+	  <% @website_publication.site_pages.each do |site_page| %>
+      <li>
+        <%= link_to site_page_url(site_page) do%>
+          <%= site_page.title %>
+        <% end %>
+      </li
+    <% end %>
+	</ul>
+</div>

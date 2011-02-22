@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :summary
       t.text :content
       t.string :author
-      t.integer :publication_id
+      t.integer :publication_id, :null => false
 
       t.timestamps
     end

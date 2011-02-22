@@ -3,6 +3,9 @@ require 'subdomain'
 Streetmag::Application.routes.draw do
 
   
+  
+  resources :site_pages,  :only => [:index, :show], :path => 'hub'
+
 
   scope "admin", :module=>"admin", :as=>"admin" do
     resources :publications do
@@ -12,6 +15,7 @@ Streetmag::Application.routes.draw do
       resources :authors, :as => "admin_authors"
       resources :articles, :as => "admin_articles"
       resources :posts, :as => "admin_posts"
+      resources :site_pages, :as => "admin_site_pages"
     end
   end
   
@@ -37,6 +41,7 @@ Streetmag::Application.routes.draw do
     match '/about' => 'publications#about'
     match '/people' => 'publications#people'
     match '/submissions' => 'publications#submissions' 
+    match '/hub/:id' => 'site_pages#show'
   end
   
   root :to => 'high_voltage/pages', :action => 'show', :id => 'home'

@@ -1,0 +1,33 @@
+<% content_for :javascript do %>
+  <%= javascript_include_tag :ckeditor %>
+<% end %>
+<%= simple_form_for [:admin,@publication,:admin,@site_page] do |f| %>
+  <% if @site_page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@site_page.errors.count, "error") %> prohibited this site_page from being saved:</h2>
+
+      <ul>
+      <% @site_page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="inputs">
+    <div class="inputs_left">
+      <%= f.input :title %>
+      <%= f.association :author, :collection => @publication.authors %>
+    </div>
+    <div class="inputs_right">
+      <%= f.label :content %><br/><br/>
+      <%= f.cktext_area :content, :toolbar=>'Article', :height=>'400px' %>
+    </div>
+    <div class="input_end"> </div>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

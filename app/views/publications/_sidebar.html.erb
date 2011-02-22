@@ -1,14 +1,13 @@
 <div id="sidebar">
 	<h2>CL Hub</h2>
 	<ul>
-		<li><a href="#">What's On</a></li>
-		<li><a href="#">New Pubs</a></li>
-		<li><a href="#">Find It</a></li>
-		<li><a href="#">Cool Courses</a></li>
-		<li><a href="#">In the Field</a></li>
-		<li><a href="#">Project Room</a></li>
-		<li><a href="#">CL World</a></li>
-		<li><a href="#">Post-CL</a></li>
+	  <% @website_publication.site_pages.each do |site_page| %>
+      <li>
+        <%= link_to site_page_url(site_page) do%>
+          <%= site_page.title %>
+        <% end %>
+      </li
+    <% end %>
 	</ul>
 	
 	<h2 class="message">New Translations</h2>

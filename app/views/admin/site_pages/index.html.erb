@@ -1,0 +1,33 @@
+<div class="admin">
+<h1>Listing site_pages</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Author</th>
+    <th>Publication</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @site_pages.each do |site_page| %>
+  <tr>
+    <td><%= site_page.title %></td>
+    <td><%= site_page.content %></td>
+    <td><%= site_page.author.name %></td>
+    <td><%= site_page.publication.title %></td>
+    <td><%= link_to 'Show', admin_publication_admin_site_page_path(@publication, site_page) %></td>
+    <td><%= link_to 'Edit', edit_admin_publication_admin_site_page_path(@publication, site_page) %></td>
+    <td><%= link_to 'Destroy', admin_publication_admin_site_page_path(@publication, site_page), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_admin_publication_admin_site_page_path(@publication) %>
+
+
+</div>
