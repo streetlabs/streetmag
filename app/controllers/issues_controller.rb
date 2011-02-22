@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
   load_and_authorize_resource
+  layout "subdomain"
 
   def index
     @publication = Publication.find(params[:publication_id])

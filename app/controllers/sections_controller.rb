@@ -1,6 +1,7 @@
 class SectionsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
+  layout "subdomain"
   
   # GET /sections
   # GET /sections.xml

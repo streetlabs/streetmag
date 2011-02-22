@@ -1,41 +1,68 @@
-<div class="mag">
-  <p id="notice"><%= notice %></p>
+<div id="page">
 
-  <h1>
-    <%= @publication.title %>
-  </h1>
-  <h2>
-    <%= @publication.subtitle %>
-  </h2>
-
-  <h3>URL: <%= @publication.name %>.streetmag.org</h3>
-
-  <h4>Welcome</h4>
-    <%= raw @publication.welcome %>
-
-  <h4>Sections</h4>
-  <ul>
-    <% @publication.sections.each do |section| %>
-      <li><%= section.name %></li>
-      <ul>
-        <% section.articles.each do |article| %>
-          <li><%= article.title %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  </ul>
-  
-  <p>
-    &copy; <%= @publication.copyright %>
-  </p>
-
-  <p>
-    <b>Issn:</b> <%= @publication.issn %>
-  </p>
-
-  <p>
-    <b>Brought to you by:</b>
-    <%= @publication.publisher %>
-  </p>
-
+		<div id="mainBlock">
+			
+			<img src="/images/inquire/rotator/01.jpg" alt="" title="" width="480px" height="260px" />
+			
+					
+			<div id="volume">
+				<div id="issue">Issue <%= @issue.volume %>.<%= @issue.issue_number %>: January <%= @issue.year %></div>
+				<div id="issueTitle"><%= @issue.title %></div>
+				
+          <% @issue.sections.each do |section| %>
+            <h3><%= section.name %></h3>
+            <ul>
+              <% Arrangement.joins(:article).where("issue_id = ? AND section_id = ?", @issue.id, section.id).order("title").each do |arrangement| %>
+                <li><%= arrangement.article.title %></li>
+              <% end %>
+            </ul>
+          <% end %>
+				
+			</div>
+		</div>
+			
+	
+		<div id="news">
+			<h2>News <img src="/images/inquire/rss.jpg" alt="" /></h2>
+			<div class="postBlock">
+			<h3><a href="#">Phasellus pellentesque turpis</a></h3>
+			<p>Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus.</p>
+			
+			<h3><a href="#">Phasellus pellentesque turpis</a></h3>
+			<p>Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus.</p>
+			
+			<h3><a href="#">Phasellus pellentesque turpis</a></h3>
+			<p>Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus.</p>
+			</div>
+			
+			
+			<h2>Discussion <img src="/images/inquire/twitter.jpg" alt="" /></h2>
+			<div id="tweets" class="postBlock"></div>
+		</div>
+		
+		
+		<div id="sidebar">
+			<h2>CL Hub</h2>
+			<ul>
+				<li><a href="#">What's On</a></li>
+				<li><a href="#">New Pubs</a></li>
+				<li><a href="#">Find It</a></li>
+				<li><a href="#">Cool Courses</a></li>
+				<li><a href="#">In the Field</a></li>
+				<li><a href="#">Project Room</a></li>
+				<li><a href="#">CL World</a></li>
+				<li><a href="#">Post-CL</a></li>
+			</ul>
+			
+			<h2 class="message">New Translations</h2>
+			<p>Inquire invites unpublished English translations of poetry, drama or prose, complete or in part, not previously translated. For more information: <a href="mailto:inquire@ualberta.ca">inquire@ualberta.ca</a>.</p>
+		</div>
+		
+		
+		<div style="clear: both;">&nbsp;</div><br clear="left" />
+				
+	
 </div>
+<script type='text/javascript'>
+$('#tweets').liveTwitter('inquire_jcl', {mode: 'user_timeline', rate:300000, limit: 5 });
+</script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inquire: Journal of Comparative Literature</title>
+  <%= stylesheet_link_tag stylesheet_name(request.subdomain) %>
+  <%= javascript_include_tag :all %>
+  <%= yield :javascript %>
+  <%= csrf_meta_tag %>
+  <link rel="icon" href="./favicon.png" type="image/png" />
+</head>
+<body id= <%= subdomain_name(request.subdomain) %> >   
+  <div id="wrapper">
+  	<div id="header">
+  		<div id="logo">
+  			<% link_to root_url do %>
+  			  <img src="/images/inquire/logo.png" alt="logo" title="Inquire: Journal of Comparative Literature" />
+  		  <% end %>
+  		</div>
+  		<div id="search">
+  			<form method="get" action="">
+  				<fieldset>
+  				<input type="text" name="s" id="search-text" size="15" />
+  				<input type="submit" id="search-submit" value="GO" />
+  				</fieldset>
+  			</form>
+  		</div>
+  	</div>
+  	<!-- end #header -->
+  	<div class="menu">
+  		<ul>
+  			<li class="current_page_item"><a href="#">Home</a></li>
+  			<li><a href="#">About</a></li>
+  			<li><a href="#">People</a></li>
+  			<li><a href="#">Submissions</a></li>
+  			<li><a href="#">Browse</a></li>
+  			<li><a href="#">Archive</a></li>
+  		</ul>
+  	</div>
+  	<!-- end #menu -->
+  
+    <% if notice != nil %>
+      <div id="notice" ><%= notice %></div>
+    <% end %>
+  
+    <%= yield %>
+
+  </div>
+  
+  <div id="bottom">
+  	<div id="bSection">
+  		<div id="col1">
+		
+  			<h2><%= @website_publication ? @website_publication.title : "unnamed"%> : <%= @website_publication && @website_publication.subtitle  ? @website_publication.subtitle : ""%>  </h2>
+  			<p>ISSN <%= @website_publication && @website_publication.issn ? @website_publication.issn : "0" %><br />
+  			Email: <a href="mailto:inquire@ualberta.ca">inquire [at] ualberta.ca</a></p>
+			
+  			<div id="links">
+  				<div class="col1">
+  					<a href="http://streetmag.org/"><img src="/images/inquire/logo_streetmag.png" alt="streetmag.org" /></a>
+  				</div>
+			
+  			<div>
+  			<p style="line-height:1.3; font-size:11px;"><a href="http://creativecommons.org/licenses/by/3.0/"><img src="/images/inquire/cc.png" alt="creative commons" /><br />
+  			<%= @website_publication && @website_publication.copyright  ? @website_publication.copyright : "Except where otherwise noted, content on this site <br />
+          			is licensed under a Creative Commons License."%> 
+  			</a>
+  			</p>
+  			</div>
+  			</div>
+			
+  		</div>
+  		<div id="col2">
+  			<h2>Join the Discussion</h2>
+  			<p><a href="http://www.linkedin.com/"><img src="/images/inquire/linkedin.png" alt="LinkedIn" /></a></p>
+			
+  			<div  id="shareButton">
+  		<!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_email"></a>
+    <a class="addthis_button_print"></a>
+    <a class="addthis_button_favorites"></a>
+    <a class="addthis_button_compact"></a>
+    </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=xa-4d54279f4bc13eb8"></script>
+  <!-- AddThis Button END -->
+
+  		</div>
+			
+  		</div>
+		
+  		<br clear="right" />
+  	</div>
+  </div>
+</body>
+</html>
