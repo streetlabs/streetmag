@@ -123,10 +123,10 @@ ActiveRecord::Schema.define(:version => 20110222081259) do
   end
 
   create_table "site_pages", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "author_id",      :null => false
-    t.integer  "publication_id", :null => false
+    t.string   "title",                                :null => false
+    t.text     "content",        :limit => 2147483647
+    t.integer  "author_id",                            :null => false
+    t.integer  "publication_id",                       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

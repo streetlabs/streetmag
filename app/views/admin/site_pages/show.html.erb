@@ -8,11 +8,6 @@
 </p>
 
 <p>
-  <b>Content:</b>
-  <%= @site_page.content %>
-</p>
-
-<p>
   <b>Author:</b>
   <%= @site_page.author_id %>
 </p>
@@ -21,6 +16,18 @@
   <b>Publication:</b>
   <%= @site_page.publication_id %>
 </p>
+
+<hr />
+<br />
+<br />
+
+
+<%= raw @site_page.content %>
+
+
+<br />
+<br />
+
 
 <%= link_to 'Edit', edit_admin_publication_admin_site_page_path(@publication, @site_page) %> |
 <%= link_to 'Back', admin_publication_admin_site_pages_path(@publication, @site_page) %>

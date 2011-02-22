@@ -4,7 +4,6 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Content</th>
     <th>Author</th>
     <th>Publication</th>
     <th></th>
@@ -15,7 +14,6 @@
 <% @site_pages.each do |site_page| %>
   <tr>
     <td><%= site_page.title %></td>
-    <td><%= site_page.content %></td>
     <td><%= site_page.author.name %></td>
     <td><%= site_page.publication.title %></td>
     <td><%= link_to 'Show', admin_publication_admin_site_page_path(@publication, site_page) %></td>
