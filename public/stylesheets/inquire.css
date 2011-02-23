@@ -252,6 +252,15 @@
   border: 1px solid #cccccc;
   padding: 5px;
 }
+#inquire #volume a {
+  padding: 2px;
+  color: #333333;
+}
+#inquire #volume a:hover {
+  padding: 2px;
+  color: #ffffff;
+  background-color: #534616;
+}
 #inquire #rotator {
   background: #000000;
   height: 260px;

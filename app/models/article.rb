@@ -1,7 +1,8 @@
 class Article < ActiveRecord::Base
   belongs_to :author
-  belongs_to :arrangement
+  has_one :arrangement
   has_one :publication, :through =>:arrangement
+  has_one :section, :through =>:arrangement
   accepts_nested_attributes_for :arrangement, :allow_destroy => true
   validates_presence_of :title
   validates_presence_of :author

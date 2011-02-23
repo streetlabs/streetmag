@@ -21,7 +21,13 @@
       <%= link_to 'Sections', admin_publication_admin_sections_path(@publication) %> | 
       <%= link_to 'Article Arrangement', admin_publication_admin_arrangements_path(@publication) %> | 
       <%= link_to 'Articles', admin_publication_admin_articles_path(@publication) %> | 
-      <%= link_to 'Authors', admin_publication_admin_authors_path(@publication) %>
+      <%= link_to 'Authors', admin_publication_admin_authors_path(@publication) %> 
+      <% if current_user && user_signed_in? %>
+       | <%= link_to('Logout', destroy_user_session_path) %>
+        <br /><i>You are signed in as <%= current_user.email %></i>&nbsp;&nbsp;    
+      <% else %>
+        | <%= link_to('Login', new_user_session_path)  %>  
+      <% end %>
     </div>
   <% end %>
   

@@ -13,7 +13,7 @@
             <h3><%= section.name %></h3>
             <ul>
               <% Arrangement.joins(:article).where("issue_id = ? AND section_id = ?", @issue.id, section.id).order("title").each do |arrangement| %>
-                <li><%= arrangement.article.title %></li>
+                <li><%= link_to arrangement.article.title, article_url(arrangement.article) %></li>
               <% end %>
             </ul>
           <% end %>

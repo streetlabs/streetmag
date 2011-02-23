@@ -4,8 +4,8 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Author</th>
     <th>Publication</th>
+    <th>Visible</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,8 +14,8 @@
 <% @site_pages.each do |site_page| %>
   <tr>
     <td><%= site_page.title %></td>
-    <td><%= site_page.author.name %></td>
     <td><%= site_page.publication.title %></td>
+    <td><%= site_page.is_published? ? "yes" : "no" %></td>
     <td><%= link_to 'Show', admin_publication_admin_site_page_path(@publication, site_page) %></td>
     <td><%= link_to 'Edit', edit_admin_publication_admin_site_page_path(@publication, site_page) %></td>
     <td><%= link_to 'Destroy', admin_publication_admin_site_page_path(@publication, site_page), :confirm => 'Are you sure?', :method => :delete %></td>

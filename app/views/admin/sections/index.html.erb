@@ -8,6 +8,7 @@
     <th>Name</th>
     <th>Publication</th>
     <th>Parent</th>
+    <th>Static</th>
     <th></th>
     <th></th>
     <th></th>
@@ -18,6 +19,7 @@
     <td><%= section.name %></td>
     <td><%= section.publication.title %></td>
     <td><%= section.parent.name unless section.parent == nil %></td>
+    <td><%= section.is_static? ? "yes" : "no" %></td>
     <td><%= link_to 'Show', admin_publication_admin_section_path(@publication, section) %></td>
     <td><%= link_to 'Edit', edit_admin_publication_admin_section_path(@publication, section) %></td>
     <td><%= link_to 'Destroy', admin_publication_admin_section_path(@publication, section) , :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="pageBar">
 	<h2>CL Hub</h2>
 	<ul>
 	  <% @website_publication.sections.where("is_static = ?", true).each do |section| %>
@@ -11,7 +11,4 @@
       <% end %>
     <% end %>
 	</ul>
-	
-	<h2 class="message">New Translations</h2>
-	<p>Inquire invites unpublished English translations of poetry, drama or prose, complete or in part, not previously translated. For more information: <a href="mailto:inquire@ualberta.ca">inquire@ualberta.ca</a>.</p>
 </div>

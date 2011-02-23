@@ -5,6 +5,7 @@ Streetmag::Application.routes.draw do
   
   
   resources :site_pages,  :only => [:index, :show], :path => 'hub'
+  resources :articles, :only => [:index, :show]
 
 
   scope "admin", :module=>"admin", :as=>"admin" do
@@ -26,7 +27,6 @@ Streetmag::Application.routes.draw do
     resources :issues, :only => [:index, :show]
     resources :sections, :only => [:index, :show]
     resources :authors, :only => [:index, :show]
-    resources :articles, :only => [:index, :show]
     resources :posts, :only => [:index, :show]
   end
   

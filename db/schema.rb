@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110222094706) do
+ActiveRecord::Schema.define(:version => 20110223064723) do
 
   create_table "arrangements", :force => true do |t|
     t.integer  "issue_id"
@@ -115,20 +115,21 @@ ActiveRecord::Schema.define(:version => 20110222094706) do
   end
 
   create_table "sections", :force => true do |t|
-    t.string   "name",           :null => false
-    t.integer  "publication_id", :null => false
+    t.string   "name",                              :null => false
+    t.integer  "publication_id",                    :null => false
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_static",      :default => false
   end
 
   create_table "site_pages", :force => true do |t|
-    t.string   "title",                                :null => false
+    t.string   "title",                                                   :null => false
     t.text     "content",        :limit => 2147483647
-    t.integer  "author_id",                            :null => false
-    t.integer  "publication_id",                       :null => false
+    t.integer  "publication_id",                                          :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_published",                         :default => false
   end
 
   create_table "users", :force => true do |t|

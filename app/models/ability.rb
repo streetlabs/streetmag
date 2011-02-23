@@ -38,7 +38,7 @@ class Ability
         publication.try(:owner) == user
       end
       can :manage, Section do |section|
-        section.try(:owner) == user
+        section.publication.try(:owner) == user
       end
       can :manage, Issue do |issue|
         issue.publication.try(:owner) == user

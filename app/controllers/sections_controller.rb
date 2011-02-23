@@ -6,14 +6,14 @@ class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.xml
   def index
-    @publication = Publication.find(params[:publication_id])
+    @publication = Publication.find_by_name!(request.subdomain)
     @sections = @publication.sections
   end
 
   # GET /sections/1
   # GET /sections/1.xml
   def show
-    @publication = Publication.find(params[:publication_id])
+    @publication = Publication.find_by_name!(request.subdomain)
     @section = @publication.sections.find(params[:id])
   end
   

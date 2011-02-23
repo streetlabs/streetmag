@@ -52,14 +52,17 @@
 }
 .admin tr {
   padding: 2px;
+  max-width: 400px;
   border: 1px solid #648118;
 }
 .admin td {
   padding: 2px;
+  max-width: 400px;
   border: 1px solid #648118;
 }
 .admin th {
   padding: 2px;
+  max-width: 400px;
   border: 1px solid #648118;
 }
 .admin th {

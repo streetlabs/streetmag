@@ -1,15 +1,18 @@
-class IssuesController < ApplicationController
+class ArticlesController < ApplicationController
   load_and_authorize_resource
   layout "subdomain"
-
+  
+  # GET /articles
   def index
     @publication = Publication.find_by_name!(request.subdomain)
-    @issues = @publication.issues
+    @articles = @publication.articles
   end
 
+  # GET /articles/1
   def show
     @publication = Publication.find_by_name!(request.subdomain)
-    @issue = @publication.issues.find(params[:id])
+    @article = @publication.articles.find(params[:id])
+
   end
 
 end

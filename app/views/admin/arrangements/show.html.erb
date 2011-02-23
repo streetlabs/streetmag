@@ -1,14 +1,17 @@
 <div class="admin">
 <p id="notice"><%= notice %></p>
 <h1>Article Arrangements :: VIEW</h1>
+
+<% if @arrangement.issue != nil %>
 <p>
   <b>Issue:</b>
   <%= @arrangement.issue.title %>
 </p>
+<% end %>
 
 <p>
   <b>Section:</b>
-  <%= @arrangement.section.name %>
+  <%= @arrangement.section.name unless @arrangement.section == nil %>
 </p>
 
 <p>

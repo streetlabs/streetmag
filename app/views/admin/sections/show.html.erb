@@ -12,6 +12,10 @@
 </p>
 
 <p>
+  <b>Static Section:</b>
+  <%= @section.is_static? ? "yes" : "no" %>  
+</p>
+<p>
   <b>Parent Section:</b>
   <%= @section.parent.name unless @section.parent==nil %>
 </p>

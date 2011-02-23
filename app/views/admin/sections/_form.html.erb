@@ -13,6 +13,7 @@
 
   <div class="inputs">
     <%= f.input :name %>
+    <%= f.input :is_static %>
     <%= f.association :parent, :collection => @publication.sections %>
   </div>
 

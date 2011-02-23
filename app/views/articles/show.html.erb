@@ -1,0 +1,12 @@
+<div id="page">
+   <%= render 'pagebar' unless !@article.section.is_static? %>
+
+		<div id="content">	
+		  <%= raw @article.content %>
+		  
+		  <div style="clear: both;">&nbsp;</div>
+  		
+		</div>
+		<div style="clear: both;">&nbsp;</div>
+		
+</div>
