@@ -1,0 +1,17 @@
+<div id="pageBar">
+	<h2>News <img src="/images/inquire/rss.jpg" alt="" /></h2>
+	<ul>
+	  <% @publication.posts.each do |post| %>
+      <% if @post.id == post.id %>
+      <li class="current_article">
+      <% else %>
+      <li class="other_article">
+      <% end %>
+        <%= link_to post do%>
+          <%= post.title %><br />
+          <span class="author_name">&ndash; <%= post.author %></span>
+        <% end %>
+      </li>
+    <% end %>
+	</ul>
+</div>

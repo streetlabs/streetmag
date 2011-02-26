@@ -20,4 +20,14 @@ class Article < ActiveRecord::Base
   def contributor
     return self.publication == nil ? Array.new : self.publication.managers;
   end
+  
+  
+  def formatted_title
+    if self.is_textiled? 
+      RedCloth.new(self.title, [:lite_mode, :filter_html]).to_html
+    else
+      self.title
+    end
+  end
+  
 end

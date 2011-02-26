@@ -8,20 +8,15 @@
     <%= @publication.subtitle %>
   </h2>
 
-  <h3>URL: <%= @publication.name %>.streetmag.org</h3>
+  <h3>URL: <a href="http://<%= @publication.name %>.streetmag.org" target="_blank"><%= @publication.name %>.streetmag.org</a></h3>
 
   <h4>Welcome</h4>
-    <%= truncate (@publication.welcome, :length => 1000)%>
+    <%= raw sanitize truncate (@publication.welcome, :length => 1000)%>
 
   <h4>Sections</h4>
   <ul>
     <% @publication.sections.each do |section| %>
       <li><%= section.name %></li>
-      <ul>
-        <% section.articles.each do |article| %>
-          <li><%= article.title %></li>
-        <% end %>
-      </ul>
     <% end %>
   </ul>
   
@@ -38,8 +33,7 @@
     <%= @publication.publisher %>
   </p>
 
-
-  <%= link_to 'Edit', edit_admin_publication_path(@publication) %> |
-  <%= link_to 'Back', admin_publications_path %>
-
 </div>
+
+<%= link_to 'Edit', edit_admin_publication_path(@publication) %>
+<!-- | <%= link_to 'Back', admin_publications_path %> -->

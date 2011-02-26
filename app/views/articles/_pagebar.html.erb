@@ -1,14 +1,17 @@
 <div id="pageBar">
-	<h2>CL Hub</h2>
+	<h2><%= @article.section.name %></h2>
 	<ul>
-	  <% @website_publication.sections.where("is_static = ?", true).each do |section| %>
-	    <% if section.articles.first != nil %>
-      <li>
-        <%= link_to section.articles.first do%>
-          <%= section.name %>
+	  <% @article.section.articles.each do |article| %>
+      <% if @article.id == article.id %>
+      <li class="current_article">
+      <% else %>
+      <li class="other_article">
+      <% end %>
+        <%= link_to article do%>
+          <%= raw sanitize article.formatted_title %><br />
+          <span class="author_name">&ndash; <%= article.author.name unless article.author == nil %></span>
         <% end %>
       </li
-      <% end %>
     <% end %>
 	</ul>
 </div>

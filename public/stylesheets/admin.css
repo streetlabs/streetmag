@@ -39,38 +39,32 @@
   background-color: #648118;
   text-decoration: underline;
 }
-.admin h1 { color: #394c06; }
-.admin a { color: #615129; }
-.admin a:visited { color: #88691a; }
-.admin a:hover {
+h1 { color: #394c06; }
+a {
+  padding: 3px;
+  color: #615129;
+  font-size: 16px;
+}
+a:visited { color: #88691a; }
+a:hover {
   color: white;
   background-color: #513c06;
 }
-.admin table {
+table {
   margin: auto;
   border: 2px solid #648118;
 }
-.admin tr {
+tr, td, th {
   padding: 2px;
   max-width: 400px;
   border: 1px solid #648118;
 }
-.admin td {
-  padding: 2px;
-  max-width: 400px;
-  border: 1px solid #648118;
-}
-.admin th {
-  padding: 2px;
-  max-width: 400px;
-  border: 1px solid #648118;
-}
-.admin th {
+th {
   font-weight: bold;
   color: white;
   background-color: #648118;
 }
-.admin form {
+form {
   width: 96%;
   margin: auto;
   padding: 10px;
@@ -78,52 +72,52 @@
   border: 2px solid #648118;
   position: relative;
 }
-.admin form label {
+form label {
   font-family: Tahoma, Verdana, Serif;
   font-size: 12pt;
   padding: 4px;
   vertical-align: middle;
 }
-.admin form input {
+form input {
   font-family: Tahoma, Verdana, Serif;
   font-size: 12pt;
   padding: 4px;
   vertical-align: middle;
 }
-.admin form select {
+form select {
   font-family: Tahoma, Verdana, Serif;
   font-size: 12pt;
   padding: 4px;
   vertical-align: middle;
 }
-.admin form label {
+form label {
   color: white;
   background-color: #648118;
 }
-.admin form label.required {
+form label.required {
   color: white;
   background-color: #88691a;
 }
-.admin form .input {
+form .input {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.admin form .inputs_left {
+form .inputs_left {
   float: left;
   width: 49%;
 }
-.admin form .inputs_right {
+form .inputs_right {
   float: right;
   width: 49%;
 }
-.admin form .actions { text-align: center; }
-.admin .published {
+form .actions { text-align: center; }
+.published {
   color: #cba954;
   background-color: #513c06;
 }
-.admin .input_end {
+.input_end {
   width: 980px;
   clear: both;
   padding-bottom: 20px;
 }
-.admin .editor { padding-top: 20px; }
+.editor { padding-top: 20px; }

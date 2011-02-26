@@ -212,6 +212,11 @@
   font-size: 10px;
   font-weight: bold;
 }
+#inquire .author_name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-style: italic;
+}
 #inquire #footer {
   height: 65px;
   margin: 0 auto;
@@ -463,8 +468,13 @@
 #inquire #pageBar {
   float: right;
   background: #ffffff;
-  padding: 0px;
-  width: 200px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  width: 360px;
+}
+#inquire #pageBar h2 {
+  border-bottom: 1px double black;
+  margin-bottom: 7px;
 }
 #inquire #pageBar ul {
   padding: 0;
@@ -477,6 +487,7 @@
   font-size: 14px;
   background-color: #eeeeee;
 }
+#inquire #pageBar li.current_article { background-color: #cccccc; }
 #inquire #pageBar ul li a {
   border: none;
   color: #333333;

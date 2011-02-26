@@ -10,22 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110223064723) do
+ActiveRecord::Schema.define(:version => 20110226081903) do
 
   create_table "arrangements", :force => true do |t|
     t.integer  "issue_id"
     t.integer  "section_id"
-    t.integer  "article_id"
-    t.integer  "publication_id"
+    t.integer  "article_id",     :null => false
+    t.integer  "publication_id", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "articles", :force => true do |t|
-    t.string   "title",                                    :null => false
-    t.integer  "author_id",                                :null => false
+    t.string   "title",                                                       :null => false
+    t.integer  "author_id",                                                   :null => false
     t.text     "abstract"
-    t.text     "content",            :limit => 2147483647, :null => false
+    t.text     "content",            :limit => 2147483647,                    :null => false
     t.text     "notes"
     t.text     "cited_works"
     t.text     "excerpt"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20110223064723) do
     t.integer  "photo_file_size"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_textiled",                              :default => false
   end
 
   create_table "assignments", :id => false, :force => true do |t|
@@ -93,16 +94,15 @@ ActiveRecord::Schema.define(:version => 20110223064723) do
   end
 
   create_table "publications", :force => true do |t|
-    t.string   "title",                           :null => false
+    t.string   "title",       :null => false
     t.string   "subtitle"
-    t.string   "name",                            :null => false
+    t.string   "name",        :null => false
     t.text     "welcome"
     t.string   "copyright"
     t.string   "issn"
     t.string   "publisher"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_published", :default => false
     t.text     "people"
     t.text     "submissions"
   end

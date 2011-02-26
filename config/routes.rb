@@ -4,8 +4,9 @@ Streetmag::Application.routes.draw do
 
   
   
-  resources :site_pages,  :only => [:index, :show], :path => 'hub'
-  resources :articles, :only => [:index, :show]
+  resources :site_pages,  :only => [:show], :path => 'hub'
+  resources :posts,  :only => [:show], :path => 'news'
+  resources :articles, :only => [:show]
 
 
   scope "admin", :module=>"admin", :as=>"admin" do
@@ -20,15 +21,7 @@ Streetmag::Application.routes.draw do
     end
   end
   
-  resources :publications, :only => [:index, :show] do
-    resource :about
-    resource :people
-    resource :submissions
-    resources :issues, :only => [:index, :show]
-    resources :sections, :only => [:index, :show]
-    resources :authors, :only => [:index, :show]
-    resources :posts, :only => [:index, :show]
-  end
+  resources :publications, :only => [:index, :show]
   
   
   devise_for :users

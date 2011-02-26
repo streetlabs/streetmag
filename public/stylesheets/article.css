@@ -1,28 +1,24 @@
-.mag {
-  padding-left: 10px;
-  border-left: 100px solid #8b7423;
-}
-.mag h1 {
+.article h1 {
   color: #000000;
   padding-top: 30px;
   padding-bottom: 30px;
   margin: 0px;
   font-size: 50pt;
 }
-.mag h2 {
+.article h2 {
   color: #534616;
   padding-top: 10px;
   padding-bottom: 10px;
   margin: 0px;
   font-size: 32pt;
 }
-.mag a { color: #cc0033; }
-.mag a:visited { color: #cc0033; }
-.mag a:hover {
+.article a { color: #cc0033; }
+.article a:visited { color: #cc0033; }
+.article a:hover {
   color: white;
   background-color: #cc0033;
 }
-.mag .title {
+.article .title {
   color: #000000;
   font-size: 16pt;
   font-weight: bold;
@@ -30,76 +26,76 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.mag .author {
+.article .author {
   color: #534616;
   font-size: 12pt;
   font-weight: normal;
   text-align: center;
 }
-.mag .affiliation {
+.article .affiliation {
   font-size: 10pt;
   font-weight: normal;
   text-align: center;
 }
-.mag .abstract {
+.article .abstract {
   margin-left: 72pt;
   font-size: 10pt;
   font-weight: normal;
   text-align: left;
   background-color: #eeeeee;
 }
-.mag .heading {
+.article .heading {
   font-size: 14pt;
   font-weight: bold;
   color: #000000;
 }
-.mag .subheading { color: #534616; }
-.mag .epigraph { margin-left: 72pt; }
-.mag .paragraph { line-height: 200%; }
-.mag p { line-height: 200%; }
-.mag ul {
+.article .subheading { color: #534616; }
+.article .epigraph { margin-left: 72pt; }
+.article .paragraph { line-height: 200%; }
+.article p { line-height: 200%; }
+.article ul {
   margin-left: 72pt;
   line-height: 150%;
 }
-.mag ol {
+.article ol {
   margin-left: 72pt;
   line-height: 150%;
 }
-.mag blockquote {
+.article blockquote {
   margin-left: 72pt;
   line-height: 150%;
 }
-.mag .caption { font-size: 10pt; }
-.mag .stanza {
+.article .caption { font-size: 10pt; }
+.article .stanza {
   margin-left: 72pt;
   line-height: 150%;
 }
-.mag .important { font-weight: bold; }
-.mag .emphasize { font-style: italic; }
-.mag .note {
+.article .important { font-weight: bold; }
+.article .emphasize { font-style: italic; }
+.article .note {
   border: 1px dotted black;
   background-color: #bab5a2;
   margin: 2px;
   padding: 2px;
 }
-.mag .definition {
+.article .definition {
   border: 1px dashed black;
   background-color: #bab5a2;
   margin: 2px;
   padding: 2px;
 }
-.mag .endnotes {
+.article .endnotes {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #2a230b;
   color: #534616;
   font-size: 10pt;
 }
-.mag .citation {
+.article .citation {
   color: #534616;
   line-height: 150%;
 }
-.mag .bio {
+.article .bio {
   color: #000000;
   font-size: 10pt;
 }

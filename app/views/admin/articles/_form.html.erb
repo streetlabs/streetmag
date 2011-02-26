@@ -14,6 +14,8 @@
   <div class="inputs">
     <div class="inputs_left">
       <%= f.input :title %>
+      <%= f.input :is_textiled, :label => "Formatted Title" %>
+      <span class="tip">Allows you to use formatting like <i>_italics_</i> or <b>*bold*</b> in your title.</span><br /><br />
       <%= f.association :author, :collection => @publication.authors %>
       <%= f.label :content %><br /><br />
       <%= f.cktext_area :content, :id=>'content', :toolbar=>'Article', :height=>'600px' %><br />

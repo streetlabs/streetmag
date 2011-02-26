@@ -22,8 +22,14 @@ div.field, div.actions {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  border: 2px double red;
   display: table;
+}
+
+.error{
+	padding: 6px;
+	color: red;
+	font-weight: bold;
 }
 
 #error_explanation {

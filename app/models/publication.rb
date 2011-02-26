@@ -9,9 +9,9 @@ class Publication < ActiveRecord::Base
   has_many :site_pages
   has_many :users, :through => :assignments
   validates_presence_of :title
-  validates_presence_of :subtitle
-  validates_format_of :name, :with => /\A[a-zA-Z]+\z/, :message => "Only letters allowed"
-  validates_uniqueness_of :name
+  validates_presence_of :name, :message => "A website name is required."
+  validates_format_of :name, :with => /\A[a-zA-Z]+\z/, :message => "Only letters are allowed."
+  validates_uniqueness_of :name, :message => "Sorry, that name is already taken."
   
   def managers
     self.users

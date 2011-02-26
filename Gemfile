@@ -16,6 +16,7 @@ gem "paperclip-cloudfiles", :require => 'paperclip'
 gem 'devise'
 gem "cancan"
 gem 'bcrypt-ruby'
+gem 'RedCloth'
 # Use unicorn as the web server
 # gem 'unicorn'
 

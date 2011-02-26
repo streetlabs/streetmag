@@ -1,13 +1,13 @@
 <% title "STREETMAG » Publications" %>  
 
 <div class="admin">
-  <h1>Listing posts</h1>
+  <h1>NEWS POSTS</h1>
 
 <table>
   <tr>
     <th>Title</th>
-    <th>Summary</th>
     <th>Author</th>
+    <th>Date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,11 +16,11 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.title %></td>
-    <td><%= raw post.summary %></td>
     <td><%= post.author %></td>
-    <td><%= link_to 'Show', admin_publication_admin_post_path(@publication, post) %></td>
-    <td><%= link_to 'Edit', edit_admin_publication_admin_post_path(@publication, post) %></td>
-    <td><%= link_to 'Destroy', admin_publication_admin_post_path(@publication, post), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= l post.created_at, :format => :short %></td>
+    <td> <%= link_to 'Show', admin_publication_admin_post_path(@publication, post) %> </td>
+    <td> <%= link_to 'Edit', edit_admin_publication_admin_post_path(@publication, post) %> </td>
+    <td> <%= link_to 'Destroy', admin_publication_admin_post_path(@publication, post), :confirm => 'Are you sure?', :method => :delete %> </td>
   </tr>
 <% end %>
 </table>
