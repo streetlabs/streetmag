@@ -2,8 +2,31 @@
    <%= render 'pagebar' %>
 
 		<div id="content" class="article">	
-		  <%= raw @article.content %>
+		  <h2><%= raw sanitize @article.formatted_title %></h2>
+		  <h3><%= @article.author.name %></h3>
+		  <div class="article">
+		    <%= raw @article.content %>
+		  </div>
 		  
+		  <% if @article.cited_works? %>
+		  
+		  <h3>Works Cited</h3>
+		  <div class="works">
+		    <%= raw @article.cited_works %>
+		  </div>
+		  
+		  <% end %>
+		  
+		  <h3>Bio</h3>
+		  <div class="bio">
+		    <%= raw @article.author.bio %>
+		  </div>
+		  
+		  <hr />
+		  
+		  <div class="notes">
+		    <%= raw @article.notes %>
+		  </div>
 		  <div style="clear: both;">&nbsp;</div>
   		
 		</div>

@@ -1,9 +1,11 @@
 <div class="admin">
-<h1>Post :: EDIT</h1>
+<h1>NEWS POST :: EDIT</h1>
+<div id="management">
+  <span class="tools">tools</span>
+  <%= link_to '[∆] View', admin_publication_admin_post_path(@publication, @post) %> |
+  <%= link_to '[!] Cancel', admin_publication_admin_posts_path(@publication, @post) %> 
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', admin_publication_admin_post_path(@publication, @post) %>
-<%= link_to 'Back', admin_publication_admin_posts_path(@publication, @post) %>
 
 </div>

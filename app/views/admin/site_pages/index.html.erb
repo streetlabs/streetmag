@@ -1,6 +1,11 @@
 <div class="admin">
 <h1>HUB PAGES &rarr; DEPRICATED</h1>
 
+<div id="management">
+  <span class="tools">tools</span>
+  <%= link_to '[+] New Page', new_admin_publication_admin_site_page_path(@publication) %>
+</div>
+
 <table>
   <tr>
     <th>Title</th>
@@ -22,10 +27,5 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Post', new_admin_publication_admin_site_page_path(@publication) %>
-
 
 </div>

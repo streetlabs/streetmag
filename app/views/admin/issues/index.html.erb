@@ -1,6 +1,9 @@
 <% title "STREETMAG » " + @publication.title + " » Issues" %>  
 <div class="admin">
-<p id="notice"><%= notice %></p>
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '[+] New Issue', new_admin_publication_admin_issue_path %>
+  </div>
 
 <h1>Issues :: LIST</h1>
 
@@ -9,10 +12,9 @@
     <th>Published</th>
     <th>Title</th>
     <th>Volume</th>
-    <th>Issue number</th>
+    <th>Number</th>
     <th>Year</th>
     <th>Month</th>
-    <th>Publication</th>
     <th></th>
     <th></th>
     <th></th>
@@ -26,16 +28,19 @@
     <td><%= issue.issue_number %></td>
     <td><%= issue.publication_date.year unless issue.publication_date == nil%></td>
     <td><%= Date::MONTHNAMES[issue.publication_date.month] unless issue.publication_date == nil%></td>
-    <td><%= issue.publication.title %></td>
-    <td><%= link_to 'Show', admin_publication_admin_issue_path(@publication, issue) %></td>
+    <td><%= link_to 'View', admin_publication_admin_issue_path(@publication, issue) %></td>
     <td><%= link_to 'Edit', edit_admin_publication_admin_issue_path(@publication, issue)  %></td>
-    <td><%= link_to 'Destroy', admin_publication_admin_issue_path(@publication, issue) , :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+    <% if !issue.is_published? %>
+      <%= link_to 'Destroy', admin_publication_admin_issue_path(@publication, issue) , :confirm => 'Are you sure?', :method => :delete %>
+    <% else %>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Issue', new_admin_publication_admin_issue_path %>
 
 </div>

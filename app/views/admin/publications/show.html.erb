@@ -1,6 +1,10 @@
-<div class="mag">
-  <p id="notice"><%= notice %></p>
+<div id="management">
+  <span class="tools">tools</span>
+  <%= link_to '[•] Edit', edit_admin_publication_path(@publication) %>
+  <!-- | <%= link_to 'Back', admin_publications_path %> -->
+</div>
 
+<div class="mag">
   <h1>
     <%= @publication.title %>
   </h1>
@@ -10,10 +14,21 @@
 
   <h3>URL: <a href="http://<%= @publication.name %>.streetmag.org" target="_blank"><%= @publication.name %>.streetmag.org</a></h3>
 
-  <h4>Welcome</h4>
-    <%= raw sanitize truncate (@publication.welcome, :length => 1000)%>
+  <p>
+      <%= link_to 'Home', admin_publication_path(@publication) %> |
+      <%= link_to 'News Posts', admin_publication_admin_posts_path(@publication) %> |
+      <%= link_to 'Hub Pages', admin_publication_admin_site_pages_path(@publication) %> |
+      <%= link_to 'Issues', admin_publication_admin_issues_path(@publication) %> | 
+      <%= link_to 'Sections', admin_publication_admin_sections_path(@publication) %> | 
+      <%= link_to 'Article Arrangement', admin_publication_admin_arrangements_path(@publication) %> | 
+      <%= link_to 'Articles', admin_publication_admin_articles_path(@publication) %> | 
+      <%= link_to 'Authors', admin_publication_admin_authors_path(@publication) %>
+  <p>
+  
 
-  <h4>Sections</h4>
+  <h4>
+    <%= link_to 'Sections', admin_publication_admin_sections_path(@publication) %>
+  </h4>
   <ul>
     <% @publication.sections.each do |section| %>
       <li><%= section.name %></li>
@@ -35,5 +50,4 @@
 
 </div>
 
-<%= link_to 'Edit', edit_admin_publication_path(@publication) %>
-<!-- | <%= link_to 'Back', admin_publications_path %> -->
+

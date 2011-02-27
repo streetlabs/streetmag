@@ -3,36 +3,30 @@
 <div class="admin">
   <h1>Listing publications</h1>
 
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '[+] New Publication', new_admin_publication_path %>
+  </div>
 
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Subtitle</th>
-      <th>Name</th>
-      <th>Copyright</th>
-      <th>Issn</th>
-      <th>Publisher</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
 
   <% @publications.each do |publication| %>
-    <tr>
-      <td><%= publication.title %></td>
-      <td><%= publication.subtitle %></td>
-      <td><%= publication.name %></td>
-      <td><%= publication.copyright %></td>
-      <td><%= publication.issn %></td>
-      <td><%= publication.publisher %></td>
-      <td><%= link_to 'Show', admin_publication_path(publication) %></td>
-      <td><%= link_to 'Edit', edit_admin_publication_path(publication) %></td>
-      <td><%= link_to 'Destroy', admin_publication_path(publication), :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+    <div class="mag mag_index">
+      <h1><%= publication.title %></td>
+      <h2><%= publication.subtitle %></td>
+      <p>
+        NAME: <%= publication.name %> (used for URL) <br/>
+        URL: <a href="http://<%= publication.name %>.streetmag.org" target="_blank"><%= publication.name %>.streetmag.org</a><br />
+        ISSN: <%= publication.issn %> | Publisher: <%= publication.publisher %><br />
+        <%= publication.copyright %>
+      </p>
+      <p> 
+        <%= link_to '[∆] Open', admin_publication_path(publication) %> | 
+        <%= link_to '[•] Edit', edit_admin_publication_path(publication) %> |
+        <%= link_to '[-] Destroy', admin_publication_path(publication), :confirm => 'Are you sure?', :method => :delete %>
+      </p>
+    </div>
   <% end %>
-  </table>
 
   <br />
 
-  <%= link_to 'New Publication', new_admin_publication_path %>
 </div>

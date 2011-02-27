@@ -1,49 +1,50 @@
 <div class="admin">
 <h1>Article :: VIEW</h1>
-<p id="notice"><%= notice %></p>
+<div id="management">
+  <span class="tools">tools</span>
+  <%= link_to '[•] Edit', edit_admin_publication_admin_article_path(@publication,@article) %> |
+  <%= link_to '[«] Back', admin_publication_admin_articles_path(@publication) %>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
+<div class="properties">
+  <p>
+    <b>Title:</b>
+    <%= @article.title %>
+  </p>
 
-<p>
-  <b>Author:</b>
-  <%= @article.author.name %>
-</p>
+  <p>
+    <b>Author:</b>
+    <%= @article.author.name %>
+  </p>
 
-<p>
-  <b>Abstract:</b>
-  <%= raw @article.abstract %>
-</p>
+  <p>
+    <b>Abstract:</b>
+    <%= raw @article.abstract %>
+  </p>
 
-<p>
-  <b>Content:</b>
+
+  <p>
+    <b>Notes:</b>
+    <%=  raw @article.notes %>
+  </p>
+
+  <p>
+    <b>Cited works:</b>
+    <%= raw @article.cited_works %>
+  </p>
+
+  <p>
+    <b>Photo:</b>
+    <img src="<%= @article.photo(:thumb) %>" alt="<%= @article.photo.name%>" title="<%= @article.photo.name%>" />
+  </p>
+  <p>
+    <b>Excerpt:</b>
+    <%= raw @article.excerpt %>
+  </p>
+</div>
+
+<div class="mag">
   <%= raw @article.content %>
-</p>
+</div>
 
-<p>
-  <b>Notes:</b>
-  <%=  raw @article.notes %>
-</p>
-
-<p>
-  <b>Cited works:</b>
-  <%= raw @article.cited_works %>
-</p>
-
-<p>
-  <b>Excerpt:</b>
-  <%= raw @article.excerpt %>
-</p>
-
-<p>
-  <b>Photo:</b>
-  <img src="<%= @article.photo(:thumb) %>" alt="<%= @article.photo.name%>" title="<%= @article.photo.name%>" />
-</p>
-
-
-
-<%= link_to 'Edit', edit_admin_publication_admin_article_path(@publication,@article) %> |
-<%= link_to 'Back', admin_publication_admin_articles_path(@publication) %>
 </div>

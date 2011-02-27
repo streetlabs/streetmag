@@ -1,13 +1,16 @@
 <div class="admin">
 <h1>Authors :: LIST</h1>
 
+<div id="management">
+  <span class="tools">tools</span>
+  <%= link_to '[+] New Author', new_admin_publication_admin_author_path(@publication) %>
+</div>
+
 <table>
   <tr>
     <th>Name</th>
     <th>Email</th>
-    <th>Url</th>
     <th>Affiliation</th>
-    <th>Bio</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,11 +18,23 @@
 
 <% @authors.each do |author| %>
   <tr>
-    <td><%= author.name %></td>
-    <td><%= author.email %></td>
-    <td><%= author.url %></td>
+    <td>
+      <% if author.url? %>
+          <a href="<%= author.url %>" >
+          <%= author.name %>
+          </a>
+      <% else %>    
+        <%= author.name %>
+      <% end %>
+    </td>
+    <td>
+      <% if author.email? %>
+          <a href="mailto:<%= author.email %>" >
+          <%= author.email %>
+          </a>
+      <% end %>
+    </td>
     <td><%= author.affiliation %></td>
-    <td><%= author.bio %></td>
     <td><%= link_to 'Show', admin_publication_admin_author_path(@publication, author) %></td>
     <td><%= link_to 'Edit', edit_admin_publication_admin_author_path(@publication, author) %></td>
     <td><%= link_to 'Destroy', admin_publication_admin_author_path(@publication, author), :confirm => 'Are you sure?', :method => :delete %></td>
@@ -27,7 +42,4 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Author', new_admin_publication_admin_author_path(@publication) %>
 </div>

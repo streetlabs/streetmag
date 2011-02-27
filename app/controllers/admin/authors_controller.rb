@@ -5,7 +5,7 @@ class Admin::AuthorsController < ApplicationController
   # GET /authors
   def index
     @publication = Publication.find(params[:publication_id])
-    @authors = @publication.authors
+    @authors = @publication.authors.order("name ASC")
   end
 
   # GET /authors/1

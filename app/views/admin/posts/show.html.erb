@@ -1,29 +1,28 @@
 <div class="admin">
-<h1>Post :: VIEW</h1>
-<p id="notice"><%= notice %></p>
+<h1>NEWS POST :: VIEW</h1>
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '[«] Back', admin_publication_admin_posts_path(@publication, @post) %> |
+    <%= link_to '[•] Edit', edit_admin_publication_admin_post_path(@publication, @post) %>
+  </div>
+  <div class="properties">
+    <p>
+      <b>Title:</b>
+      <%= @post.title %><br/>
+      <b>Author:</b>
+      <%= @post.author %>
+    </p>  
+    <hr />
+    <p>
+      <b>Summary:</b><br /><br />
+      <%= @post.summary %>
+    </p>
 
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Summary:</b>
-  <%= @post.summary %>
-</p>
-
-<p>
-  <b>Author:</b>
-  <%= @post.author %>
-</p>
-
+  </div>
 <hr />
-<br />
 
-<%= raw @post.content %>
-
-
-<%= link_to 'Edit', edit_admin_publication_admin_post_path(@publication, @post) %> |
-<%= link_to 'Back', admin_publication_admin_posts_path(@publication, @post) %>
+  <div class="mag">
+    <%= raw @post.content %>
+  </div>
 
 </div>

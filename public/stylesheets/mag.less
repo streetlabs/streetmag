@@ -9,30 +9,53 @@
 @complement: #534616;	
 @complement-medium: #8B7423;
 @complement-dark: #2A230B;
-@complement-light: #989073;
-@complement-xlight: #BAB5A2;
+@complement-light: #BAB5A2;
+@complement-xlight: #D3D0C4;
 
 @link: #cc0033;
 
 
+.properties{
+	padding: 10px;
+	border: 1px double @complement-dark;
+	background-color: @complement-xlight;
+	margin: 20px;
+	
+}
+
+
+.mag_index{
+	vertical-align: top;
+	position: relative;
+	display: inline-block;
+	width: 800px;
+	margin: 20px;	
+}
+
 .mag{
+	margin: 20px;
 	padding-left: 10px;
+	border: 10px solid @complement-medium;
 	border-left: 100px solid @complement-medium;
 	
 	h1{
 		color:@primary;
-		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-top: 40px;
+		padding-bottom: 10px;
 		margin: 0px;
-		font-size: 50pt;
+		font-size: 40pt;
+		text-align: left;
 	}
 	h2{
 		color:@complement;
-		padding-top: 10px;
+		padding-top: 30px;
 		padding-bottom: 10px;
 		margin: 0px;
-		font-size: 32pt;
+		font-size: 24pt;
+		text-align: left;
 	}
+	h3{	font-size: 24pt;}
+	h3 a{font-size: 24pt;}
 
 
 	a{ color: @link; }

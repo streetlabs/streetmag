@@ -1,7 +1,11 @@
 <% title "STREETMAG » Publications" %>  
 
 <div class="admin">
-  <h1>NEWS POSTS</h1>
+  <h1>NEWS POSTS :: LIST</h1>
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '[+] New Post', new_admin_publication_admin_post_path(@publication) %>
+  </div>
 
 <table>
   <tr>
@@ -18,14 +22,11 @@
     <td><%= post.title %></td>
     <td><%= post.author %></td>
     <td><%= l post.created_at, :format => :short %></td>
-    <td> <%= link_to 'Show', admin_publication_admin_post_path(@publication, post) %> </td>
-    <td> <%= link_to 'Edit', edit_admin_publication_admin_post_path(@publication, post) %> </td>
-    <td> <%= link_to 'Destroy', admin_publication_admin_post_path(@publication, post), :confirm => 'Are you sure?', :method => :delete %> </td>
+    <td> <%= link_to '[∆] View', admin_publication_admin_post_path(@publication, post) %> </td>
+    <td> <%= link_to '[•] Edit', edit_admin_publication_admin_post_path(@publication, post) %> </td>
+    <td> <%= link_to '[-] Delete', admin_publication_admin_post_path(@publication, post), :confirm => 'Are you sure?', :method => :delete %> </td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Post', new_admin_publication_admin_post_path(@publication) %>
 </div>

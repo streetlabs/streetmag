@@ -1,32 +1,36 @@
 <div class="admin">
-<p id="notice"><%= notice %></p>
-<h1>Author :: VIEW</h1>
-<p>
-  <b>Name:</b>
-  <%= @author.name %>
-</p>
+  <h1>Author :: VIEW</h1>
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '[•] Edit', edit_admin_publication_admin_author_path(@publication, @author) %> |
+    <%= link_to '[«] Back', admin_publication_admin_authors_path(@publication) %>
+  </div>
 
-<p>
-  <b>Email:</b>
-  <%= @author.email %>
-</p>
+  <div class="properties">
+    <p>
+      <b>Name:</b>
+      <%= @author.name %>
+    </p>
 
-<p>
-  <b>Url:</b>
-  <%= @author.url %>
-</p>
+    <p>
+      <b>Email:</b>
+      <%= @author.email %>
+    </p>
 
-<p>
-  <b>Affiliation:</b>
-  <%= @author.affiliation %>
-</p>
+    <p>
+      <b>Url:</b>
+      <%= @author.url %>
+    </p>
 
-<p>
-  <b>Bio:</b>
-  <%= @author.bio %>
-</p>
+    <p>
+      <b>Affiliation:</b>
+      <%= @author.affiliation %>
+    </p>
+  </div>
+  
+  <div class="mag">
 
+    <%= raw @author.bio %>
 
-<%= link_to 'Edit', edit_admin_publication_admin_author_path(@publication, @author) %> |
-<%= link_to 'Back', admin_publication_admin_authors_path(@publication) %>
+  </div>
 </div>

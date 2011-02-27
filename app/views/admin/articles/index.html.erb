@@ -1,12 +1,16 @@
 <div class="admin">
-<h1>Articles :: LIST</h1>
+<h1>Articles :: LIST</h1>  
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '[+] New Article', new_admin_publication_admin_article_path(@publication) %>
+  </div>
+<br />
 
 <table>
   <tr>
     <th>Image</th>
     <th>Title</th>
     <th>Author</th>
-    <th>Abstract</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,7 +21,6 @@
     <td><img src="<%= article.photo(:thumb) %>" /></td>
     <td><%= article.title %></td>
     <td><%= article.author.name %></td>
-    <td><%= raw article.abstract %></td>
     <td><%= link_to 'Show', admin_publication_admin_article_path(@publication, article) %></td>
     <td><%= link_to 'Edit', edit_admin_publication_admin_article_path(@publication, article) %></td>
     <td><%= link_to 'Destroy', admin_publication_admin_article_path(@publication, article), :confirm => 'Are you sure?', :method => :delete %></td>
@@ -25,7 +28,4 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Article', new_admin_publication_admin_article_path(@publication) %>
 </div>

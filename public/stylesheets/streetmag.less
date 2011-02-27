@@ -1,43 +1,85 @@
 //Primary Color:
-@primary: #648118;	
-@primary-medium: #4D5B27;
-@primary-dark: #394C06;
-@primary-light: #A7C753;
-@primary-xlight: #B1C777;
+@primary: #154D75;	
+@primary-medium: #233D50;
+@primary-dark: #042841;
+@primary-light: #73B4E2;
+@primary-xlight: #ADCCE2;
 //Complementary Color:
-@complement: #88691A;	
-@complement-medium: #615129;
-@complement-dark: #513C06;
-@complement-light: #CBA954;
-@complement-xlight: #CBB479;
+@complement: #B69C17;	
+@complement-medium: #7C7032;
+@complement-dark: #655505;
+@complement-light: #F0DB71;
+@complement-xlight: #F0E6B4;
+//Complementary Color:
+@accent: #B11722;	
+@accent-medium: #793136;
+@accent-dark: #62050B;
+@accent-light: #EF717A;
+@accent-xlight: #EFB3B8;
+//Complementary Color:
+@tool: #888;	
+@tool-medium: #AAA;
+@tool-dark: #555;
+@tool-light: #CCC;
+@tool-xlight: #EEE;
 
-body{
+//Primary Color
+// 154D75	233D50	042841	73B4E2	ADCCE2
+//Secondary Color A:
+// B69C17	7C7032	655505	F0DB71	F0E6B4
+//Secondary Color B:
+// B11722	793136	62050B	EF717A	EFB3B8
+
+body{ 
+	font-family: Verdana, Tahoma, Serif;
+	margin: 0px;
+	padding: 0px;
 }
 
 h1,h2,h3,h4{ font-family: Helvetica, Arial, Serif;}
 
-h2{ font-size: 24px;}
-h3{ font-size: 20px;}
+h1{ font-size: 40pt;}
+h2{ font-size: 36pt;}
+h3{ font-size: 32pt;}
+
+#primary{
+	background-color: white;
+}
 
 #container{
 	position: relative;
 	width: 800px;
 	margin: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	h2 {
-		color: @primary-medium;
+	padding:0px;
+	
+	h1,h2,h3{
+		text-align: left;
+		
 	}
-	a{
-		padding-left: 2px;
-		padding-right: 2px;
-		color: @primary-dark;
+	h1{ 
+		font-size: 28pt;
+		border-bottom: 2px solid @primary-dark;
+		padding-bottom: 4px;
 	}
-	a:hover{
-		background-color: @primary-dark;
-		color: @complement-xlight;
+	h2{ 
+		font-size: 18pt; 
+		border-bottom: 2px solid @complement-xlight; 
+		padding-bottom: 4px;
+	    color: @complement-xlight; 
+	    text-align: center;
 	}
-
+	h3{ 
+		font-size: 16pt;
+		color: @complement;
+		border-bottom: 2px solid @complement;
+		padding-bottom: 4px;
+	}
+	
+	p{ 
+		color: #333;
+		font-size: 12pt; 
+		font-family: Tahoma, Verdana, Serif;
+	}
 
 	.feature{
 		position: absolute;
@@ -48,25 +90,262 @@ h3{ font-size: 20px;}
 		padding-top: 5px;
 		width: 360px;
 		background-color: @complement-dark;
-		color: white;
 		border-left: 3px solid @complement;
 		border-right: 3px solid @complement;
-		h2 {color: @complement-xlight;}
+		color: white;
+		p{color: white;}
 	}
 	.content{
 		width: 360px;
 	}
 	.about{
-		h3{ color: @complement;}
 		width: 100%;
 	}
 }
+
 #footer{
-	border-top: 3px solid @complement;
-	color: white;
-	margin-top: 100px;
-	margin-bottom: 10px;
-	padding: 10px;
-	background-color: @primary;
+	border-top: 2px solid @primary-dark;
+	color: @primary-dark;
+	margin-top: 60px;
+	padding: 30px;
+	background-color: @primary-xlight;
 	text-align: center;
+}
+
+
+#head{
+	width: 100%;
+	margin: 0px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	background-color: @primary;
+	color: @primary-xlight;
+	a, a:hover, a:visited{ 
+		padding: 4px;
+		color: white; 
+		background-color: @primary;
+		text-decoration: none;
+	}
+	a:hover{color: white; background-color: @primary-dark; }
+	#street_mag_title{
+		font-family: Arial, Helvetica, Serif;
+		font-size: 12pt;
+		padding: 2px;
+		margin-left: 6px;
+		margin-right: 6px;
+	}
+	.subtitle{
+		font-size: 10pt;
+		font-style: italic;
+	}
+	
+	#user_info{
+		padding: 4px;
+		padding-top: 6px;
+		height: 19px;
+		overflow: hidden;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		float: right;
+		a:hover{color: white; background-color: @primary-dark; }
+	}
+	#user_info.signed_in{
+		color: @complement-dark;
+		background-color: @complement-xlight;
+		a, a:hover, a:visited{ 
+			color: @complement-dark; 
+			background-color: @complement-xlight;
+			text-decoration: none;
+		}
+		a:hover{color: white; background-color: @complement-dark; }
+		border-bottom: 2px double @complement-medium;
+		border-left: 2px double @complement-medium;
+	}
+	
+	border-bottom: 2px double @primary-medium;
+}
+
+
+#nav{
+	text-align: right;
+	font-family: Arial, Helvetica, Serif;
+	font-size: 12pt;
+	margin-top: 5px;
+	padding: 5px;
+	padding-top: 0px;
+	color: @complement-dark;
+	a{color: @complement-dark; text-decoration: underline; padding: 3px;}
+	a:hover{ color: @complement-xlight; background-color: @complement-medium; text-decoration:underline;}
+}
+
+.notice, .error, .alert{
+	width: 96%;
+	height: 20px;
+	padding: 4px;
+	margin: auto;
+	color:  @primary-medium;
+	background-color: @primary-xlight;
+	border: 1px dotted @primary;
+	text-align: center;
+}
+
+.error, .alert{
+	color:  @accent-medium;
+	background-color: @accent-xlight;
+	border: 1px dotted @accent;
+	text-align: center;
+}
+
+
+h1{
+	color: @primary-dark;	
+	text-align: center;
+}
+h2{
+	color: @complement-dark;	
+	text-align: center;
+}
+
+
+a{ 
+	padding: 1px;
+	color: @accent;
+	font-size: 14px; 
+}
+a:visited { color: @accent-medium; }
+a:hover { color: white; background-color:@accent-dark; }
+
+
+
+table{
+	margin: auto;
+	border: 2px solid @primary;
+}
+
+tr,td, th{
+	padding: 2px;
+	max-width: 400px;
+	border: 1px solid @primary;
+}
+
+th{
+	font-weight: bold;
+	color: white;
+	background-color: @primary;
+}
+
+form{
+	width: 96%;
+	margin: auto;
+	padding: 10px;
+	padding-right: 24px;
+	border: 2px solid @primary;	
+	position: relative;
+	label, input, select{
+		font-family: Tahoma, Verdana, Serif;
+		font-size: 12pt;
+		padding: 4px;
+		vertical-align: middle;
+	}
+	label{
+		color: white;
+		background-color: @primary;
+	}
+	label.required{
+		color: white;
+		background-color: @complement;
+	}
+	.input{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.inputs_left{
+		float: left;
+		width: 49%;
+	}
+	.inputs_right{
+		float: right;
+		width: 49%;
+	}
+	.actions{
+		text-align: center;
+	}
+}
+
+form.user_new{
+	width: 280px;
+	margin: auto;
+	padding: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: 1px double @complement-dark;
+	background-color: @complement-xlight;
+	label, select{
+		font-family: Tahoma, Verdana, Serif;
+		font-size: 16pt;
+		margin: 10px;
+		margin-left: 6px;
+		vertical-align: middle;
+		color: @complement-dark;
+		background-color: inherit;
+	}
+	input{
+		font-family: Tahoma, Verdana, Serif;
+		font-size: 12pt;
+		padding: 10px;
+		margin: 10px;
+		margin-right: 3px;
+	}
+	#user_submit {
+		margin-left: 100px;
+		width: 80px;
+		text-align: center;
+	}
+}
+
+.published{
+	background-color: @complement-xlight;
+	color: @complement-dark;
+}
+
+.input_end{
+	width: 980px;
+	clear: both;
+	padding-bottom: 20px;
+}
+
+.editor{
+	padding-top: 20px;
+}
+
+#management{
+	.tools{
+		padding: 6px;
+		color: @tool-xlight;
+		background-color: @tool-dark;
+		margin-right:6px;
+	}
+	padding: 4px;
+	padding-left:0px;
+	border: 1px double @tool-dark;
+	background-color: @tool-xlight;
+	margin: 20px;
+	
+	a{ 
+		padding:2px;
+		color: @tool-dark;
+		font-size: 14px; 
+	 	text-decoration: none;
+	}
+	a:visited { color: @tool-dark; }
+	a:hover { color: @tool-xlight; background-color:@tool-dark; }
+}
+
+.properties{
+	padding: 1px;
+	border: 1px double @complement-dark;
+	background-color: @complement-xlight;
+	margin: 20px;
+	
 }

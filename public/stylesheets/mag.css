@@ -1,21 +1,40 @@
+.properties {
+  padding: 10px;
+  border: 1px double #2a230b;
+  background-color: #d3d0c4;
+  margin: 20px;
+}
+.mag_index {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 800px;
+  margin: 20px;
+}
 .mag {
+  margin: 20px;
   padding-left: 10px;
+  border: 10px solid #8b7423;
   border-left: 100px solid #8b7423;
 }
 .mag h1 {
   color: #000000;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 10px;
   margin: 0px;
-  font-size: 50pt;
+  font-size: 40pt;
+  text-align: left;
 }
 .mag h2 {
   color: #534616;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 10px;
   margin: 0px;
-  font-size: 32pt;
+  font-size: 24pt;
+  text-align: left;
 }
+.mag h3 { font-size: 24pt; }
+.mag h3 a { font-size: 24pt; }
 .mag a { color: #cc0033; }
 .mag a:visited { color: #cc0033; }
 .mag a:hover {
@@ -78,13 +97,13 @@
 .mag .emphasize { font-style: italic; }
 .mag .note {
   border: 1px dotted black;
-  background-color: #bab5a2;
+  background-color: #d3d0c4;
   margin: 2px;
   padding: 2px;
 }
 .mag .definition {
   border: 1px dashed black;
-  background-color: #bab5a2;
+  background-color: #d3d0c4;
   margin: 2px;
   padding: 2px;
 }

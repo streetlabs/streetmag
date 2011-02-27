@@ -1,44 +1,48 @@
 <div class="admin">
-<h1>Issue :: VIEW</h1>
-<p id="notice"><%= notice %></p>
+  <h1>Issue :: VIEW</h1>
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '[•] Edit', edit_admin_publication_admin_issue_path(@publication, @issue) %> |
+    <%= link_to '[«] Back', admin_publication_admin_issues_path(@publication) %>
+  </div>
 
-<p>
-  <b>Title:</b>
-  <%= @issue.title %>
-</p>
+  <div class="properties">
+    <p>
+      <b>Title:</b>
+      <%= @issue.title %>
+    </p>
 
-<p>
-  <b>Volume:</b>
-  <%= @issue.volume %>
-</p>
+    <p>
+      <b>Volume:</b>
+      <%= @issue.volume %>
+    </p>
 
-<p>
-  <b>Issue number:</b>
-  <%= @issue.issue_number %>
-</p>
+    <p>
+      <b>Issue number:</b>
+      <%= @issue.issue_number %>
+    </p>
 
-<p>
-  <b>Year:</b>
-  <%= @issue.publication_date.year unless @issue.publication_date == nil %>
-</p>
+    <p>
+      <b>Year:</b>
+      <%= @issue.publication_date.year unless @issue.publication_date == nil %>
+    </p>
 
-<p>
-  <b>Month:</b>
-  <%= Date::MONTHNAMES[@issue.publication_date.month] unless @issue.publication_date == nil %>
-</p>
+    <p>
+      <b>Month:</b>
+      <%= Date::MONTHNAMES[@issue.publication_date.month] unless @issue.publication_date == nil %>
+    </p>
 
-<p>
-  <b>Publication:</b>
-  <%= @issue.publication_id %>
-</p>
+    <p>
+      <b>Publication:</b>
+      <%= @issue.publication_id %>
+    </p>
 
-<% if @issue.is_published? %>
-  <p><b>this issue is published!</b></p>
-<% else %>
-  <p>this issue is NOT published.</p>
-<%end%>
+    <% if @issue.is_published? %>
+      <p><b>this issue is published!</b></p>
+    <% else %>
+      <p>this issue is NOT published.</p>
+    <%end%>
 
-
-<%= link_to 'Edit', edit_admin_publication_admin_issue_path(@publication, @issue) %> |
-<%= link_to 'Back', admin_publication_admin_issues_path(@publication) %>
+  </div>
+  
 </div>

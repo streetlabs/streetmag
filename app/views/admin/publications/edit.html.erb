@@ -6,10 +6,14 @@
 
 <div class="admin">
   <h1>Editing publication</h1>
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '[∆] View', admin_publication_path(@publication) %> |
+    <%= link_to '[!] Cancel',admin_publication_path(@publication) %>
+    
+  </div>
 
   <%= render 'form' %>
 
-  <%= link_to 'Show', admin_publication_path(@publication) %> |
-  <%= link_to 'Back', admin_publications_path %>
 
 </div>

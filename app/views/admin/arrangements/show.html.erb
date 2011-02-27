@@ -1,7 +1,11 @@
 <div class="admin">
-<p id="notice"><%= notice %></p>
 <h1>Article Arrangements :: VIEW</h1>
-
+<div id="management">
+  <span class="tools">tools</span>
+  <%= link_to '[•] Edit', edit_admin_publication_admin_arrangement_path(@publication, @arrangement) %> |
+  <%= link_to '[«] Back', admin_publication_admin_arrangements_path(@publication) %>
+</div>
+<div class="properties">
 <% if @arrangement.issue != nil %>
 <p>
   <b>Issue:</b>
@@ -25,6 +29,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_admin_publication_admin_arrangement_path(@publication, @arrangement) %> |
-<%= link_to 'Back', admin_publication_admin_arrangements_path(@publication) %>
+</div>
 </div>

@@ -1,12 +1,15 @@
 <div class="admin">
 <h1>Article Arrangements :: LIST</h1>
+  <div id="management">
+    <span class="tools">tools</span>
+    <%= link_to '+ New Arrangement', new_admin_publication_admin_arrangement_path(@publication)  %>
+  </div>
 
 <table>
   <tr>
     <th>Issue</th>
     <th>Section</th>
     <th>Article</th>
-    <th>Publication</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,7 +20,6 @@
     <td><%= arrangement.issue.title unless arrangement.issue == nil %></td>
     <td><%= arrangement.section.name unless arrangement.section == nil %></td>
     <td><%= arrangement.article.title unless arrangement.article == nil %></td>
-    <td><%= arrangement.publication.title %></td>
     <td><%= link_to 'Show', admin_publication_admin_arrangement_path(@publication, arrangement) %></td>
     <td><%= link_to 'Edit', edit_admin_publication_admin_arrangement_path(@publication, arrangement) %></td>
     <td><%= link_to 'Destroy', admin_publication_admin_arrangement_path(@publication, arrangement) , :confirm => 'Are you sure?', :method => :delete %></td>

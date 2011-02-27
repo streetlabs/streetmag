@@ -5,7 +5,7 @@ class Admin::ArrangementsController < ApplicationController
   # GET /arrangements
   def index
     @publication = Publication.find(params[:publication_id])
-    @arrangements = @publication.arrangements
+    @arrangements = @publication.arrangements.order("section_id, issue_id DESC");
   end
 
   # GET /arrangements/1
