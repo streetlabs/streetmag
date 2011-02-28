@@ -6,6 +6,6 @@
 <div class="postBlock">
   <% @website_publication.posts.each do |post| %>
     <h3><%= link_to post.title, post %></h3>
-    <p><%= post.summary %></p>
+    <p><%= raw sanitize post.formatted_summary %></p>
   <% end %>
 </div>

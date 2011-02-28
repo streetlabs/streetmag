@@ -4,4 +4,10 @@ class Post < ActiveRecord::Base
   validates_presence_of :author
   validates_presence_of :summary
   validates_presence_of :content
+  
+  
+  def formatted_summary
+    return RedCloth.new(self.summary, [:lite_mode, :filter_html]).to_html
+  end
+  
 end

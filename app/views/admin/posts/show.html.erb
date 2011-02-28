@@ -15,7 +15,8 @@
     <hr />
     <p>
       <b>Summary:</b><br /><br />
-      <%= @post.summary %>
+      <%= raw sanitize @post.formatted_summary %>
+      
     </p>
 
   </div>
