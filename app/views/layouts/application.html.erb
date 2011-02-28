@@ -3,7 +3,11 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "STREETMAG" %></title>
   <%= stylesheet_link_tag stylesheet_name(request.subdomain) %>
-  <%= javascript_include_tag :all %>
+  <%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'jquery.twitter' %>
+  <%= javascript_include_tag 'jquery.cycle.lite' %>
+  <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag 'application' %>
   <%= yield :javascript %>
   <%= csrf_meta_tag %>
 </head>

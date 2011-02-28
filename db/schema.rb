@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110226081903) do
+ActiveRecord::Schema.define(:version => 20110228015847) do
 
   create_table "arrangements", :force => true do |t|
     t.integer  "issue_id"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20110226081903) do
 
   create_table "articles", :force => true do |t|
     t.string   "title",                                                       :null => false
-    t.integer  "author_id",                                                   :null => false
     t.text     "abstract"
     t.text     "content",            :limit => 2147483647,                    :null => false
     t.text     "notes"
@@ -50,6 +49,15 @@ ActiveRecord::Schema.define(:version => 20110226081903) do
     t.string   "url"
     t.string   "affiliation"
     t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authorships", :force => true do |t|
+    t.integer  "publication_id",                    :null => false
+    t.integer  "article_id",                        :null => false
+    t.integer  "author_id",                         :null => false
+    t.boolean  "is_primary",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

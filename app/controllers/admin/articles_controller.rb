@@ -32,6 +32,9 @@ class Admin::ArticlesController < ApplicationController
   # POST /articles
   def create
     @publication = Publication.find(params[:publication_id])
+    params[:article][:authorships_attributes].each do |key, authorship|
+      authorship[:publication_id] =  @publication.id
+    end if params[:article][:authorships_attributes]
     @article= @publication.articles.create(params[:article])
 
     if @article.save
@@ -46,6 +49,9 @@ class Admin::ArticlesController < ApplicationController
   # PUT /articles/1
   def update
     @publication = Publication.find(params[:publication_id])
+    params[:article][:authorships_attributes].each do |key, authorship|
+      authorship[:publication_id] =  @publication.id
+    end if params[:article][:authorships_attributes]
     @article = Article.find(params[:id])
 
     if @article.update_attributes(params[:article])

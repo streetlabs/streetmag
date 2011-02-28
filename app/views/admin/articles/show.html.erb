@@ -13,8 +13,10 @@
   </p>
 
   <p>
-    <b>Author:</b>
-    <%= @article.author.name %>
+    <b>Author(s):</b>
+    <% @article.authors.each do |author| %>
+      <br/ ><%= author.name%>
+    <% end %>
   </p>
 
   <p>

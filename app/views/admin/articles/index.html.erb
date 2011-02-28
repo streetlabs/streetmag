@@ -20,7 +20,7 @@
   <tr>
     <td><img src="<%= article.photo(:thumb) %>" /></td>
     <td><%= article.title %></td>
-    <td><%= article.author.name %></td>
+    <td><%= article.author.name unless article.author == nil %></td>
     <td><%= link_to 'Show', admin_publication_admin_article_path(@publication, article) %></td>
     <td><%= link_to 'Edit', edit_admin_publication_admin_article_path(@publication, article) %></td>
     <td><%= link_to 'Destroy', admin_publication_admin_article_path(@publication, article), :confirm => 'Are you sure?', :method => :delete %></td>

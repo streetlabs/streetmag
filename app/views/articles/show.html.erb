@@ -3,7 +3,13 @@
 
 		<div id="content" class="article">	
 		  <h2><%= raw sanitize @article.formatted_title %></h2>
-		  <h3><%= @article.author.name %></h3>
+
+	    <% @article.authors.each do |author| %>
+	    <h3>
+		    <%= raw author.name %>
+	    </h3>
+		  <% end %>
+
 		  <div class="article">
 		    <%= raw @article.content %>
 		  </div>
@@ -17,10 +23,15 @@
 		  
 		  <% end %>
 		  
+		  
+      <% @article.authors.each do |author| %>
+
 		  <h3>Bio</h3>
 		  <div class="bio">
-		    <%= raw @article.author.bio %>
+		    <%= raw author.bio %>
 		  </div>
+		  
+		  <% end %>
 		  
 		  <hr />
 		  

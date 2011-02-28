@@ -3,6 +3,7 @@ class Publication < ActiveRecord::Base
   has_many :authors, :dependent => :destroy
   has_many :issues, :dependent => :destroy
   has_many :sections, :dependent => :destroy
+  has_many :authorships, :dependent => :destroy
   has_many :articles, :through => :arrangements, :dependent => :destroy
   has_many :assignments
   has_many :posts

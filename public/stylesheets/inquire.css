@@ -499,3 +499,8 @@
   height: 80px;
   width: 130px;
 }
+#slideshow {
+  width: 480px;
+  height: 319px;
+  overflow: hidden;
+}

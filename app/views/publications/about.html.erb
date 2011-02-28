@@ -1,3 +1,13 @@
+<% content_for :javascript do %>
+
+<script type="text/javascript">
+$(function() {
+    $('#tweets').liveTwitter('inquire_jcl', {mode: 'user_timeline', rate:300000, limit: 5 });
+  });
+</script>
+
+<% end %>
+
 <div id="page">
 
 		<div id="mainBlock">
@@ -16,6 +26,3 @@
 				
 	
 </div>
-<script type='text/javascript'>
-$('#tweets').liveTwitter('inquire_jcl', {mode: 'user_timeline', rate:300000, limit: 5 });
-</script>
