@@ -1,4 +1,8 @@
-<h2>News <img src="/images/inquire/rss.jpg" alt="" /></h2>
+<h2>News 
+  <% link_to  @website_publication.posts.first do %>
+    <img src="/images/inquire/rss.jpg" alt="" />
+  <% end unless @website_publication.posts.first == nil %>
+</h2>
 <div class="postBlock">
   <% @website_publication.posts.each do |post| %>
     <h3><%= link_to post.title, post %></h3>

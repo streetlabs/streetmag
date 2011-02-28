@@ -20,7 +20,7 @@
         <% f.fields_for :authorships do |builder| %>  
           <%= render 'authorship_partial', :f => builder %>  
         <% end %>
-        <div><%= link_to_add_partial "[+] Add Author", f, :authorships %>  </div><br />
+        <div class="add_item button primary_button"><%= link_to_add_partial "Add Author", f, :authorships %>  </div>
       </div>
       <%= f.label :content %><br /><br />
       <%= f.cktext_area :content, :id=>'content', :toolbar=>'Article', :height=>'600px' %><br />

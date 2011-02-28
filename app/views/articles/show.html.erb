@@ -3,13 +3,19 @@
 
 		<div id="content" class="article">	
 		  <h2><%= raw sanitize @article.formatted_title %></h2>
-
-	    <% @article.authors.each do |author| %>
-	    <h3>
-		    <%= raw author.name %>
-	    </h3>
-		  <% end %>
-
+		  
+		  <h3>
+		  <% @article.authors.each do |author| %>
+        <% if @article.authors.first == author %>
+          <%= author.name %>
+        <% elsif @article.authors.last == author %>
+          &amp; <%= author.name %>
+        <% else %>
+          , <%= author.name %>
+        <% end %>
+      <% end %>
+      </h3>
+      
 		  <div class="article">
 		    <%= raw @article.content %>
 		  </div>

@@ -262,7 +262,7 @@ form .actions { text-align: center; }
 form .items {
   position: relative;
   display: block;
-  border: 1px dotted #655505;
+  border: 1px dotted #042841;
   margin-bottom: 20px;
   padding-left: 12px;
 }
@@ -272,14 +272,17 @@ form .item {
   width: 100%;
 }
 form .item_label { display: inline-block; }
-form .item_delete { display: inline-block; }
 form .item_delete {
   float: right;
-  margin: 12px;
+  margin-top: 9px;
+  margin-right: 9px;
 }
 form .item .select { display: inline-block; }
 form .item .input { display: inline-block; }
-form .item_delete label { background-color: #b11722; }
+form .add_item {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 form.user_new {
   width: 280px;
   margin: auto;
@@ -336,7 +339,7 @@ form.user_new #user_submit {
   text-align: center;
   text-decoration: none;
   font: 14px/100% Arial, Helvetica, sans-serif;
-  padding: 0.5em 2em 0.55em;
+  padding: 0.5em 1em 0.55em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
@@ -345,34 +348,40 @@ form.user_new #user_submit {
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
+.button a {
+  color: white;
+  text-decoration: none;
+}
+.button a:hover {
+  color: white;
+  background-color: inherit;
+}
 .button:hover { text-decoration: none; }
 .button:active {
   position: relative;
   top: 1px;
 }
-.orange {
-  color: #fef4e9;
-  border: solid 1px #da7c0c;
-  background: #f78d1d;
-  background: -webkit-gradient(linear, left top, left bottom, from(#faa51a), to(#f47a20));
-  background: -moz-linear-gradient(top, #faa51a, #f47a20);
-}
-.orange:hover {
-  background: #f47c20;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
-  background: -moz-linear-gradient(top, #f88e11, #f06015);
-}
-.orange:active {
-  color: #fcd3a5;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
-  background: -moz-linear-gradient(top, #f47a20, #faa51a);
-}
-.button, .primary_button {
+.button {
   color: white;
   border: solid 1px #042841;
   background: #154d75;
   background: -webkit-gradient(linear, left top, left bottom, from(#154d75), to(#233d50));
   background: -moz-linear-gradient(top, #154d75, #233d50);
+}
+.button a {
+  color: white;
+  text-decoration: none;
+}
+.primary_button {
+  color: white;
+  border: solid 1px #042841;
+  background: #154d75;
+  background: -webkit-gradient(linear, left top, left bottom, from(#154d75), to(#233d50));
+  background: -moz-linear-gradient(top, #154d75, #233d50);
+}
+.primary_button a {
+  color: white;
+  text-decoration: none;
 }
 .button:hover {
   background: #233d50;
@@ -401,6 +410,10 @@ form.user_new #user_submit {
   background: -webkit-gradient(linear, left top, left bottom, from(#b69c17), to(#7c7032));
   background: -moz-linear-gradient(top, #b69c17, #7c7032);
 }
+.complement_button a {
+  color: white;
+  text-decoration: none;
+}
 .complement_button:hover {
   background: #7c7032;
   background: -webkit-gradient(linear, left top, left bottom, from(#b69c17), to(#655505));
@@ -410,6 +423,48 @@ form.user_new #user_submit {
   color: #f0e6b4;
   background: -webkit-gradient(linear, left top, left bottom, from(#7c7032), to(#655505));
   background: -moz-linear-gradient(top, #7c7032, #655505);
+}
+.accent_button {
+  color: white;
+  border: solid 1px #62050b;
+  background: #b11722;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b11722), to(#793136));
+  background: -moz-linear-gradient(top, #b11722, #793136);
+}
+.accent_button a {
+  color: white;
+  text-decoration: none;
+}
+.accent_button:hover {
+  background: #793136;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b11722), to(#62050b));
+  background: -moz-linear-gradient(top, #b11722, #62050b);
+}
+.accent_button:active {
+  color: #efb3b8;
+  background: -webkit-gradient(linear, left top, left bottom, from(#793136), to(#62050b));
+  background: -moz-linear-gradient(top, #793136, #62050b);
+}
+.tool_button {
+  color: white;
+  border: solid 1px #555555;
+  background: #888888;
+  background: -webkit-gradient(linear, left top, left bottom, from(#888888), to(#aaaaaa));
+  background: -moz-linear-gradient(top, #888888, #aaaaaa);
+}
+.tool_button a {
+  color: white;
+  text-decoration: none;
+}
+.tool_button:hover {
+  background: #aaaaaa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#888888), to(#555555));
+  background: -moz-linear-gradient(top, #888888, #555555);
+}
+.tool_button:active {
+  color: #eeeeee;
+  background: -webkit-gradient(linear, left top, left bottom, from(#aaaaaa), to(#555555));
+  background: -moz-linear-gradient(top, #aaaaaa, #555555);
 }
 #management {
   padding: 4px;

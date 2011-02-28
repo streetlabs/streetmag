@@ -12,12 +12,6 @@
   margin: 0px;
   font-size: 32pt;
 }
-.article a { color: #cc0033; }
-.article a:visited { color: #cc0033; }
-.article a:hover {
-  color: white;
-  background-color: #cc0033;
-}
 .article .title {
   color: #000000;
   font-size: 16pt;

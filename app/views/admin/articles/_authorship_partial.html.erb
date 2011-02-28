@@ -1,10 +1,10 @@
 <div class="item">
-  <%= f.association :author, :collection => @publication.authors, :class => "item_list" %>
+  <%= f.association :author, :collection => @publication.authors.order("name ASC"), :class => "item_list" %>
   <div class="item_label">
     <%= f.input :is_primary, :label => "Primary Author" %>
   </div>
   <div class="item_delete">
     <%= f.hidden_field :_destroy %>  
-    <%= link_to_function "remove", "remove_partial(this)" %>
+    <div class="button accent_button"><%= link_to_function "remove", "remove_partial(this)" %></div>
   </div>
 </div>

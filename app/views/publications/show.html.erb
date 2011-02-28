@@ -30,7 +30,12 @@ $(function() {
               <% Arrangement.joins(:article).where("issue_id = ? AND section_id = ?", @issue.id, section.id).order("title").each do |arrangement| %>
                 <li>
                 <% link_to article_url(arrangement.article) do%>
-                  <span class="author_name_main"><%= arrangement.article.author.name if arrangement.article.author%></span>, &lsquo;<%= raw sanitize arrangement.article.formatted_title %>&rsquo;
+                  <span class="author_name_main">
+                    <% arrangement.article.authors.each do |author| %>
+                        <%= author.name %>,
+                    <% end %>
+                  </span> 
+                  &lsquo;<%= raw sanitize arrangement.article.formatted_title %>&rsquo;
                 <% end %>
                 </li>
               <% end %>

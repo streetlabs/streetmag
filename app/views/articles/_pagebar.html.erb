@@ -9,7 +9,17 @@
       <% end %>
         <%= link_to article do%>
           <%= raw sanitize article.formatted_title %><br />
-          <span class="author_name">&ndash; <%= article.author.name unless article.author == nil %></span>
+          <span class="author_name">&ndash; 
+            <% article.authors.each do |author| %>
+              <% if article.authors.first == author %>
+                <%= author.name %>
+              <% elsif article.authors.last == author %>
+                &amp; <%= author.name %>
+              <% else %>
+                , <%= author.name %>
+              <% end %>
+            <% end %>
+          </span>
         <% end %>
       </li
     <% end %>
