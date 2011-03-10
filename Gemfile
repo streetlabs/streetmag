@@ -17,6 +17,8 @@ gem 'devise'
 gem "cancan"
 gem 'bcrypt-ruby'
 gem 'RedCloth'
+gem 'acts_as_list'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

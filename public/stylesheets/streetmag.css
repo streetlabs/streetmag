@@ -322,6 +322,34 @@ form.user_new #user_submit {
   width: 80px;
   text-align: center;
 }
+.handle {
+  background-color: #655505;
+  color: #f0e6b4;
+  height: 100%;
+}
+.handle:hover {
+  cursor: move;
+  background-color: #b69c17;
+  color: white;
+}
+.drag_box {
+  display: block;
+  border: dotted 1px #b69c17;
+  margin: 2px;
+  background-color: white;
+}
+.drag_box span {
+  display: inline-block;
+  padding: 5px;
+}
+.drag_box .column_one { padding-left: 10px; }
+#arrangements {
+  margin: 20px;
+  border: 1px solid #655505;
+  background-color: #f0e6b4;
+  padding: 20px;
+  list-style: none;
+}
 .published {
   background-color: #f0e6b4;
   color: #655505;

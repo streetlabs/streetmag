@@ -10,15 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110228015847) do
+ActiveRecord::Schema.define(:version => 20110310054134) do
 
   create_table "arrangements", :force => true do |t|
     t.integer  "issue_id"
     t.integer  "section_id"
-    t.integer  "article_id",     :null => false
-    t.integer  "publication_id", :null => false
+    t.integer  "article_id",                    :null => false
+    t.integer  "publication_id",                :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position",       :default => 0
   end
 
   create_table "articles", :force => true do |t|

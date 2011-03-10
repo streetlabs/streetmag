@@ -3,7 +3,8 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "STREETMAG" %></title>
   <%= stylesheet_link_tag stylesheet_name(request.subdomain) %>
-  <%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'jquery.min' %>
+  <%= javascript_include_tag 'jquery.ui.min' %>
   <%= javascript_include_tag 'jquery.twitter' %>
   <%= javascript_include_tag 'jquery.cycle.lite' %>
   <%= javascript_include_tag 'rails' %>
@@ -17,17 +18,18 @@
  <% if current_user && user_signed_in? %>
     <div id="user_info" class="signed_in">
       <i>You are signed in as <b><%= current_user.email %></b></i>&nbsp;|
-      <%= link_to 'Your Mags', admin_publications_path %>&nbsp;|
+      <%= link_to 'Your Mags', admin_publications_path if current_user.is_admin?%>&nbsp;|
+      <%= link_to('Edit registration', edit_user_registration_path) %>&nbsp;|
       <%= link_to('Logout', destroy_user_session_path) %> 
     <% else %>
     <div id="user_info" class="signed_out">
-      <%= link_to('Login', new_user_session_path)  %>  
+      <%= link_to('Login', new_user_session_path(:protocol => 'https://') )  %>  
     <% end %>
     </div>
   </div>
   
   <div id="nav">  
-    <% if !subdomain?(request.subdomain) && @publication && !@publication.new_record? %>
+    <% if !subdomain?(request.subdomain) && @publication && !@publication.new_record? && current_user.is_admin?%>
 
         <%= link_to 'Home', admin_publication_path(@publication) %> |
         <%= link_to 'News Posts', admin_publication_admin_posts_path(@publication) %> |

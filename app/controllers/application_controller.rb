@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
  
 
 
+  rescue_from CanCan::AccessDenied do |exception|
+    render :file => "#{Rails.root}/public/403.html", :status => 403
+  end
+
   private
   def determine_website
     name = request.subdomain
@@ -15,5 +19,6 @@ class ApplicationController < ActionController::Base
   def mailer_set_url_options
     ActionMailer::Base.default_url_options[:host] = request.host_with_port
   end
+  
   
 end

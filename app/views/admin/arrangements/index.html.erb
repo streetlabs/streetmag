@@ -1,3 +1,31 @@
+<% content_for :javascript do %>
+  <%= javascript_tag do %>
+    // Sorting the list
+
+    $(document).ready(function(){
+    $('#arrangements').sortable({
+    axis: 'y',
+    dropOnEmpty: false,
+    handle: '.handle',
+    cursor: 'crosshair',
+    items: 'li',
+    opacity: 0.4,
+    scroll: true,
+    update: function(){
+    $.ajax({
+    type: 'post',
+    data: $('#arrangements').sortable('serialize'),
+    dataType: 'script',
+    complete: function(request){
+    $('#arrangements').effect('highlight');
+    },
+    url: '<%= sort_admin_publication_admin_arrangements_path(@publication) %>'})
+    }
+    });
+    });
+  <% end %>
+<% end %>
+
 <div class="admin">
 <h1>Article Arrangements :: LIST</h1>
   <div id="management">
@@ -5,27 +33,23 @@
     <%= link_to '+ New Arrangement', new_admin_publication_admin_arrangement_path(@publication)  %>
   </div>
 
-<table>
-  <tr>
-    <th>Issue</th>
-    <th>Section</th>
-    <th>Article</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul id="arrangements">
 
 <% @arrangements.each do |arrangement| %>
-  <tr>
-    <td><%= arrangement.issue.title unless arrangement.issue == nil %></td>
-    <td><%= arrangement.section.name unless arrangement.section == nil %></td>
-    <td><%= arrangement.article.title unless arrangement.article == nil %></td>
-    <td><%= link_to 'Show', admin_publication_admin_arrangement_path(@publication, arrangement) %></td>
-    <td><%= link_to 'Edit', edit_admin_publication_admin_arrangement_path(@publication, arrangement) %></td>
-    <td><%= link_to 'Destroy', admin_publication_admin_arrangement_path(@publication, arrangement) , :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li id="arrangement_<%= arrangement.id %>" class="drag_box">
+    <span class="handle">&nbsp;:::&nbsp;</span>
+    <span class="column_one"><%=truncate( arrangement.issue.title , :length => 40, :separator => ' ')unless arrangement.issue == nil %></span>
+    <span><b><%= arrangement.section.name unless arrangement.section == nil %></b></span>
+    <span>
+      <% link_to admin_publication_admin_arrangement_path(@publication, arrangement) do %>
+        <%= truncate(arrangement.article.title, :length => 50, :separator => ' ') unless arrangement.article == nil %>
+      <% end %>
+    </span> | 
+    <span><%= link_to 'Edit', edit_admin_publication_admin_arrangement_path(@publication, arrangement) %></span> | 
+    <span class="destroy"><%= link_to 'Destroy', admin_publication_admin_arrangement_path(@publication, arrangement) , :confirm => 'Are you sure?', :method => :delete %></span>
+  </li>
 <% end %>
-</table>
+</ul>
 
 <br />
 

@@ -1,4 +1,7 @@
 class Admin::SitePagesController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
+
   # GET /site_pages
   # GET /site_pages.xml
   def index

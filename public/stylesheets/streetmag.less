@@ -333,6 +333,38 @@ form.user_new{
 
 }
 
+.handle{
+	background-color: @complement-dark;
+	color: @complement-xlight;
+	height: 100%;
+}
+.handle:hover{
+	cursor: move;
+	background-color: @complement;
+	color: white;
+}
+.drag_box{
+	display: block;
+	border: dotted 1px @complement;
+	margin: 2px;
+	background-color: white;
+	span{
+		display: inline-block; 
+		padding: 5px;
+	}
+	.column_one{
+		padding-left: 10px;
+	}
+}
+
+#arrangements{
+	margin: 20px;
+	border: 1px solid @complement-dark;
+	background-color: @complement-xlight;
+	padding: 20px;
+	list-style: none;
+}
+
 .published{
 	background-color: @complement-xlight;
 	color: @complement-dark;

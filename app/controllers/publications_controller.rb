@@ -9,7 +9,6 @@ class PublicationsController < ApplicationController
   def show
     @publication = Publication.find_by_name!(request.subdomain)
     @issue = @publication.issues.first 
-    #@publication = Publication.find(params[:id])
   end
   
   def about

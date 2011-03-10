@@ -5,7 +5,19 @@ class Admin::ArrangementsController < ApplicationController
   # GET /arrangements
   def index
     @publication = Publication.find(params[:publication_id])
-    @arrangements = @publication.arrangements.order("section_id, issue_id DESC");
+    @issue = @publication.issues.first
+    @arrangements = @publication.arrangements.order("section_id, issue_id DESC, arrangements.position ASC");
+  end
+
+  def sort
+    @publication = Publication.find(params[:publication_id])
+    @arrangements = Arrangement.all
+    @arrangements.each do |arrangement|
+      arrangement.position = params['arrangement'].index(arrangement.id.to_s) + 1
+      arrangement.save
+    end
+
+    render :nothing => true
   end
 
   # GET /arrangements/1

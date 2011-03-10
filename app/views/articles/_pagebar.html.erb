@@ -1,7 +1,7 @@
 <div id="pageBar">
 	<h2><%= @article.section.name %></h2>
 	<ul>
-	  <% @article.section.articles.each do |article| %>
+	  <% @article.section.articles.order("arrangements.position ASC").each do |article| %>
       <% if @article.id == article.id %>
       <li class="current_article">
       <% else %>
