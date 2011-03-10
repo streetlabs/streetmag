@@ -4,7 +4,12 @@
   <title>Inquire: Journal of Comparative Literature</title>
   <%= stylesheet_link_tag stylesheet_name(request.subdomain) %>
   <%= stylesheet_link_tag stylesheet_name("article") %>
-  <%= javascript_include_tag :all %>
+  <%= javascript_include_tag 'jquery.min' %>
+  <%= javascript_include_tag 'jquery.ui.min' %>
+  <%= javascript_include_tag 'jquery.twitter' %>
+  <%= javascript_include_tag 'jquery.cycle.lite' %>
+  <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag 'application' %>
   <%= yield :javascript %>
   <%= csrf_meta_tag %>
   <link rel="icon" href="./favicon.png" type="image/png" />

@@ -34,23 +34,23 @@ class Ability
     if user.is_admin?
       can :manage, :all
     else 
-#      can :manage, Publication do |publication|
-#        publication.try(:owner) == user
-#      end
-#      can :manage, Section do |section|
-#        section.publication.try(:owner) == user
-##      end
-#      can :manage, Issue do |issue|
-#        issue.publication.try(:owner) == user
-#      end
-#      can :manage, Arrangement do |arrangement|
-#        arrangement.publication.try(:owner) == user
-#      end
-#      can :manage, Article do |article|
-#        arrangement.publication.try(:owner) == user
-#        #article.try(:editors).include?(user) || article.try(:contributor).include?(user)
-#      end
-      can :read, :none
+      can :manage, Publication do |publication|
+        publication.try(:owner) == user
+      end
+      can :manage, Section do |section|
+        section.publication.try(:owner) == user
+      end
+      can :manage, Issue do |issue|
+        issue.publication.try(:owner) == user
+      end
+      can :manage, Arrangement do |arrangement|
+        arrangement.publication.try(:owner) == user
+      end
+      can :manage, Article do |article|
+        arrangement.publication.try(:owner) == user
+        #article.try(:editors).include?(user) || article.try(:contributor).include?(user)
+      end
+      can :read, :all
     end
   end
 end
