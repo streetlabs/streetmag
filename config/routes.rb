@@ -5,7 +5,7 @@ Streetmag::Application.routes.draw do
   resources :site_pages,  :only => [:show], :path => 'hub'
   resources :posts,  :only => [:show], :path => 'news'
   resources :articles, :only => [:show, :index]
-
+  resources :publications, :only => [:index, :show]
 
   scope "admin", :module=>"admin", :as=>"admin", :constraints => { :protocol => "https" } do
     resources :publications do
@@ -22,8 +22,6 @@ Streetmag::Application.routes.draw do
       resources :site_pages, :as => "admin_site_pages"
     end
   end
-  
-  resources :publications, :only => [:index, :show]
   
   
   constraints :protocol => "https" do

@@ -1,5 +1,4 @@
 class PublicationsController < ApplicationController
-  load_and_authorize_resource
   layout "subdomain"
   
   def index
