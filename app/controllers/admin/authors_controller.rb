@@ -18,8 +18,7 @@ class Admin::AuthorsController < ApplicationController
   # GET /authors/new
   def new
     @publication = Publication.find(params[:publication_id])
-    @author = Author.new
-    @arrangement = Arrangement.new
+    @author= @publication.authors.create()
   end
 
   # GET /authors/1/edit

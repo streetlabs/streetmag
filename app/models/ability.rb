@@ -33,7 +33,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.is_admin?
       can :manage, :all
-    else 
+    else
       can :manage, Publication do |publication|
         publication.try(:owner) == user
       end
@@ -43,6 +43,12 @@ class Ability
       can :manage, Issue do |issue|
         issue.publication.try(:owner) == user
       end
+      can :manage, Post do |post|
+        post.publication.try(:owner) == user
+      end
+      can :manage, SitePage do |page|
+        page.publication.try(:owner) == user
+      end
       can :manage, Arrangement do |arrangement|
         arrangement.publication.try(:owner) == user
       end
@@ -50,7 +56,10 @@ class Ability
         arrangement.publication.try(:owner) == user
         #article.try(:editors).include?(user) || article.try(:contributor).include?(user)
       end
-      can :read, :all
+      can :manage, Author do |author|
+        author.publication.try(:owner) == user
+      end
+      can :read, :none
     end
   end
 end
