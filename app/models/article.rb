@@ -27,7 +27,7 @@ class Article < ActiveRecord::Base
     #indexes publication(:title), :as => :publication , :sortable => true
     #indexes arrangement.issue(:title), :as => :issue, :sortable => true
     indexes arrangement.section(:name), :as => :section, :sortable => true
-    indexes authorships.author(:name), :as => :author_name, :sortable => true
+    indexes authorships.author(:name), :as => :name, :sortable => true
     #indexes arrangement.publication, :as => :publication, :sortable => true
     
     # attributes
@@ -35,7 +35,7 @@ class Article < ActiveRecord::Base
     
     set_property :field_weights => {
       :title => 20,
-      :author_name => 14,
+      :name => 14,
       :content => 10,
       :section => 5,
       :abstract => 3,
