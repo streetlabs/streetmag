@@ -1,20 +1,32 @@
 <div id="page">
   <div id="search-content">
-  <% if @search%>
-    <h4>You searched for: &quot;<%= @search%>&quot;. Here is what we found:</h4>
+  <% if @search && @articles.count > 1%>
+    <h3>You searched for: &quot;<%= @search%>&quot;. Here is what we found:<br/><br/></h3>
+
+    <% @articles.each do |article| %>
+      <div class="result">
+        <div class="author">
+          <% article.authors.each do |author| %>
+              <%= author.name %><%= "," unless author == article.authors.last %>
+          <% end %>
+        </div>  
+         <% link_to article do%>
+             <%= raw sanitize textilize article.excerpts.formatted_title %>
+         <% end %>
+         <div class="excerpt"><%= raw sanitize textilize article.excerpts.content %></div>
+      </div>
+    <% end %>
+    <% else %>
+    
+      <h3>No results were found!</h3>
+      <h4>Searching tips:</h4>
+      <ul>
+        <li>Search for words or phrases that you'd expect to see in the article.</li>
+        <li>If you know the name of the author you can search for first and last name.</li>
+        <li>Try removing some words if you are not getting enough results.</li>
+        <li>Searching for a portion of a word to get all variations.</li>
+      </ul>
+      <div class="padding">&nbsp;</div>
   <% end %>
-<% @articles.each do |article| %>
-  <div class="result">
-    <div class="author">
-      <% article.authors.each do |author| %>
-          <%= author.name %><%= "," unless author == article.authors.last %>
-      <% end %>
-    </div>  
-     <% link_to article do%>
-         <%= raw sanitize textilize article.excerpts.formatted_title %>
-     <% end %>
-     <div class="excerpt"><%= raw sanitize textilize article.excerpts.content %></div>
-  </div>
-<% end %>
   </div>
 </div>

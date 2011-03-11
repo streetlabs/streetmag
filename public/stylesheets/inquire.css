@@ -435,6 +435,7 @@
   font-weight: bold;
   padding: 2px;
 }
+#inquire .padding { height: 300px; }
 #inquire #issue {
   font-size: 14px;
   font-weight: normail;
