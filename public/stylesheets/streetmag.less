@@ -516,7 +516,41 @@ form.user_new{
 	}
 	a:visited { color: @tool-dark; }
 	a:hover { color: @tool-xlight; background-color:@tool-dark; }
+	
+	.pagination{
+		display:inline-block;
+		.page{
+			font-size: 14px; 
+			padding-left: 1px;
+			padding-right: 1px;
+		}
+		.current{
+			color: @tool-xlight;
+			background-color: @tool;
+			border: 2px solid @tool-dark;
+			margin: 1px;
+		}
+	}
 }
+
+
+.pagination{
+	margin-top: 20px;
+	display:block;
+	text-align: center;
+	.page{
+		font-size: 14px; 
+		padding-left: 1px;
+		padding-right: 1px;
+	}
+	.current{
+		color: white;
+		background-color: @accent-medium;
+		border: 2px solid @accent-dark;
+		margin: 1px;
+	}
+}
+
 
 .properties{
 	padding: 1px;

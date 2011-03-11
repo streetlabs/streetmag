@@ -170,6 +170,10 @@
   width: 670px;
   padding: 0;
 }
+#inquire #search-content {
+  width: 960px;
+  padding: 0;
+}
 #inquire .post {
   margin-bottom: 25px;
   padding: 0px;
@@ -404,6 +408,32 @@
   margin: 0 0 1px 0;
   font-size: 11px;
   background: #dddddd;
+}
+#inquire .result {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cccccc;
+}
+#inquire .result .author { float: right; }
+#inquire .result a:hover { text-decoration: underline; }
+#inquire .result a span.match {
+  background: #dddddd;
+  font-weight: bold;
+  padding: 2px;
+}
+#inquire .excerpt {
+  border: 1px dotted #aaaaaa;
+  padding: 5px;
+  line-heght: 1.3;
+  margin: 0 0 1px 0;
+  font-size: 11px;
+  background: #eeeeee;
+  font-style: italic;
+}
+#inquire .excerpt .match {
+  background: #dddddd;
+  font-weight: bold;
+  padding: 2px;
 }
 #inquire #issue {
   font-size: 14px;

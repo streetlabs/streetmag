@@ -22,16 +22,16 @@
   			  <img src="/images/inquire/logo.png" alt="logo" title="Inquire: Journal of Comparative Literature" />
   		  <% end %>
   		</div>
-  		<!-- SEARCH IS NOT ONLINE, YET....
+  		<% if @website_publication != nil %>
   		<div id="search">
-  			<form method="get" action="">
+  		  <% form_tag articles_url, :method => 'get' do %>
   				<fieldset>
-  				<input type="text" name="s" id="search-text" size="15" />
-  				<input type="submit" id="search-submit" value="GO" />
-  				</fieldset>
-  			</form>
+            <%= text_field_tag :search, params[:search], :id => 'search-text' %>
+            <%= submit_tag "GO", :name => nil, :class =>"button", :id=>"search-submit" %>
+    				</fieldset>
+        <% end %>
   		</div>
-      	-->
+  		<% end %>
   	</div>
   	<!-- end #header -->
   	<div class="menu">

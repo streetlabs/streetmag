@@ -1,21 +1,20 @@
 <div id="page">
-  <div id="content" class="article">
+  <div id="search-content">
   <% if @search%>
     <h4>You searched for: &quot;<%= @search%>&quot;. Here is what we found:</h4>
   <% end %>
-<ul>
 <% @articles.each do |article| %>
-  <li>
-    <span class="author_name_main">
+  <div class="result">
+    <div class="author">
       <% article.authors.each do |author| %>
-          <%= author.name %>, 
+          <%= author.name %><%= "," unless author == article.authors.last %>
       <% end %>
-    </span>  
+    </div>  
      <% link_to article do%>
-         &lsquo;<%= raw sanitize article.formatted_title %>&rsquo;
+         <%= raw sanitize textilize article.excerpts.formatted_title %>
      <% end %>
-  </li>
+     <div class="excerpt"><%= raw sanitize textilize article.excerpts.content %></div>
+  </div>
 <% end %>
-</ul>
   </div>
 </div>

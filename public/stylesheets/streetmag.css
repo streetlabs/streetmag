@@ -518,6 +518,34 @@ form.user_new #user_submit {
   color: #eeeeee;
   background-color: #555555;
 }
+#management .pagination { display: inline-block; }
+#management .pagination .page {
+  font-size: 14px;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+#management .pagination .current {
+  color: #eeeeee;
+  background-color: #888888;
+  border: 2px solid #555555;
+  margin: 1px;
+}
+.pagination {
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+}
+.pagination .page {
+  font-size: 14px;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+.pagination .current {
+  color: white;
+  background-color: #793136;
+  border: 2px solid #62050b;
+  margin: 1px;
+}
 .properties {
   padding: 1px;
   border: 1px double #655505;

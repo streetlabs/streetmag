@@ -1,7 +1,9 @@
 .bundle
 db/*.sqlite3
-log/*.log
+log/*
 tmp/*
 tmp/**/*
 config/rackspace_cloudfiles.yml
 config/database.yml
+config/*.sphinx.conf
+db/sphinx/*

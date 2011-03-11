@@ -2,13 +2,13 @@
 <h1>Articles :: LIST</h1>  
   <div id="management">
     <span class="tools">tools</span>
-    <%= link_to '[+] New Article', new_admin_publication_admin_article_path(@publication) %>
+    <%= link_to '[+] New Article', new_admin_publication_admin_article_path(@publication) %> 
   </div>
 <br />
 
 <table>
   <tr>
-    <th>Image</th>
+    <th>Date</th>
     <th>Title</th>
     <th>Author</th>
     <th></th>
@@ -18,7 +18,7 @@
 
 <% @articles.each do |article| %>
   <tr>
-    <td><img src="<%= article.photo(:thumb) %>" /></td>
+    <td><%= l article.created_at, :format => :short%></td>
     <td><%= article.title %></td>
     <td><%= article.author.name unless article.author == nil %></td>
     <td><%= link_to 'Show', admin_publication_admin_article_path(@publication, article) %></td>
@@ -27,5 +27,5 @@
   </tr>
 <% end %>
 </table>
-
+<%= paginate @articles %> 
 </div>

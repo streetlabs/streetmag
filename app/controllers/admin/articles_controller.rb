@@ -5,7 +5,7 @@ class Admin::ArticlesController < ApplicationController
   # GET /articles
   def index
     @publication = Publication.find(params[:publication_id])
-    @articles = @publication.articles
+    @articles = @publication.articles.order("created_at DESC").page(params[:page]).per(10) 
   end
 
   # GET /articles/1

@@ -15,6 +15,36 @@ class Article < ActiveRecord::Base
                     :storage => :cloud_files,
                     :cloudfiles_credentials => "#{RAILS_ROOT}/config/rackspace_cloudfiles.yml"
                     
+                    
+  
+  define_index do
+    # fields
+    indexes title, :sortable => true
+    indexes content, :sortable => true
+    indexes abstract, :sortable => true
+    indexes notes, :sortable => true
+    indexes cited_works, :sortable => true
+    #indexes publication(:title), :as => :publication , :sortable => true
+    #indexes arrangement.issue(:title), :as => :issue, :sortable => true
+    indexes arrangement.section(:name), :as => :section, :sortable => true
+    indexes authorships.author(:name), :as => :author_name, :sortable => true
+    #indexes arrangement.publication, :as => :publication, :sortable => true
+    
+    # attributes
+    has title, created_at, updated_at
+    
+    set_property :field_weights => {
+      :title => 20,
+      :author_name => 14,
+      :content => 10,
+      :section => 5,
+      :abstract => 3,
+      :notes => 2,
+      :cited_works => 2,
+    }
+    
+  end  
+                    
   def editors
     return self.publication == nil ? Array.new : self.publication.managers;
   end
