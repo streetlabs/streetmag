@@ -14,11 +14,11 @@ gem 'cloudfiles'
 gem "paperclip-cloudfiles", :require => 'paperclip'
 #gem 'paperclip'
 gem 'devise'
-gem "cancan"
+gem 'cancan', '1.6.0'
 gem 'bcrypt-ruby'
 gem 'RedCloth'
 gem 'acts_as_list'
-gem "kaminari"  
+gem 'kaminari'
 gem 'thinking-sphinx', '2.0.2', :require => 'thinking_sphinx'
 
 # Use unicorn as the web server

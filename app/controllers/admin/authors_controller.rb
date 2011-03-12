@@ -4,34 +4,32 @@ class Admin::AuthorsController < ApplicationController
 
   # GET /authors
   def index
-    @publication = Publication.find(params[:publication_id])
+    @publication = @current_publication
     @authors = @publication.authors.order("name ASC")
   end
 
   # GET /authors/1
   def show
-    @publication = Publication.find(params[:publication_id])
+    @publication = @current_publication
     @author = @publication.authors.find(params[:id])
-
   end
 
   # GET /authors/new
   def new
-    @publication = Publication.find(params[:publication_id])
-    @author= @publication.authors.create()
+    @publication = @current_publication
+    @author = @publication.authors.new
   end
 
   # GET /authors/1/edit
   def edit
-    @publication = Publication.find(params[:publication_id])
+    @publication = @current_publication
     @author = @publication.authors.find(params[:id])
   end
 
   # POST /authors
   def create
-    @publication = Publication.find(params[:publication_id])
+    @publication = @current_publication
     @author= @publication.authors.create(params[:author])
-
     if @author.save
       redirect_to(admin_publication_admin_authors_path(@publication), :notice => 'Author was successfully created.')
     else
@@ -43,7 +41,7 @@ class Admin::AuthorsController < ApplicationController
 
   # PUT /authors/1
   def update
-    @publication = Publication.find(params[:publication_id])
+    @publication = @current_publication
     @author = Author.find(params[:id])
 
     if @author.update_attributes(params[:author])
@@ -56,7 +54,7 @@ class Admin::AuthorsController < ApplicationController
 
   # DELETE /authors/1
   def destroy
-    @publication = Publication.find(params[:publication_id])
+    @publication = @current_publication
     @author = @publication.authors.find(params[:id])
     @author.destroy
     

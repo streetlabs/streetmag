@@ -5,6 +5,8 @@ class Arrangement < ActiveRecord::Base
   belongs_to :issue
   validates_uniqueness_of :article_id
   
+  attr_protected :publication_id
+  
   acts_as_list
   
   define_index do

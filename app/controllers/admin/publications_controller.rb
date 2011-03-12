@@ -8,7 +8,6 @@ class Admin::PublicationsController < ApplicationController
 
   def show
     @publication = Publication.find(params[:id])
-    #@publication = Publication.find(params[:id])
   end
 
   def new
@@ -43,5 +42,10 @@ end
     @publication.destroy
 
     redirect_to(admin_publications_url) 
+  end
+  
+  private
+  def current_publication  
+    @current_publication ||= Publication.find(params[:id]) if params[:id]
   end
 end

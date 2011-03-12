@@ -13,9 +13,7 @@ class Article < ActiveRecord::Base
   has_attached_file :photo,
                     :styles => { :medium => "300x300>", :thumb => "100x100>", :small  => "200x200>", :large  => "600x600>"  },
                     :storage => :cloud_files,
-                    :cloudfiles_credentials => "#{RAILS_ROOT}/config/rackspace_cloudfiles.yml"
-                    
-                    
+                    :cloudfiles_credentials => "#{RAILS_ROOT}/config/rackspace_cloudfiles.yml"                                    
   
   define_index do
     # fields

@@ -36,7 +36,7 @@ GEM
       ZenTest (>= 4.4.1)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
-    cancan (1.5.1)
+    cancan (1.6.0)
     capybara (0.4.1.2)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
@@ -51,7 +51,7 @@ GEM
       ffi (~> 0.6.3)
     ckeditor (3.4.2.pre)
       mime-types (>= 1.16)
-    cloudfiles (1.4.13)
+    cloudfiles (1.4.15)
       mime-types (>= 1.16)
     configuration (1.2.0)
     cucumber (0.10.0)
@@ -63,7 +63,7 @@ GEM
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
     culerity (0.2.15)
-    database_cleaner (0.6.4)
+    database_cleaner (0.6.5)
     devise (1.1.7)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.2)
@@ -76,7 +76,7 @@ GEM
       railties (>= 3.0.0)
     ffi (0.6.3)
       rake (>= 0.8.7)
-    gherkin (2.3.3)
+    gherkin (2.3.4)
       json (~> 1.4.6)
     high_voltage (0.9.3)
     i18n (0.5.0)
@@ -87,7 +87,7 @@ GEM
     json_pure (1.5.1)
     kaminari (0.10.4)
       rails (>= 3.0.0)
-    launchy (0.3.7)
+    launchy (0.4.0)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
     mail (2.2.15)
@@ -98,7 +98,7 @@ GEM
     mime-types (1.16)
     mysql2 (0.2.6)
     nokogiri (1.4.4)
-    paperclip-cloudfiles (2.3.8.1)
+    paperclip-cloudfiles (2.3.8.3)
       activerecord
       activesupport
     polyglot (0.3.1)
@@ -165,7 +165,7 @@ DEPENDENCIES
   acts_as_list
   autotest
   bcrypt-ruby
-  cancan
+  cancan (= 1.6.0)
   capybara
   ckeditor (= 3.4.2.pre)
   cloudfiles

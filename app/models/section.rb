@@ -6,4 +6,6 @@ class Section < ActiveRecord::Base
   has_many :arrangements, :dependent => :destroy
   validates_presence_of :name
   validates_presence_of :publication
+  
+  attr_protected :publication_id
 end

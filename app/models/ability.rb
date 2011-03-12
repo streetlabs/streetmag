@@ -1,7 +1,7 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(user, publication)
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
@@ -26,40 +26,31 @@ class Ability
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
     
     #
-    # There is currently an error in the new method. Only admin can perform new...
-    # This is likely due to me messing up permissions.
     #
+    # The current issue now is that if a user has multiple roles, across publications they are not properly reflected!!!
+    # 
+    # 
+    # 
     
     user ||= User.new # guest user (not logged in)
+    role = user.role(publication)
     if user.is_admin?
       can :manage, :all
+    elsif publication != nil && role != nil
+      if role.name == "Owner"
+        can :manage, [Publication, Section, Issue ,Post, SitePage, Arrangement , Article , Author ]
+      elsif role.name == "Editor"
+        can :read, [Publication, Section, Issue ,Post, SitePage, Arrangement , Author ]
+        can :manage, Article
+      else
+        can :read, :none
+        can :manage, Article  do |article|
+          article.try(:user_id) ==  user.id
+        end
+      end
     else
-      can :manage, Publication do |publication|
-        publication.try(:owner) == user
-      end
-      can :manage, Section do |section|
-        section.publication.try(:owner) == user
-      end
-      can :manage, Issue do |issue|
-        issue.publication.try(:owner) == user
-      end
-      can :manage, Post do |post|
-        post.publication.try(:owner) == user
-      end
-      can :manage, SitePage do |page|
-        page.publication.try(:owner) == user
-      end
-      can :manage, Arrangement do |arrangement|
-        arrangement.publication.try(:owner) == user
-      end
-      can :manage, Article do |article|
-        arrangement.publication.try(:owner) == user
-        #article.try(:editors).include?(user) || article.try(:contributor).include?(user)
-      end
-      can :manage, Author do |author|
-        author.publication.try(:owner) == user
-      end
       can :read, :none
     end
   end
+  
 end

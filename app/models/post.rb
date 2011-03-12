@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :summary
   validates_presence_of :content
   
+  attr_protected :publication_id
   
   def formatted_summary
     return RedCloth.new(self.summary, [:lite_mode, :filter_html]).to_html

@@ -22,5 +22,10 @@ class Publication < ActiveRecord::Base
     owner = Role.find_by_name('Owner')
     self.assignments.find_by_role_id(owner.id).try(:user)
   end
+  
+  def editors
+    editor = Role.find_by_name('Editor')
+    self.assignments.find_all_by_role_id(editor.id).map {|assignment| assignment.user}
+  end
 
 end

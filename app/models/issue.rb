@@ -7,4 +7,6 @@ class Issue < ActiveRecord::Base
   validates_presence_of :title
   validates_numericality_of :volume, :only_integer => true
   validates_numericality_of :issue_number, :only_integer => true
+  
+  attr_protected :publication_id
 end

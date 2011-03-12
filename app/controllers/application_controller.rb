@@ -3,8 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :determine_website
   before_filter :mailer_set_url_options
- 
-
+  before_filter :current_publication
 
   rescue_from CanCan::AccessDenied do |exception|
     render :file => "#{Rails.root}/public/403.html", :status => 403
@@ -18,6 +17,14 @@ class ApplicationController < ActionController::Base
   
   def mailer_set_url_options
     ActionMailer::Base.default_url_options[:host] = request.host_with_port
+  end  
+  
+  def current_publication  
+    @current_publication ||= Publication.find(params[:publication_id]) if params[:publication_id]
+  end
+  
+  def current_ability
+    @current_ability ||= Ability.new(current_user, current_publication)
   end
   
   
