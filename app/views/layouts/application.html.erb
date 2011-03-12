@@ -15,23 +15,32 @@
 <body id= <%= subdomain_name(request.subdomain) %> > 
   <div id="head">
     <div id="street_mag_title"><%= link_to "STREETMAG", root_url %> » <span class="subtitle">the OPEN platform for publishing magazines and journals.</span></div>
- <% if current_user && user_signed_in? %>
+ <% if current_user && user_signed_in? %>   
     <div id="user_info" class="signed_in">
-      <i>You are signed in as <b><%= current_user.email %></b></i>&nbsp;|
-      <%= link_to 'Your Mags', admin_publications_path if current_user.is_admin?%>&nbsp;|
-      <%= link_to('Edit registration', edit_user_registration_path) %>&nbsp;|
-      <%= link_to('Logout', destroy_user_session_path) %> 
+    <% if current_user.is_admin %>
+      <span class="admin_link"><%= link_to("Publications", admin_publications_path) %></span> |
+    <% end %>
+    <% current_user.assignments.each do |assignment| %>
+      <span class="mag_link">
+        <% link_to admin_publication_path(assignment.publication) do %> 
+          <%= assignment.publication.title %> » <%= assignment.role.name.titlecase %>
+        <% end %>
+      </span>&nbsp;|
+    <% end %>
+      <%= link_to('Account', edit_user_registration_path) %>&nbsp;|
+      <% link_to destroy_user_session_path do %>
+        Sign out (<i><%= current_user.email %></i>)
+      <% end %> 
     <% else %>
     <div id="user_info" class="signed_out">
-      <%= link_to('Login', new_user_session_path(:protocol => 'https://') )  %>  
+      <%= link_to('Sign in', new_user_session_path(:protocol => 'https://') )  %>  
     <% end %>
     </div>
   </div>
   
   <div id="nav">  
-    <% if !subdomain?(request.subdomain) && @publication && !@publication.new_record? && current_user.is_admin?%>
-
-        <%= link_to 'Home', admin_publication_path(@publication) %> |
+    <% if !subdomain?(request.subdomain) && @publication && !@publication.new_record? %> 
+        <%= link_to @publication.title, admin_publication_path(@publication) %> |
         <%= link_to 'News Posts', admin_publication_admin_posts_path(@publication) %> |
         <%= link_to 'Hub Pages', admin_publication_admin_site_pages_path(@publication) %> |
         <%= link_to 'Issues', admin_publication_admin_issues_path(@publication) %> | 

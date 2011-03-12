@@ -145,6 +145,52 @@ h3 { font-size: 32pt; }
   color: white;
   background-color: #655505;
 }
+#head #user_info.signed_in .mag_link {
+  color: white;
+  background-color: #b69c17;
+}
+#head #user_info.signed_in .mag_link a {
+  color: white;
+  background-color: #b69c17;
+  text-decoration: underline;
+}
+#head #user_info.signed_in .mag_link a:hover {
+  color: white;
+  background-color: #b69c17;
+  text-decoration: underline;
+}
+#head #user_info.signed_in .mag_link a:visited {
+  color: white;
+  background-color: #b69c17;
+  text-decoration: underline;
+}
+#head #user_info.signed_in .mag_link a:hover {
+  color: white;
+  background-color: #655505;
+}
+#head #user_info.signed_in .admin_link {
+  color: white;
+  background-color: #b11722;
+}
+#head #user_info.signed_in .admin_link a {
+  color: white;
+  background-color: #b11722;
+  text-decoration: underline;
+}
+#head #user_info.signed_in .admin_link a:hover {
+  color: white;
+  background-color: #b11722;
+  text-decoration: underline;
+}
+#head #user_info.signed_in .admin_link a:visited {
+  color: white;
+  background-color: #b11722;
+  text-decoration: underline;
+}
+#head #user_info.signed_in .admin_link a:hover {
+  color: white;
+  background-color: #62050b;
+}
 #nav {
   text-align: right;
   font-family: Arial, Helvetica, Serif;
