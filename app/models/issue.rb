@@ -9,4 +9,9 @@ class Issue < ActiveRecord::Base
   validates_numericality_of :issue_number, :only_integer => true
   
   attr_protected :publication_id
+  
+  
+  scope :published, lambda {
+    where("issues.is_published = ?", true).order("issues.created_at DESC")
+  }
 end

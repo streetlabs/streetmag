@@ -1,16 +1,28 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.1.0.rc6'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+
+gem 'json'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0.rc"
+  gem 'coffee-rails', "~> 3.1.0.rc"
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'
 
 gem 'mysql2'
-gem 'jquery-rails'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'ckeditor', '3.4.2.pre'
 gem 'cloudfiles'
+gem 'cocaine' #a dependency that paperclilp didn't pick up yet
 gem "paperclip-cloudfiles", :require => 'paperclip'
 #gem 'paperclip'
 gem 'devise'
@@ -19,7 +31,9 @@ gem 'bcrypt-ruby'
 gem 'RedCloth'
 gem 'acts_as_list'
 gem 'kaminari'
-gem 'thinking-sphinx', '2.0.2', :require => 'thinking_sphinx'
+gem 'thinking-sphinx',
+  :git     => 'git://github.com/freelancing-god/thinking-sphinx.git',
+  :branch  => 'rails3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -43,7 +57,6 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'rack-test'
-  gem 'autotest'
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'

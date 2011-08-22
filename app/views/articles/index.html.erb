@@ -10,7 +10,7 @@
               <%= author.name %><%= "," unless author == article.authors.last %>
           <% end %>
         </div>  
-         <% link_to article do%>
+         <%= link_to article do%>
              <%= raw sanitize textilize article.excerpts.formatted_title %>
          <% end %>
          <div class="excerpt"><%= raw sanitize textilize article.excerpts.content %></div>

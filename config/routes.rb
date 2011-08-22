@@ -2,12 +2,14 @@ require 'subdomain'
 
 Streetmag::Application.routes.draw do
   
+  devise_for :users, :protocol => "https" 
+  
   resources :site_pages,  :only => [:show], :path => 'hub'
   resources :posts,  :only => [:show], :path => 'news'
   resources :articles, :only => [:show, :index]
   resources :publications, :only => [:index, :show]
 
-  scope "admin", :module=>"admin", :as=>"admin", :constraints => { :protocol => "https" } do
+  scope "admin", :module=>"admin", :as=>"admin" do
     resources :publications do
       resources :issues, :as => "admin_issues"
       resources :arrangements, :as => "admin_arrangements"  do
@@ -23,10 +25,7 @@ Streetmag::Application.routes.draw do
     end
   end
   
-  
-  constraints :protocol => "https" do
-    devise_for :users
-  end
+
   
   #match '/mobile', :controller => 'high_voltage/pages', :action => 'show', :id => 'mobile'
   match '/home', :controller => 'high_voltage/pages', :action => 'show', :id => 'home'
@@ -40,8 +39,8 @@ Streetmag::Application.routes.draw do
   end
   
   # Redirect to https for user and admin paths
-  match "admin(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
-  match "users(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
+  #match "admin(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
+  #match "users(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
   
   root :to => 'high_voltage/pages', :action => 'show', :id => 'home'
   

@@ -14,6 +14,10 @@ class Publication < ActiveRecord::Base
   validates_format_of :name, :with => /\A[a-zA-Z]+\z/, :message => "Only letters are allowed."
   validates_uniqueness_of :name, :message => "Sorry, that name is already taken."
   
+  def news
+    posts.order("created_at DESC")
+  end
+
   def managers
     self.users
   end

@@ -41,7 +41,7 @@
     <span class="column_one"><%=truncate( arrangement.issue.title , :length => 40, :separator => ' ')unless arrangement.issue == nil %></span>
     <span><b><%= arrangement.section.name unless arrangement.section == nil %></b></span>
     <span>
-      <% link_to admin_publication_admin_arrangement_path(@publication, arrangement) do %>
+      <%= link_to admin_publication_admin_arrangement_path(@publication, arrangement) do %>
         <%= truncate(arrangement.article.title, :length => 50, :separator => ' ') unless arrangement.article == nil %>
       <% end %>
     </span> | 

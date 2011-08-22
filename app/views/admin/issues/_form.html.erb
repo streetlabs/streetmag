@@ -1,5 +1,5 @@
 <% content_for :javascript do %>
-  <%= javascript_include_tag :ckeditor %>
+  <%= javascript_include_tag 'ckeditor/ckeditor' %>
 <% end %>
 <%= simple_form_for [:admin,@publication,:admin,@issue] do |f| %>
   <% if @issue.errors.any? %>

@@ -2,7 +2,8 @@
 <html>
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "STREETMAG" %></title>
-  <%= stylesheet_link_tag stylesheet_name(request.subdomain) %>
+  <%= stylesheet_link_tag 'streetmag' %>
+  <%= stylesheet_link_tag 'mag' %>
   <%= javascript_include_tag 'jquery.min' %>
   <%= javascript_include_tag 'jquery.ui.min' %>
   <%= javascript_include_tag 'jquery.twitter' %>
@@ -22,13 +23,13 @@
     <% end %>
     <% current_user.assignments.each do |assignment| %>
       <span class="mag_link">
-        <% link_to admin_publication_path(assignment.publication) do %> 
+        <%= link_to admin_publication_path(assignment.publication) do %> 
           <%= assignment.publication.title %> » <%= assignment.role.name.titlecase %>
         <% end %>
       </span>&nbsp;|
     <% end %>
       <%= link_to('Account', edit_user_registration_path) %>&nbsp;|
-      <% link_to destroy_user_session_path do %>
+      <%= link_to destroy_user_session_path do %>
         Sign out (<i><%= current_user.email %></i>)
       <% end %> 
     <% else %>

@@ -29,7 +29,7 @@ $(function() {
             <ul>
               <% Arrangement.joins(:article).where("issue_id = ? AND section_id = ?", @issue.id, section.id).order("arrangements.position ASC").each do |arrangement| %>
                 <li>
-                <% link_to article_url(arrangement.article) do%>
+                <%= link_to article_url(arrangement.article) do%>
                   <span class="author_name_main">
                     <% arrangement.article.authors.each do |author| %>
                         <%= author.name %>, 

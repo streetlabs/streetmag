@@ -13,7 +13,7 @@ class Article < ActiveRecord::Base
   has_attached_file :photo,
                     :styles => { :medium => "300x300>", :thumb => "100x100>", :small  => "200x200>", :large  => "600x600>"  },
                     :storage => :cloud_files,
-                    :cloudfiles_credentials => "#{RAILS_ROOT}/config/rackspace_cloudfiles.yml"                                    
+                    :cloudfiles_credentials => "#{Rails.root}/config/rackspace_cloudfiles.yml"                                    
   
   define_index do
     # fields
@@ -29,7 +29,9 @@ class Article < ActiveRecord::Base
     #indexes arrangement.publication, :as => :publication, :sortable => true
     
     # attributes
-    has title, created_at, updated_at
+    has title, :as => :article_title 
+    created_at
+    updated_at
     
     set_property :field_weights => {
       :title => 20,
@@ -46,10 +48,10 @@ class Article < ActiveRecord::Base
   def editors
     return self.publication == nil ? Array.new : self.publication.managers;
   end
+  
   def contributor
     return self.publication == nil ? Array.new : self.publication.managers;
   end
-  
   
   def formatted_title
     if self.is_textiled? 

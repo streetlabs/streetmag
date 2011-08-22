@@ -7,7 +7,8 @@ class PublicationsController < ApplicationController
 
   def show
     @publication = Publication.find_by_name!(request.subdomain)
-    @issue = @publication.issues.first 
+    @issue = @publication.issues.published.first 
+    @news
   end
   
   def about

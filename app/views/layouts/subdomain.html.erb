@@ -18,13 +18,13 @@
   <div id="wrapper">
   	<div id="header">
   		<div id="logo">
-  			<% link_to root_url do %>
+  			<%= link_to root_url do %>
   			  <img src="/images/inquire/logo.png" alt="logo" title="Inquire: Journal of Comparative Literature" />
   		  <% end %>
   		</div>
   		<% if @website_publication != nil %>
   		<div id="search">
-  		  <% form_tag articles_url, :method => 'get' do %>
+  		  <%= form_tag articles_url, :method => 'get' do %>
   				<fieldset>
             <%= text_field_tag :search, params[:search], :id => 'search-text' %>
             <%= submit_tag "GO", :name => nil, :class =>"button", :id=>"search-submit" %>

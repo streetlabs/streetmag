@@ -30,7 +30,7 @@ class Admin::ArrangementsController < ApplicationController
   # GET /arrangements/new
   def new
     @publication = Publication.find(params[:publication_id])
-    @arrangement = Arrangement.new (:publication => @publication)
+    @arrangement = Arrangement.new(:publication => @publication)
   end
 
   # GET /arrangements/1/edit
