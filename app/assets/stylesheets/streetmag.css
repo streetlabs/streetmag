@@ -3,20 +3,33 @@ body {
   margin: 0px;
   padding: 0px;
 }
-h1, h2, h3, h4 { font-family: Helvetica, Arial, Serif; }
-h1 { font-size: 40pt; }
-h2 { font-size: 36pt; }
-h3 { font-size: 32pt; }
-#primary { background-color: white; }
+h1,
+h2,
+h3,
+h4 {
+  font-family: Helvetica, Arial, Serif;
+}
+h1 {
+  font-size: 40pt;
+}
+h2 {
+  font-size: 36pt;
+}
+h3 {
+  font-size: 32pt;
+}
+#primary {
+  background-color: white;
+}
 #container {
   position: relative;
   width: 800px;
   margin: auto;
   padding: 0px;
 }
-#container h1 { text-align: left; }
-#container h2 { text-align: left; }
-#container h3 { text-align: left; }
+#container h1, #container h2, #container h3 {
+  text-align: left;
+}
 #container h1 {
   font-size: 28pt;
   border-bottom: 2px solid #042841;
@@ -36,7 +49,7 @@ h3 { font-size: 32pt; }
   padding-bottom: 4px;
 }
 #container p {
-  color: #333333;
+  color: #333;
   font-size: 12pt;
   font-family: Tahoma, Verdana, Serif;
 }
@@ -53,9 +66,15 @@ h3 { font-size: 32pt; }
   border-right: 3px solid #b69c17;
   color: white;
 }
-#container .feature p { color: white; }
-#container .content { width: 360px; }
-#container .about { width: 100%; }
+#container .feature p {
+  color: white;
+}
+#container .content {
+  width: 360px;
+}
+#container .about {
+  width: 100%;
+}
 #footer {
   border-top: 2px solid #042841;
   color: #042841;
@@ -73,19 +92,7 @@ h3 { font-size: 32pt; }
   color: #adcce2;
   border-bottom: 2px double #233d50;
 }
-#head a {
-  padding: 4px;
-  color: white;
-  background-color: #154d75;
-  text-decoration: none;
-}
-#head a:hover {
-  padding: 4px;
-  color: white;
-  background-color: #154d75;
-  text-decoration: none;
-}
-#head a:visited {
+#head a, #head a:hover, #head a:visited {
   padding: 4px;
   color: white;
   background-color: #154d75;
@@ -126,17 +133,7 @@ h3 { font-size: 32pt; }
   border-bottom: 2px double #7c7032;
   border-left: 2px double #7c7032;
 }
-#head #user_info.signed_in a {
-  color: #655505;
-  background-color: #f0e6b4;
-  text-decoration: none;
-}
-#head #user_info.signed_in a:hover {
-  color: #655505;
-  background-color: #f0e6b4;
-  text-decoration: none;
-}
-#head #user_info.signed_in a:visited {
+#head #user_info.signed_in a, #head #user_info.signed_in a:hover, #head #user_info.signed_in a:visited {
   color: #655505;
   background-color: #f0e6b4;
   text-decoration: none;
@@ -149,17 +146,7 @@ h3 { font-size: 32pt; }
   color: white;
   background-color: #b69c17;
 }
-#head #user_info.signed_in .mag_link a {
-  color: white;
-  background-color: #b69c17;
-  text-decoration: underline;
-}
-#head #user_info.signed_in .mag_link a:hover {
-  color: white;
-  background-color: #b69c17;
-  text-decoration: underline;
-}
-#head #user_info.signed_in .mag_link a:visited {
+#head #user_info.signed_in .mag_link a, #head #user_info.signed_in .mag_link a:hover, #head #user_info.signed_in .mag_link a:visited {
   color: white;
   background-color: #b69c17;
   text-decoration: underline;
@@ -172,17 +159,7 @@ h3 { font-size: 32pt; }
   color: white;
   background-color: #b11722;
 }
-#head #user_info.signed_in .admin_link a {
-  color: white;
-  background-color: #b11722;
-  text-decoration: underline;
-}
-#head #user_info.signed_in .admin_link a:hover {
-  color: white;
-  background-color: #b11722;
-  text-decoration: underline;
-}
-#head #user_info.signed_in .admin_link a:visited {
+#head #user_info.signed_in .admin_link a, #head #user_info.signed_in .admin_link a:hover, #head #user_info.signed_in .admin_link a:visited {
   color: white;
   background-color: #b11722;
   text-decoration: underline;
@@ -239,7 +216,9 @@ a {
   color: #b11722;
   font-size: 14px;
 }
-a:visited { color: #793136; }
+a:visited {
+  color: #793136;
+}
 a:hover {
   color: white;
   background-color: #62050b;
@@ -266,19 +245,7 @@ form {
   border: 2px solid #154d75;
   position: relative;
 }
-form label {
-  font-family: Tahoma, Verdana, Serif;
-  font-size: 12pt;
-  padding: 4px;
-  vertical-align: middle;
-}
-form input {
-  font-family: Tahoma, Verdana, Serif;
-  font-size: 12pt;
-  padding: 4px;
-  vertical-align: middle;
-}
-form select {
+form label, form input, form select {
   font-family: Tahoma, Verdana, Serif;
   font-size: 12pt;
   padding: 4px;
@@ -304,7 +271,9 @@ form .inputs_right {
   float: right;
   width: 49%;
 }
-form .actions { text-align: center; }
+form .actions {
+  text-align: center;
+}
 form .items {
   position: relative;
   display: block;
@@ -317,14 +286,17 @@ form .item {
   display: block;
   width: 100%;
 }
-form .item_label { display: inline-block; }
+form .item_label {
+  display: inline-block;
+}
 form .item_delete {
   float: right;
   margin-top: 9px;
   margin-right: 9px;
 }
-form .item .select { display: inline-block; }
-form .item .input { display: inline-block; }
+form .item .select, form .item .input {
+  display: inline-block;
+}
 form .add_item {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -338,16 +310,7 @@ form.user_new {
   border: 1px double #655505;
   background-color: #f0e6b4;
 }
-form.user_new label {
-  font-family: Tahoma, Verdana, Serif;
-  font-size: 16pt;
-  margin: 10px;
-  margin-left: 6px;
-  vertical-align: middle;
-  color: #655505;
-  background-color: inherit;
-}
-form.user_new select {
+form.user_new label, form.user_new select {
   font-family: Tahoma, Verdana, Serif;
   font-size: 16pt;
   margin: 10px;
@@ -388,7 +351,9 @@ form.user_new #user_submit {
   display: inline-block;
   padding: 5px;
 }
-.drag_box .column_one { padding-left: 10px; }
+.drag_box .column_one {
+  padding-left: 10px;
+}
 #arrangements {
   margin: 20px;
   border: 1px solid #655505;
@@ -405,7 +370,9 @@ form.user_new #user_submit {
   clear: both;
   padding-bottom: 20px;
 }
-.editor { padding-top: 20px; }
+.editor {
+  padding-top: 20px;
+}
 .button {
   display: inline-block;
   outline: none;
@@ -413,11 +380,11 @@ form.user_new #user_submit {
   text-align: center;
   text-decoration: none;
   font: 14px/100% Arial, Helvetica, sans-serif;
-  padding: 0.5em 1em 0.55em;
+  padding: .5em 1em .55em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0.5em;
-  border-radius: 0.5em;
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -430,49 +397,30 @@ form.user_new #user_submit {
   color: white;
   background-color: inherit;
 }
-.button:hover { text-decoration: none; }
+.button:hover {
+  text-decoration: none;
+}
 .button:active {
   position: relative;
   top: 1px;
 }
-.button {
+.button, .primary_button {
   color: white;
   border: solid 1px #042841;
   background: #154d75;
   background: -webkit-gradient(linear, left top, left bottom, from(#154d75), to(#233d50));
   background: -moz-linear-gradient(top, #154d75, #233d50);
 }
-.button a {
+.button a, .primary_button a {
   color: white;
   text-decoration: none;
 }
-.primary_button {
-  color: white;
-  border: solid 1px #042841;
-  background: #154d75;
-  background: -webkit-gradient(linear, left top, left bottom, from(#154d75), to(#233d50));
-  background: -moz-linear-gradient(top, #154d75, #233d50);
-}
-.primary_button a {
-  color: white;
-  text-decoration: none;
-}
-.button:hover {
+.button:hover, .primary_button:hover {
   background: #233d50;
   background: -webkit-gradient(linear, left top, left bottom, from(#154d75), to(#042841));
   background: -moz-linear-gradient(top, #154d75, #042841);
 }
-.primary_button:hover {
-  background: #233d50;
-  background: -webkit-gradient(linear, left top, left bottom, from(#154d75), to(#042841));
-  background: -moz-linear-gradient(top, #154d75, #042841);
-}
-.button:active {
-  color: #adcce2;
-  background: -webkit-gradient(linear, left top, left bottom, from(#233d50), to(#042841));
-  background: -moz-linear-gradient(top, #233d50, #042841);
-}
-.primary_button:active {
+.button:active, .primary_button:active {
   color: #adcce2;
   background: -webkit-gradient(linear, left top, left bottom, from(#233d50), to(#042841));
   background: -moz-linear-gradient(top, #233d50, #042841);
@@ -559,12 +507,16 @@ form.user_new #user_submit {
   font-size: 14px;
   text-decoration: none;
 }
-#management a:visited { color: #555555; }
+#management a:visited {
+  color: #555555;
+}
 #management a:hover {
   color: #eeeeee;
   background-color: #555555;
 }
-#management .pagination { display: inline-block; }
+#management .pagination {
+  display: inline-block;
+}
 #management .pagination .page {
   font-size: 14px;
   padding-left: 1px;

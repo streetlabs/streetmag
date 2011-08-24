@@ -4,7 +4,7 @@ class Article < ActiveRecord::Base
   has_one :section, :through =>:arrangement
   has_many :authorships
   has_many :authors, :through => :authorships
-  accepts_nested_attributes_for :authorships, :allow_destroy => true, :reject_if => lambda { |a| a[:author_id].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :authorships, :reject_if => lambda { |a| a[:author_id].blank? }, :allow_destroy => true
   accepts_nested_attributes_for :arrangement, :allow_destroy => true
   validates_presence_of :title
   validates_presence_of :abstract
