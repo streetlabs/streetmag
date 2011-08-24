@@ -40,7 +40,7 @@ module Streetmag
     config.filter_parameters += [:password]
 
     # Enable the asset pipeline
-    config.assets.enabled = true
+    # config.assets.enabled = false
     
     # Needed for CKEditor for some reason...
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)

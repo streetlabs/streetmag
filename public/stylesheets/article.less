@@ -1,0 +1,127 @@
+//Primary Color:
+@primary: #000000;	
+@primary-medium: #444444;
+@primary-dark: #000000;
+@primary-light: #CCCCCC;
+@primary-xlight: #EEEEEE;
+//Complementary Color:
+@complement: #534616;	
+@complement-medium: #8B7423;
+@complement-dark: #2A230B;
+@complement-light: #989073;
+@complement-xlight: #BAB5A2;
+
+@link: #cc0033;
+
+.article{
+	
+	h1{
+		color:@primary;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin: 0px;
+		font-size: 50pt;
+	}
+	h2{
+		color:@complement;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin: 0px;
+		font-size: 32pt;
+	}
+
+	/* STREETMAG */
+
+	.title{
+		color:@primary;
+		font-size: 16pt;
+		font-weight: bold;
+		text-align: center;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.author{
+		color:@complement;
+		font-size: 12pt;
+		font-weight: normal;
+		text-align: center;
+	}
+	.affiliation{
+		font-size: 10pt;
+		font-weight: normal;
+		text-align: center;
+	}
+	.abstract{
+		margin-left: 72pt;
+		font-size: 10pt;
+		font-weight: normal;
+		text-align: left;
+		background-color: @primary-xlight;
+	}
+
+	.heading{
+		font-size: 14pt;
+		font-weight: bold;
+		color :@primary;
+	}
+	.subheading{
+		color:@complement;
+	}
+	.epigraph{
+		margin-left: 72pt;
+	}
+	.paragraph, p{
+		line-height:200%
+	}
+
+	ul, ol, blockquote{
+		margin-left: 72pt;
+		line-height:150%;
+	}
+
+	.caption{
+		font-size: 10pt;
+	}
+	.stanza{
+		margin-left: 72pt;
+		line-height:150%;
+	}
+
+	.important{ font-weight: bold; }
+	.emphasize{ font-style: italic;}
+
+	.note{
+		/*
+		width: 300px;
+		float: right;
+		clear: both;
+		*/
+		border: 1px dotted black;
+		background-color: @complement-xlight;
+		margin: 2px;
+		padding: 2px;
+	}
+	.definition{
+		border: 1px dashed black;
+		background-color: @complement-xlight;
+		margin: 2px;
+		padding: 2px;
+	}
+
+	.endnotes{
+		margin-top: 10px;
+		padding-top: 10px;
+		border-top: 1px solid @complement-dark;
+		color: @complement;
+		font-size: 10pt;
+	}
+	.citation{
+		color: @complement;
+		line-height:150%;
+	}
+	.bio{
+		color: @primary;
+		font-size: 10pt;	
+	}
+
+}

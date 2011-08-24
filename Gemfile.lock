@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/freelancing-god/thinking-sphinx.git
-  revision: dc98d802210f02558a6a3bc5bb6486bec574713e
+  revision: f44dd2dff3aed646b11fd12ce09d243ccd42c931
   branch: rails3
   specs:
     thinking-sphinx (2.0.5)
@@ -61,13 +61,6 @@ GEM
     cloudfiles (1.4.17)
       mime-types (>= 1.16)
     cocaine (0.2.0)
-    coffee-rails (3.1.0.rc.6)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.1.0.rc1)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.1.2)
     cucumber (1.0.2)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
@@ -85,14 +78,12 @@ GEM
       warden (~> 1.0.3)
     diff-lcs (1.1.2)
     erubis (2.7.0)
-    execjs (1.2.4)
-      multi_json (~> 1.0)
-    factory_girl (2.0.4)
+    factory_girl (2.0.5)
     factory_girl_rails (1.1.0)
       factory_girl (~> 2.0.0)
       railties (>= 3.0.0)
     ffi (1.0.9)
-    gherkin (2.4.14)
+    gherkin (2.4.15)
       json (>= 1.4.6)
     high_voltage (1.0.0)
     hike (1.2.1)
@@ -144,7 +135,7 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2)
-    rdoc (3.9.2)
+    rdoc (3.9.3)
     riddle (1.4.0)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
@@ -160,12 +151,7 @@ GEM
       railties (~> 3.0)
       rspec (~> 2.6.0)
     rubyzip (0.9.4)
-    sass (3.1.7)
-    sass-rails (3.1.0.rc.6)
-      actionpack (~> 3.1.0.rc6)
-      railties (~> 3.1.0.rc6)
-      sass (>= 3.1.4)
-    selenium-webdriver (2.4.0)
+    selenium-webdriver (2.5.0)
       childprocess (>= 0.2.1)
       ffi (>= 1.0.7)
       json_pure
@@ -186,9 +172,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
-    uglifier (1.0.1)
-      execjs (>= 0.3.0)
-      multi_json (>= 1.0.2)
     warden (1.0.5)
       rack (>= 1.0)
     xpath (0.1.4)
@@ -206,7 +189,6 @@ DEPENDENCIES
   ckeditor (~> 3.6.0)
   cloudfiles
   cocaine
-  coffee-rails (~> 3.1.0.rc)
   cucumber
   cucumber-rails
   database_cleaner
@@ -222,9 +204,7 @@ DEPENDENCIES
   rack-test
   rails (= 3.1.0.rc6)
   rspec-rails
-  sass-rails (~> 3.1.0.rc)
   shoulda
   simple_form
   spork
   thinking-sphinx!
-  uglifier

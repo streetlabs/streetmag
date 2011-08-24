@@ -1,0 +1,124 @@
+.properties {
+  padding: 10px;
+  border: 1px double #2a230b;
+  background-color: #d3d0c4;
+  margin: 20px;
+}
+.mag_index {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 800px;
+  margin: 20px;
+}
+.mag {
+  margin: 20px;
+  padding-left: 10px;
+  border: 10px solid #8b7423;
+  border-left: 100px solid #8b7423;
+}
+.mag h1 {
+  color: #000000;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  margin: 0px;
+  font-size: 40pt;
+  text-align: left;
+}
+.mag h2 {
+  color: #534616;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  margin: 0px;
+  font-size: 24pt;
+  text-align: left;
+}
+.mag h3 { font-size: 24pt; }
+.mag h3 a { font-size: 24pt; }
+.mag a { color: #cc0033; }
+.mag a:visited { color: #cc0033; }
+.mag a:hover {
+  color: white;
+  background-color: #cc0033;
+}
+.mag .title {
+  color: #000000;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.mag .author {
+  color: #534616;
+  font-size: 12pt;
+  font-weight: normal;
+  text-align: center;
+}
+.mag .affiliation {
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: center;
+}
+.mag .abstract {
+  margin-left: 72pt;
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: left;
+  background-color: #eeeeee;
+}
+.mag .heading {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #000000;
+}
+.mag .subheading { color: #534616; }
+.mag .epigraph { margin-left: 72pt; }
+.mag .paragraph { line-height: 200%; }
+.mag p { line-height: 200%; }
+.mag ul {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.mag ol {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.mag blockquote {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.mag .caption { font-size: 10pt; }
+.mag .stanza {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.mag .important { font-weight: bold; }
+.mag .emphasize { font-style: italic; }
+.mag .note {
+  border: 1px dotted black;
+  background-color: #d3d0c4;
+  margin: 2px;
+  padding: 2px;
+}
+.mag .definition {
+  border: 1px dashed black;
+  background-color: #d3d0c4;
+  margin: 2px;
+  padding: 2px;
+}
+.mag .endnotes {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #2a230b;
+  color: #534616;
+  font-size: 10pt;
+}
+.mag .citation {
+  color: #534616;
+  line-height: 150%;
+}
+.mag .bio {
+  color: #000000;
+  font-size: 10pt;
+}

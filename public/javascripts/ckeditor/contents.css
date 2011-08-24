@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -14,12 +14,119 @@ body
 
 	/* Remove the background color to make it transparent */
 	background-color: #fff;
+	
+	/*  STREETMAG */
+	font-family: Times, 'Times New Roman', Verdana, sans-serif;
+	font-size: 12pt;
+	font-weight: normal;
+	text-align: left;
 }
 
-ol,ul,dl
+html
 {
-	/* IE7: reset rtl list margin. (#7334) */
-	*margin-right:0px;
-	/* preserved spaces for rtl list item bullets. (#6249)*/
-    padding-right:40px;
+	/* #3658: [IE6] Editor document has horizontal scrollbar on long lines
+	To prevent this misbehavior, we show the scrollbar always */
+	_overflow-y: scroll;
+	/* #6341: The text cursor must be set on the editor area. */
+	cursor: text;
+	/* #6632: Avoid having "text" shape of cursor in IE7 scrollbars.*/
+	*cursor:auto;
+}
+
+img:-moz-broken
+{
+	-moz-force-broken-image-icon : 1;
+	width : 24px;
+	height : 24px;
+}
+img, input, textarea
+{
+	cursor: default;
+}
+
+/* STREETMAG */
+
+.title{
+	font-size: 16pt;
+	font-weight: bold;
+	text-align: center;
+}
+.author{
+	font-size: 12pt;
+	font-weight: normal;
+	text-align: center;
+}
+.affiliation{
+	font-size: 10pt;
+	font-weight: normal;
+	text-align: center;
+}
+.abstract{
+	margin-left: 72pt;
+	font-size: 10pt;
+	font-weight: normal;
+	text-align: left;
+	background-color: #CCCCCC;
+}
+
+.heading{
+	font-size: 14pt;
+	font-weight: bold;
+	color: #333366;
+}
+.subheading{
+	color: #333366;
+}
+.epigraph{
+	margin-left: 72pt;
+	background-color: #CCCCCC;
+}
+.paragraph, p{
+	line-height:200%
+}
+
+ul, ol, blockquote{
+	margin-left: 72pt;
+	line-height:150%;
+}
+
+.caption{
+	font-size: 10pt;
+	background-color: #DDFFFF;
+}
+.stanza{
+	margin-left: 72pt;
+	line-height:150%;
+	background-color: #FFDDFF;
+}
+
+.important{ font-weight: bold; }
+.emphasize{ font-style: italic;}
+
+.note{
+	/*
+	width: 300px;
+	float: right;
+	clear: both;
+	*/
+	border: 1px dotted black;
+	background-color: #999999;
+	margin: 2px;
+	padding: 2px;
+}
+.definition{
+	border: 1px dashed black;
+	background-color: #AAAAAA;
+	margin: 2px;
+	padding: 2px;
+}
+	
+.endnotes{
+	font-size: 10pt;
+}
+.citation{
+	line-height:150%;
+}
+.bio{
+	font-size: 10pt;	
 }

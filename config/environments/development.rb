@@ -26,7 +26,7 @@ Streetmag::Application.configure do
   IMAGE_MAGICK_BIN_PATH = "/usr/local/imagemagick/bin"
 
   # Do not compress assets
-  config.assets.compress = false
+  # config.assets.compress = false
   
 end
 

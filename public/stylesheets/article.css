@@ -1,0 +1,95 @@
+.article h1 {
+  color: #000000;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0px;
+  font-size: 50pt;
+}
+.article h2 {
+  color: #534616;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px;
+  font-size: 32pt;
+}
+.article .title {
+  color: #000000;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.article .author {
+  color: #534616;
+  font-size: 12pt;
+  font-weight: normal;
+  text-align: center;
+}
+.article .affiliation {
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: center;
+}
+.article .abstract {
+  margin-left: 72pt;
+  font-size: 10pt;
+  font-weight: normal;
+  text-align: left;
+  background-color: #eeeeee;
+}
+.article .heading {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #000000;
+}
+.article .subheading { color: #534616; }
+.article .epigraph { margin-left: 72pt; }
+.article .paragraph { line-height: 200%; }
+.article p { line-height: 200%; }
+.article ul {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.article ol {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.article blockquote {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.article .caption { font-size: 10pt; }
+.article .stanza {
+  margin-left: 72pt;
+  line-height: 150%;
+}
+.article .important { font-weight: bold; }
+.article .emphasize { font-style: italic; }
+.article .note {
+  border: 1px dotted black;
+  background-color: #bab5a2;
+  margin: 2px;
+  padding: 2px;
+}
+.article .definition {
+  border: 1px dashed black;
+  background-color: #bab5a2;
+  margin: 2px;
+  padding: 2px;
+}
+.article .endnotes {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #2a230b;
+  color: #534616;
+  font-size: 10pt;
+}
+.article .citation {
+  color: #534616;
+  line-height: 150%;
+}
+.article .bio {
+  color: #000000;
+  font-size: 10pt;
+}
