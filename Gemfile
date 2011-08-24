@@ -20,7 +20,7 @@ gem 'jquery-rails'
 gem 'mysql2'
 gem 'high_voltage'
 gem 'simple_form'
-gem 'ckeditor', '3.4.2.pre'
+gem "ckeditor", "~> 3.6.0"
 gem 'cloudfiles'
 gem 'cocaine' #a dependency that paperclilp didn't pick up yet
 gem "paperclip-cloudfiles", :require => 'paperclip'

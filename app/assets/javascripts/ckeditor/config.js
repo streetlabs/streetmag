@@ -1,7 +1,8 @@
-/*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+﻿/*
+Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
+
 
 
 CKEDITOR.addStylesSet( 'streetmag_styles',
@@ -33,15 +34,35 @@ CKEDITOR.addStylesSet( 'streetmag_styles',
 
 CKEDITOR.editorConfig = function( config )
 {
-  config.PreserveSessionOnFileBrowser = true;
-  // Define changes to default configuration here. For example:
-  config.language = 'en';
-  // config.uiColor = '#AADC6E';
+	// Define changes to default configuration here. For example:
+	// config.language = 'fr';
+	// config.uiColor = '#AADC6E';
+	
+  /* Filebrowser routes */
+  // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
+  config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
 
-  //config.ContextMenu = ['Generic','Anchor','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField','ImageButton','Button','BulletedList','NumberedList','Table','Form'] ; 
+  // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Flash dialog.
+  config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
+
+  // The location of a script that handles file uploads in the Flash dialog.
+  config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
   
-  config.height = '400px';
-  config.width = '100px';
+  // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Link tab of Image dialog.
+  config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
+
+  // The location of an external file browser, that should be launched when "Browse Server" button is pressed in the Image dialog.
+  config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
+
+  // The location of a script that handles file uploads in the Image dialog.
+  config.filebrowserImageUploadUrl = "/ckeditor/pictures";
+  
+  // The location of a script that handles file uploads.
+  config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+  
+
+  //config.ContextMenu = ['Generic','Anchor','Flash','Select','Textarea','Checkbox','Radio','TextField','HiddenField',  ,'Button','BulletedList','NumberedList','Table','Form'] ; 
+  
   
   //config.resize_enabled = false;
   //config.resize_maxHeight = 2000;
@@ -74,7 +95,7 @@ CKEDITOR.editorConfig = function( config )
 	config.toolbar_Article =
 	
 	[
-    	['Styles','Format','-','Link','Unlink','Anchor','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','Find','Replace','-','PasteText','PasteFromWord'],
+    	['Styles','Format','-','Image','Link','Unlink','Anchor','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','Find','Replace','-','PasteText','PasteFromWord'],
 		['RemoveFormat','-','Bold','Italic','Strike','-','Subscript','Superscript','SpecialChar'],
 	    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
 	    ['Table','-','ShowBlocks','-','Source','-','Maximize'],
@@ -85,7 +106,7 @@ CKEDITOR.editorConfig = function( config )
 //	config.toolbar_Article =
 	config.toolbar_Admin =
 	[
-    	['Styles','Format','-','Link','Unlink','Anchor','-','Find','Replace','-','PasteText','PasteFromWord','-','ShowBlocks'],
+    	['Styles','Format','-','Image','Link','Unlink','Anchor','-','Find','Replace','-','PasteText','PasteFromWord','-','ShowBlocks'],
 		['RemoveFormat','-','Bold','Italic','Strike','-','Subscript','Superscript','SpecialChar'],
 	    ['NumberedList','BulletedList','-','Blockquote'],
 	    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
@@ -95,4 +116,5 @@ CKEDITOR.editorConfig = function( config )
 	config.stylesCombo_stylesSet = 'streetmag_styles';
 	
 };
+
 

@@ -43,7 +43,7 @@ module Streetmag
     config.assets.enabled = true
     
     # Needed for CKEditor for some reason...
-    config.autoload_paths += %W( #{config.root}/app/models/ckeditor )
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     
   end
 end

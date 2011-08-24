@@ -55,8 +55,9 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.2.1)
       ffi (~> 1.0.6)
-    ckeditor (3.4.2.pre)
-      mime-types (>= 1.16)
+    ckeditor (3.6.1)
+      mime-types (~> 1.16)
+      orm_adapter (~> 0.0.5)
     cloudfiles (1.4.17)
       mime-types (>= 1.16)
     cocaine (0.2.0)
@@ -202,7 +203,7 @@ DEPENDENCIES
   bcrypt-ruby
   cancan (= 1.6.0)
   capybara
-  ckeditor (= 3.4.2.pre)
+  ckeditor (~> 3.6.0)
   cloudfiles
   cocaine
   coffee-rails (~> 3.1.0.rc)
