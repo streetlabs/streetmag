@@ -59,6 +59,7 @@
   		<div id="col1">
 		
   			<h2><%= @website_publication ? @website_publication.title : "unnamed"%><%= @website_publication && @website_publication.subtitle  ? ": "+@website_publication.subtitle : ""%>  </h2>
+  			<p style="font-size: 11px; font-weight: lighter;">Brought to you by Graduate Students from the Program in Comparative Literature <br />at the University of Alberta</p>
   			<p>ISSN <%= @website_publication && @website_publication.issn ? @website_publication.issn : "0" %><br />
   			Email: <a href="mailto:inquire@ualberta.ca">inquire [at] ualberta.ca</a></p>
 			
