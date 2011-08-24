@@ -1,7 +1,7 @@
 <% content_for :javascript do %>
   <%= javascript_include_tag 'ckeditor/ckeditor' %>
 <% end %>
-<%= simple_form_for [:admin,@publication,:admin,@issue] do |f| %>
+<%= simple_form_for [:admin,@publication,:admin,@issue], :html => {:multipart => true} do |f| %>
   <% if @issue.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
@@ -20,6 +20,13 @@
     <%= f.input :issue_number %>
     <%= f.input :publication_date, :discard_day => true, :order => [:month, :year] %>
     <%= f.input :is_published %>
+    
+    <div class="items">
+      <%= f.simple_fields_for :cover_images do |builder| %>  
+        <%= render 'cover_image_partial', :f => builder %>  
+      <% end %>
+      <div class="add_item button primary_button"><%= link_to_add_partial "Add Cover Image", f, :cover_images %>  </div>
+    </div>
   </div>
 
   <div class="actions">

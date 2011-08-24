@@ -14,9 +14,9 @@ $(function() {
 
 		<div id="mainBlock">
 			<div id="slideshow">
-    		<img src="/images/inquire/rotator/inquire_01.jpg" alt="" title="" width="480px" height="319px" />
-        <img src="/images/inquire/rotator/inquire_02.jpg" alt="" title="" width="480px" height="319px" />
-        <img src="/images/inquire/rotator/inquire_03.jpg" alt="" title="" width="480px" height="319px" />
+			  <% @issue.cover_images.each do |cover_image| %>
+          <%= image_tag cover_image.photo.url(:large) %>
+        <% end %>
     	</div>
 			
 					

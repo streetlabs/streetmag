@@ -36,6 +36,10 @@
       <b>Publication:</b>
       <%= @issue.publication_id %>
     </p>
+    
+    <% @issue.cover_images.each do |cover_image| %>
+      <%= image_tag cover_image.photo.url(:thumb) %>
+    <% end %>
 
     <% if @issue.is_published? %>
       <p><b>this issue is published!</b></p>
