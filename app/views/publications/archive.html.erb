@@ -1,0 +1,59 @@
+<% content_for :javascript do %>
+
+<script type="text/javascript">
+$(function() {
+    $("#slideshow").cycle();
+    $('#tweets').liveTwitter('inquire_jcl', {mode: 'user_timeline', rate:300000, limit: 5 });
+  });
+</script>
+
+<% end %>
+
+
+<div id="page">
+
+		<div id="mainBlock">
+			<div id="slideshow">
+			  <% @issue.cover_images.each do |cover_image| %>
+          <%= image_tag cover_image.photo.url(:large) %>
+        <% end %>
+    	</div>
+			
+					
+			<div id="volume">
+				<div id="issue">Issue <%= @issue.volume %>.<%= @issue.issue_number %>: <%=  Date::MONTHNAMES[@issue.publication_date.month] %> <%= @issue.publication_date.year %></div>
+				<div id="issueTitle"><%= @issue.title %></div>
+				
+          <% @issue.sections.order("section_id asc").each do |section| %>
+            <h3><%= section.name %></h3>
+            <ul>
+              <% Arrangement.joins(:article).where("issue_id = ? AND section_id = ?", @issue.id, section.id).order("arrangements.position ASC").each do |arrangement| %>
+                <li>
+                <%= link_to article_url(arrangement.article) do%>
+                  <span class="author_name_main">
+                    <% arrangement.article.authors.each do |author| %>
+                        <%= author.name %>, 
+                    <% end %>
+                  </span> 
+                  &lsquo;<%= raw sanitize arrangement.article.formatted_title %>&rsquo; <!-- Page #<%= arrangement.position %> -->
+                <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+				
+			</div>
+		</div>
+			
+	
+		<div id="news">
+      <%= render 'news_feed'%>
+			<%= render 'twitter' %>
+		</div>
+		
+		<%= render 'sidebar' %>
+		
+		<div style="clear: both;">&nbsp;</div><br clear="left" />
+				
+	
+</div>

@@ -35,6 +35,7 @@ Streetmag::Application.routes.draw do
     match '/about' => 'publications#about'
     match '/people' => 'publications#people'
     match '/submissions' => 'publications#submissions' 
+    match '/archive' => 'publications#archive'
     match '/hub/:id' => 'site_pages#show'
   end
   
