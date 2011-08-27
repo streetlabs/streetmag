@@ -7,6 +7,9 @@ class Arrangement < ActiveRecord::Base
   
   attr_protected :publication_id
   
+  scope :ordered, order("arrangements.position ASC")
+  scope :grouped, joins(:section).group("issue_id").group("section_id").order("issue_id, sections.position, arrangements.position ASC")
+  
   acts_as_list
   
   define_index do

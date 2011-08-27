@@ -1,7 +1,7 @@
 <div id="sidebar">
 	<h2>CL Hub</h2>
 	<ul>
-	  <% @website_publication.sections.where("is_static = ?", true).each do |section| %>
+	  <% @website_publication.sections.hub.each do |section| %>
 	    <% if section.articles.first != nil %>
       <li>
         <%= link_to section.articles.first do%>

@@ -1,3 +1,7 @@
+.article {
+  /* STREETMAG */
+
+}
 .article h1 {
   color: #000000;
   padding-top: 30px;
@@ -43,30 +47,39 @@
   font-weight: bold;
   color: #000000;
 }
-.article .subheading { color: #534616; }
-.article .epigraph { margin-left: 72pt; }
-.article .paragraph { line-height: 200%; }
-.article p { line-height: 200%; }
-.article ul {
+.article .subheading {
+  color: #534616;
+}
+.article .epigraph {
+  margin-left: 72pt;
+}
+.article .paragraph, .article p {
+  line-height: 200%;
+}
+.article ul, .article ol, .article blockquote {
   margin-left: 72pt;
   line-height: 150%;
 }
-.article ol {
-  margin-left: 72pt;
-  line-height: 150%;
+.article .caption {
+  font-size: 10pt;
 }
-.article blockquote {
-  margin-left: 72pt;
-  line-height: 150%;
-}
-.article .caption { font-size: 10pt; }
 .article .stanza {
   margin-left: 72pt;
   line-height: 150%;
 }
-.article .important { font-weight: bold; }
-.article .emphasize { font-style: italic; }
+.article .important {
+  font-weight: bold;
+}
+.article .emphasize {
+  font-style: italic;
+}
 .article .note {
+  /*
+		width: 300px;
+		float: right;
+		clear: both;
+		*/
+
   border: 1px dotted black;
   background-color: #bab5a2;
   margin: 2px;

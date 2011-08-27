@@ -10,6 +10,9 @@ class Article < ActiveRecord::Base
   validates_presence_of :abstract
   validates_presence_of :content
   # Paperclip
+  
+  scope :unassigned, includes(:arrangement).where("arrangements.id is null OR section_id is null")
+  
   has_attached_file :photo,
                     :styles => { :medium => "300x300>", :thumb => "100x100>", :small  => "200x200>", :large  => "600x600>"  },
                     :storage => :cloud_files,

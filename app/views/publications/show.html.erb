@@ -24,7 +24,7 @@ $(function() {
 				<div id="issue">Issue <%= @issue.volume %>.<%= @issue.issue_number %>: <%=  Date::MONTHNAMES[@issue.publication_date.month] %> <%= @issue.publication_date.year %></div>
 				<div id="issueTitle"><%= @issue.title %></div>
 				
-          <% @issue.sections.order("section_id asc").each do |section| %>
+          <% @issue.sections.ordered.each do |section| %>
             <h3><%= section.name %></h3>
             <ul>
               <% Arrangement.joins(:article).where("issue_id = ? AND section_id = ?", @issue.id, section.id).order("arrangements.position ASC").each do |arrangement| %>

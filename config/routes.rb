@@ -14,6 +14,7 @@ Streetmag::Application.routes.draw do
       resources :issues, :as => "admin_issues"
       resources :arrangements, :as => "admin_arrangements"  do
         collection do
+          get 'hub'
           post 'sort'
         end
       end

@@ -301,6 +301,12 @@ form .add_item {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+.admin h5 {
+  margin: 5px;
+}
+.admin h4 {
+  margin-left: 20px;
+}
 form.user_new {
   width: 280px;
   margin: auto;

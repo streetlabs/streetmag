@@ -5,13 +5,17 @@ class Admin::ArrangementsController < ApplicationController
   # GET /arrangements
   def index
     @publication = Publication.find(params[:publication_id])
-    @issue = @publication.issues.first
-    @arrangements = @publication.arrangements.order("section_id, issue_id DESC, arrangements.position ASC");
+    @issues = @publication.issues.includes(:arrangements, :sections).order(" arrangements.issue_id DESC, sections.position, arrangements.position ASC").page(params[:page]).per(1);
+  end
+  
+  def hub
+    @publication = Publication.find(params[:publication_id])
+    @arrangements = Arrangement.where("arrangements.publication_id = ? AND issue_id IS NULL", @publication.id ).includes(:section).order("sections.position, arrangements.position ASC")
   end
 
   def sort
     @publication = Publication.find(params[:publication_id])
-    @arrangements = Arrangement.all
+    @arrangements = Arrangement.find(params['arrangement'])
     @arrangements.each do |arrangement|
       arrangement.position = params['arrangement'].index(arrangement.id.to_s) + 1
       arrangement.save

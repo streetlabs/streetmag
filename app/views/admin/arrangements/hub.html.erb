@@ -27,18 +27,15 @@
 <% end %>
 
 <div class="admin">
-<h1>Arrangements :: Issues</h1>
-<h4><%= link_to "Arrange Hub Articles", hub_admin_publication_admin_arrangements_path(@publication) %></h4>
+<h1>Arrangements :: Hub Sections</h1>
+<h4><%= link_to "Arrange Issue Articles", admin_publication_admin_arrangements_path(@publication) %></h4>
   <div id="management">
     <span class="tools">tools</span>
     <%= link_to '+ New Arrangement', new_admin_publication_admin_arrangement_path(@publication)  %>
   </div>
 
-<% @issues.each do |issue| %>
-<h4>ISSUE: <%= issue.title %></h4>
 <ul id="arrangements">
-
-<% issue.arrangements.each do |arrangement| %>
+<% @arrangements.each do |arrangement| %>
   <li id="arrangement_<%= arrangement.id %>" class="drag_box">
     <span class="handle">&nbsp;:::&nbsp;</span>
     <span class="column_one"><%=truncate( arrangement.issue.title , :length => 40, :separator => ' ')unless arrangement.issue == nil %></span>
@@ -52,15 +49,8 @@
     <span class="destroy"><%= link_to 'Destroy', admin_publication_admin_arrangement_path(@publication, arrangement) , :confirm => 'Are you sure?', :method => :delete %></span>
   </li>
 <% end %>
-
 </ul>
 
-<% end %>
-
-
-<br />
-
-<%= paginate @issues %>
 
 <br />
 

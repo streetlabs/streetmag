@@ -8,7 +8,7 @@
   <%= javascript_include_tag 'jquery.ui.min' %>
   <%= javascript_include_tag 'jquery.twitter' %>
   <%= javascript_include_tag 'jquery.cycle.lite' %>
-  <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag 'jquery_ujs' %>
   <%= javascript_include_tag 'application' %>
   <%= yield :javascript %>
   <%= csrf_meta_tag %>
@@ -29,7 +29,7 @@
       </span>&nbsp;|
     <% end %>
       <%= link_to('Account', edit_user_registration_path) %>&nbsp;|
-      <%= link_to destroy_user_session_path do %>
+      <%= link_to destroy_user_session_path, :method => :delete  do %>
         Sign out (<i><%= current_user.email %></i>)
       <% end %> 
     <% else %>
@@ -43,7 +43,7 @@
     <% if !subdomain?(request.subdomain) && @publication && !@publication.new_record? %> 
         <%= link_to @publication.title, admin_publication_path(@publication) %> |
         <%= link_to 'News Posts', admin_publication_admin_posts_path(@publication) %> |
-        <%= link_to 'Hub Pages', admin_publication_admin_site_pages_path(@publication) %> |
+        <!-- <% link_to 'Hub Pages', admin_publication_admin_site_pages_path(@publication) %> | -->
         <%= link_to 'Issues', admin_publication_admin_issues_path(@publication) %> | 
         <%= link_to 'Sections', admin_publication_admin_sections_path(@publication) %> | 
         <%= link_to 'Article Arrangement', admin_publication_admin_arrangements_path(@publication) %> | 

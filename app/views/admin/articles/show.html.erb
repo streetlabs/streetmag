@@ -23,8 +23,6 @@
     <b>Abstract:</b>
     <%= raw @article.abstract %>
   </p>
-
-
   <p>
     <b>Notes:</b>
     <%=  raw @article.notes %>
@@ -33,11 +31,6 @@
   <p>
     <b>Cited works:</b>
     <%= raw @article.cited_works %>
-  </p>
-
-  <p>
-    <b>Photo:</b>
-    <img src="<%= @article.photo(:thumb) %>" alt="<%= @article.photo.name%>" title="<%= @article.photo.name%>" />
   </p>
   <p>
     <b>Excerpt:</b>

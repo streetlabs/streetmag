@@ -16,6 +16,8 @@
   padding-left: 10px;
   border: 10px solid #8b7423;
   border-left: 100px solid #8b7423;
+  /* STREETMAG */
+
 }
 .mag h1 {
   color: #000000;
@@ -33,10 +35,18 @@
   font-size: 24pt;
   text-align: left;
 }
-.mag h3 { font-size: 24pt; }
-.mag h3 a { font-size: 24pt; }
-.mag a { color: #cc0033; }
-.mag a:visited { color: #cc0033; }
+.mag h3 {
+  font-size: 24pt;
+}
+.mag h3 a {
+  font-size: 24pt;
+}
+.mag a {
+  color: #cc0033;
+}
+.mag a:visited {
+  color: #cc0033;
+}
 .mag a:hover {
   color: white;
   background-color: #cc0033;
@@ -72,30 +82,39 @@
   font-weight: bold;
   color: #000000;
 }
-.mag .subheading { color: #534616; }
-.mag .epigraph { margin-left: 72pt; }
-.mag .paragraph { line-height: 200%; }
-.mag p { line-height: 200%; }
-.mag ul {
+.mag .subheading {
+  color: #534616;
+}
+.mag .epigraph {
+  margin-left: 72pt;
+}
+.mag .paragraph, .mag p {
+  line-height: 200%;
+}
+.mag ul, .mag ol, .mag blockquote {
   margin-left: 72pt;
   line-height: 150%;
 }
-.mag ol {
-  margin-left: 72pt;
-  line-height: 150%;
+.mag .caption {
+  font-size: 10pt;
 }
-.mag blockquote {
-  margin-left: 72pt;
-  line-height: 150%;
-}
-.mag .caption { font-size: 10pt; }
 .mag .stanza {
   margin-left: 72pt;
   line-height: 150%;
 }
-.mag .important { font-weight: bold; }
-.mag .emphasize { font-style: italic; }
+.mag .important {
+  font-weight: bold;
+}
+.mag .emphasize {
+  font-style: italic;
+}
 .mag .note {
+  /*
+		width: 300px;
+		float: right;
+		clear: both;
+		*/
+
   border: 1px dotted black;
   background-color: #d3d0c4;
   margin: 2px;

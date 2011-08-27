@@ -8,4 +8,9 @@ class Section < ActiveRecord::Base
   validates_presence_of :publication
   
   attr_protected :publication_id
+  
+  scope :hub, where("is_static = ?", true).order("sections.position ASC")
+  scope :main, where("is_static = ?", false).order("sections.position ASC")
+  scope :ordered, order("sections.position ASC")
+  
 end

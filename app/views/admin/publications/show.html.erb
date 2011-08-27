@@ -29,8 +29,15 @@
   <h4>
     <%= link_to 'Sections', admin_publication_admin_sections_path(@publication) %>
   </h4>
+  <h5>MAIN</h5>
   <ul>
-    <% @publication.sections.each do |section| %>
+    <% @publication.sections.main.each do |section| %>
+      <li><%= section.name %></li>
+    <% end %>
+  </ul>
+  <h5>HUB</h5>
+  <ul>
+    <% @publication.sections.hub.each do |section| %>
       <li><%= section.name %></li>
     <% end %>
   </ul>

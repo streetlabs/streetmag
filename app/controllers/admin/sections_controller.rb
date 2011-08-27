@@ -6,7 +6,7 @@ class Admin::SectionsController < ApplicationController
   # GET /sections.xml
   def index
     @publication = Publication.find(params[:publication_id])
-    @sections = @publication.sections
+    @sections = @publication.sections.order("sections.position ASC")
   end
 
   # GET /sections/1
