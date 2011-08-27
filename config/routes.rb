@@ -41,8 +41,8 @@ Streetmag::Application.routes.draw do
   end
   
   # Redirect to https for user and admin paths
-  #match "admin(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
-  #match "users(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
+  match "admin(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
+  match "users(/*path)", :to => redirect { |_, request| "https://" + request.host_with_port + request.fullpath }
   
   root :to => 'high_voltage/pages', :action => 'show', :id => 'home'
   
