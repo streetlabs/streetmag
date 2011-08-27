@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include UrlHelper
   protect_from_forgery
-  config.force_ssl if Rails.env.production?
+  force_ssl
   before_filter :determine_website
   before_filter :mailer_set_url_options
   before_filter :current_publication

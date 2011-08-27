@@ -1,5 +1,6 @@
 class Admin::SectionsController < ApplicationController
   before_filter :authenticate_user!
+  force_ssl
   load_and_authorize_resource
   
   # GET /sections

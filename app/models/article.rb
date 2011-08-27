@@ -14,7 +14,7 @@ class Article < ActiveRecord::Base
   scope :unassigned, includes(:arrangement).where("arrangements.id is null OR section_id is null")
   
   has_attached_file :photo,
-                    :styles => { :medium => "300x300>", :thumb => "100x100>", :small  => "200x200>", :large  => "600x600>"  },
+                    :styles => { :medium => "300x300>", :thumb => "100x100>", :large  => "600x600>"  },
                     :storage => :cloud_files,
                     :cloudfiles_credentials => "#{Rails.root}/config/rackspace_cloudfiles.yml"                                    
   
