@@ -2,7 +2,7 @@ require 'subdomain'
 
 Streetmag::Application.routes.draw do
   
-  devise_for :users, :protocol => "https" 
+  devise_for :users, :controllers => { :registrations => "admin/registrations", :sessions => "admin/sessions", :confirmations => "admin/confirmations", :passwords => "admin/passwords", :unlocks => "admin/unlocks"}
   
   resources :site_pages,  :only => [:show], :path => 'hub'
   resources :posts,  :only => [:show], :path => 'news'
