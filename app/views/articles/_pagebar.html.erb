@@ -1,13 +1,18 @@
 <div id="pageBar">
+  <% unless @issue.nil? %>
+  <h3><%= @issue.title %></h3>
+  <h4>Issue <%= @issue.volume %>.<%= @issue.issue_number %>: <%=  Date::MONTHNAMES[@issue.publication_date.month] %> <%= @issue.publication_date.year %></h4>
+  <% end %>
+  
 	<h2><%= @article.section.name %></h2>
 	<ul>
-	  <% @article.section.articles.order("arrangements.position ASC").each do |article| %>
+	  <% @articles.each do |article| %>
       <% if @article.id == article.id %>
       <li class="current_article">
       <% else %>
       <li class="other_article">
       <% end %>
-        <%= link_to article do%>
+        <%= link_to article do %>
           <%= raw sanitize article.formatted_title %><br />
           <span class="author_name">&ndash; 
             <% article.authors.each do |author| %>

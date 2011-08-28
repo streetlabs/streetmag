@@ -2,9 +2,9 @@
 	<h2>CL Hub</h2>
 	<ul>
 	  <% @website_publication.sections.hub.each do |section| %>
-	    <% if section.articles.first != nil %>
+	    <% if section.articles.last != nil %>
       <li>
-        <%= link_to section.articles.first do%>
+        <%= link_to section.articles.order("position ASC").first do%>
           <%= section.name %>
         <% end %>
       </li>

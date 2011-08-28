@@ -358,6 +358,21 @@
   color: #000;
   text-align: right;
 }
+#inquire #pageBar h3 {
+  margin: 0px;
+  padding: 3px;
+  font-size: 24px;
+  color: #000;
+  text-align: right;
+}
+#inquire #pageBar h4 {
+  margin: 0px;
+  padding: 3px;
+  padding-bottom: 24px;
+  font-size: 16px;
+  color: #000;
+  text-align: right;
+}
 #inquire #news h3, #inquire #board h3 {
   font-size: 15px;
   margin: 0;
