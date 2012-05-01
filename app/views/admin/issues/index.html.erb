@@ -11,6 +11,7 @@
   <tr>
     <th>Published</th>
     <th>Title</th>
+    <th>Descriptor</th>
     <th>Volume</th>
     <th>Number</th>
     <th>Year</th>
@@ -24,6 +25,7 @@
   <tr class="<%= issue.is_published? ? "published" :  "unpublished" %>">
     <td><%= issue.is_published? ? "yes" :  "no" %></td>
     <td><%= issue.title %></td>
+    <td><%= issue.descriptor %></td>
     <td><%= issue.volume %></td>
     <td><%= issue.issue_number %></td>
     <td><%= issue.publication_date.year unless issue.publication_date == nil%></td>

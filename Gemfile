@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc6'
+gem 'rails', '3.1.4'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -9,11 +9,11 @@ gem 'json'
 
 # Gems used only for assets and not required
 # in production environments by default.
-#group :assets do
+group :assets do
 #  gem 'sass-rails', "  ~> 3.1.0.rc"
 #  gem 'coffee-rails', "~> 3.1.0.rc"
 #  gem 'uglifier'
-#end
+end
 
 gem 'jquery-rails'
 
@@ -25,15 +25,13 @@ gem 'cloudfiles'
 gem 'cocaine' #a dependency that paperclilp didn't pick up yet
 gem "paperclip-cloudfiles", :require => 'paperclip'
 #gem 'paperclip'
-gem 'devise'
+gem 'devise', "~> 2.0.2"
 gem 'cancan', '1.6.0'
 gem 'bcrypt-ruby'
 gem 'RedCloth'
 gem 'acts_as_list'
 gem 'kaminari'
-gem 'thinking-sphinx',
-  :git     => 'git://github.com/freelancing-god/thinking-sphinx.git',
-  :branch  => 'rails3'
+gem 'thinking-sphinx'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -52,16 +50,18 @@ gem 'thinking-sphinx',
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to
+group :test do
+  gem 'cucumber-rails'
+  gem 'cucumber'
+end
 
 group :test, :development do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'rack-test'
   gem 'database_cleaner'
-  gem 'cucumber-rails'
-  gem 'cucumber'
   gem 'rspec-rails'
-  gem "shoulda"
+  gem "shoulda", :require => false
   gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
 end

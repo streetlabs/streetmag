@@ -16,6 +16,16 @@ module ApplicationHelper
     name.present? && name != 'www' && name != 'api'
   end
   
+  def publication_issues_path(descriptor)
+    "/issues/#{descriptor}"
+  end
+  
+  def issue_name(issue)
+    month = Date::MONTHNAMES[issue.publication_date.month] unless issue.publication_date == nil
+    year = issue.publication_date.year unless issue.publication_date == nil
+    issue.nil? ? "N/A" : "Issue #{issue.volume}.#{issue.issue_number} #{month} #{year}"
+  end
+  
   def link_to_remove_partial(name, f)
     f.hidden_field(:_destroy) + link_to_function(name, "remove_partial(this)")
   end
