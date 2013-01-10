@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.4'
+gem 'rails', '3.1.10'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -17,7 +17,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'mysql2'
+gem 'mysql2', "~> 0.3.11"
 gem 'high_voltage'
 gem 'simple_form'
 gem "ckeditor", "~> 3.6.0"
@@ -56,7 +56,7 @@ group :test do
 end
 
 group :test, :development do
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '~> 1.0.1'
   gem 'capybara'
   gem 'rack-test'
   gem 'database_cleaner'
